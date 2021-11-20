@@ -4,12 +4,27 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--accent-color: #{$accent};
+	--warning-color: #{$warning};
+	--success-color: #{$success};
+	--error-color: #{$error};
+	--primary-color: #{$primary};
+	--secondary-color: #{$secondary};
+	--muted-color: #{$muted};
+	--bright-color: #{$bright};
+	--shade-color: #{$shade};
+	--tint-color: #{$tint};
+}
+
 html {
 	font-size: 62.5%;
 }
 
 body {
 	margin: 0;
+	background-color: var(--tint-color);
+	color: var(--primary-color);
 	font-family: "IBM Plex Sans", sans-serif;
 	font-weight: 400;
 }
@@ -17,9 +32,16 @@ body {
 h1,
 h2,
 h3,
+h4,
 p,
 ul,
 li {
 	margin: 0;
 	padding: 0;
+}
+
+.container {
+	max-width: 1320px;
+	margin: 0 auto;
+	padding: 60px;
 }

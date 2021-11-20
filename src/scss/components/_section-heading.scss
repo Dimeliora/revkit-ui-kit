@@ -1,0 +1,13 @@
+.section-heading {
+	padding-bottom: 20px;
+	border-bottom: 1px solid var(--shade-color);
+	color: var(--primary-color);
+	font-size: 2.8rem;
+	font-weight: 700;
+
+	&__number {
+		display: inline-block;
+		margin-right: 5px;
+		color: var(--muted-color);
+	}
+}
