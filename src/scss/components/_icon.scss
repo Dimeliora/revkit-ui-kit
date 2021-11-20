@@ -2,4 +2,40 @@
 	width: 30px;
 	height: 30px;
 	fill: var(--primary-color);
+
+	&--accent {
+		fill: var(--accent-color);
+	}
+
+	&--warning {
+		fill: var(--warning-color);
+	}
+
+	&--success {
+		fill: var(--success-color);
+	}
+
+	&--error {
+		fill: var(--error-color);
+	}
+
+	&--secondary {
+		fill: var(--secondary-color);
+	}
+
+	&--muted {
+		fill: var(--muted-color);
+	}
+
+	&--bright {
+		fill: var(--bright-color);
+	}
+
+	&--shade {
+		fill: var(--shade-color);
+	}
+
+	&--tint {
+		fill: var(--tint-color);
+	}
 }

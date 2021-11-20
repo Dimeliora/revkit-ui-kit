@@ -13,18 +13,8 @@
 			margin-bottom: 0;
 		}
 
-		&--dark {
+		&--bright {
 			background-color: var(--muted-color);
-		}
-	}
-
-	&__item {
-		&--accent {
-			fill: var(--accent-color);
-		}
-
-		&--dark {
-			fill: var(--bright-color);
 		}
 	}
 }
