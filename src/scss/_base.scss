@@ -23,6 +23,7 @@ html {
 
 body {
 	margin: 0;
+	padding: 60px;
 	background-color: var(--tint-color);
 	color: var(--primary-color);
 	font-family: "IBM Plex Sans", sans-serif;
@@ -43,5 +44,4 @@ li {
 .container {
 	max-width: 1320px;
 	margin: 0 auto;
-	padding: 60px;
 }
