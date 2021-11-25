@@ -1,378 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="RevKit UI Kit. Controls page. For education purpose"
-    />
-    <title>RevKit - Controls</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script src="/script.js" defer></script>
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="/icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/icons/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/icons/site.webmanifest" />
-    <link rel="shortcut icon" href="/icons/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-    <meta name="theme-color" content="#ffffff" />
-  </head>
-  <body>
-    <main>
-      <div class="container">
-        <!-- Form -->
-        <section class="form">
-          <h2 class="section-heading">
-            <span class="section-heading__number">04.</span>
-            Form
-          </h2>
-          <!-- Form Inputs -->
-          <div class="form__wrapper section-wrapper">
-            <div class="form__inputs">
-              <!-- Form Input. Placeholder, error message -->
-              <div class="form__field text-field">
-                <label for="form-field-01" class="text-field__label"
-                  >Label</label
-                >
-                <div class="text-field__input-wrapper">
-                  <input
-                    id="form-field-01"
-                    type="text"
-                    class="text-field__input"
-                    placeholder="Placeholder"
-                  />
-                </div>
-                <div
-                  class="
-                    text-field__helper-text text-field__helper-text--success
-                  "
-                >
-                  Validation success message
-                </div>
-                <div
-                  class="
-                    text-field__helper-text
-                    text-field__helper-text--visible
-                    text-field__helper-text--error
-                  "
-                >
-                  Validation error message
-                </div>
-              </div>
-              <!-- Form Input. Value, success message -->
-              <div class="form__field text-field">
-                <label for="form-field-02" class="text-field__label"
-                  >Label</label
-                >
-                <div class="text-field__input-wrapper">
-                  <input
-                    id="form-field-02"
-                    type="text"
-                    class="text-field__input"
-                    placeholder="Placeholder"
-                    value="Value"
-                  />
-                </div>
-                <div
-                  class="
-                    text-field__helper-text
-                    text-field__helper-text--visible
-                    text-field__helper-text--success
-                  "
-                >
-                  Validation success message
-                </div>
-                <div
-                  class="text-field__helper-text text-field__helper-text--error"
-                >
-                  Validation error message
-                </div>
-              </div>
-              <!-- Form Input. Placeholder, error message, focus -->
-              <div class="form__field text-field">
-                <label for="form-field-03" class="text-field__label"
-                  >Label</label
-                >
-                <div class="text-field__input-wrapper">
-                  <input
-                    id="form-field-03"
-                    type="text"
-                    class="text-field__input"
-                    placeholder="Placeholder"
-                  />
-                </div>
-                <div
-                  class="
-                    text-field__helper-text text-field__helper-text--success
-                  "
-                >
-                  Validation success message
-                </div>
-                <div
-                  class="
-                    text-field__helper-text
-                    text-field__helper-text--visible
-                    text-field__helper-text--error
-                  "
-                >
-                  Validation error message
-                </div>
-              </div>
-              <!-- Form Input. Value, error message, disabled -->
-              <div class="form__field text-field">
-                <label for="form-field-04" class="text-field__label"
-                  >Label</label
-                >
-                <div class="text-field__input-wrapper">
-                  <input
-                    id="form-field-04"
-                    type="text"
-                    class="text-field__input"
-                    placeholder="Placeholder"
-                    value="Value"
-                    disabled
-                  />
-                </div>
-                <div
-                  class="
-                    text-field__helper-text text-field__helper-text--success
-                  "
-                >
-                  Validation success message
-                </div>
-                <div
-                  class="
-                    text-field__helper-text
-                    text-field__helper-text--visible
-                    text-field__helper-text--error
-                  "
-                >
-                  Validation error message
-                </div>
-              </div>
-              <!-- Form Input. Placeholder, icon -->
-              <div class="form__field text-field">
-                <label for="form-field-05" class="text-field__label"
-                  >Label</label
-                >
-                <div class="text-field__input-wrapper">
-                  <input
-                    id="form-field-05"
-                    type="text"
-                    class="text-field__input"
-                    placeholder="Placeholder"
-                  />
-                  <svg class="text-field__icon">
-                    <use href="#lens" />
-                  </svg>
-                </div>
-                <div
-                  class="
-                    text-field__helper-text text-field__helper-text--success
-                  "
-                >
-                  Validation success message
-                </div>
-                <div
-                  class="text-field__helper-text text-field__helper-text--error"
-                >
-                  Validation error message
-                </div>
-              </div>
-              <!-- Form Input. Value, success message, icon -->
-              <div class="form__field text-field">
-                <label for="form-field-06" class="text-field__label"
-                  >Label</label
-                >
-                <div class="text-field__input-wrapper">
-                  <input
-                    id="form-field-06"
-                    type="text"
-                    class="text-field__input"
-                    placeholder="Placeholder"
-                    value="Value"
-                  />
-                  <svg class="text-field__icon">
-                    <use href="#chevron-left" />
-                  </svg>
-                </div>
-                <div
-                  class="
-                    text-field__helper-text
-                    text-field__helper-text--visible
-                    text-field__helper-text--success
-                  "
-                >
-                  Validation success message
-                </div>
-                <div
-                  class="text-field__helper-text text-field__helper-text--error"
-                >
-                  Validation error message
-                </div>
-              </div>
-              <!-- Form Input. Value, error message, icon, focus -->
-              <div class="form__field text-field">
-                <label for="form-field-07" class="text-field__label"
-                  >Label</label
-                >
-                <div class="text-field__input-wrapper">
-                  <input
-                    id="form-field-07"
-                    type="text"
-                    class="text-field__input"
-                    placeholder="Placeholder"
-                    value="Value"
-                  />
-                  <svg class="text-field__icon">
-                    <use href="#alert" />
-                  </svg>
-                </div>
-                <div
-                  class="
-                    text-field__helper-text text-field__helper-text--success
-                  "
-                >
-                  Validation success message
-                </div>
-                <div
-                  class="
-                    text-field__helper-text
-                    text-field__helper-text--visible
-                    text-field__helper-text--error
-                  "
-                >
-                  Validation error message
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <a href="/" class="page-link page-link--prev" title="To index page">
-      <svg class="icons__item icon icon--tint">
-        <use href="#chevron-left" />
-      </svg>
-    </a>
-
-    <!-- Спрайты для иконок, взяты из файла /dist/icons/icon-sprite.svg, генерируемого автоматически.
-		Размещен здесь, так как при использовании отдельного файла иконки отображаются некорректно (из-за использования в иконках элемента mask) -->
-    <?xml version="1.0" encoding="utf-8"?><svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      style="width: 0; height: 0"
-    >
-      <symbol viewbox="0 0 30 30" id="lens" xmlns="http://www.w3.org/2000/svg">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M13.5 20a7.5 7.5 0 115.478-2.378l3.803 4.753a1 1 0 11-1.562 1.25l-3.789-4.736A7.464 7.464 0 0113.5 20zm0-2a5.5 5.5 0 100-11 5.5 5.5 0 000 11z"
-        />
-        <mask
-          id="bsmask0_0_698"
-          style="mask-type: alpha"
-          maskunits="userSpaceOnUse"
-          x="6"
-          y="5"
-          width="17"
-          height="19"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M13.5 20a7.5 7.5 0 115.478-2.378l3.803 4.753a1 1 0 11-1.562 1.25l-3.789-4.736A7.464 7.464 0 0113.5 20zm0-2a5.5 5.5 0 100-11 5.5 5.5 0 000 11z"
-          />
-        </mask>
-        <g mask="url(#bsmask0_0_698)"><path d="M0 0h30v30H0z" /></g>
-      </symbol>
-      <symbol
-        viewbox="0 0 30 30"
-        id="chevron-left"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12.414 15l6.293 6.293a1 1 0 01-1.414 1.414l-7-7a1 1 0 010-1.414l7-7a1 1 0 111.414 1.414L12.414 15z"
-        />
-        <mask
-          id="aumask0_0_674"
-          style="mask-type: alpha"
-          maskunits="userSpaceOnUse"
-          x="10"
-          y="7"
-          width="9"
-          height="16"
-        >
-          <path
-            d="M12.414 15l6.293 6.293a1 1 0 01-1.414 1.414l-7-7a1 1 0 010-1.414l7-7a1 1 0 111.414 1.414L12.414 15z"
-          />
-        </mask>
-        <g mask="url(#aumask0_0_674)"><path d="M0 0h30v30H0z" /></g>
-      </symbol>
-      <symbol
-        viewbox="0 0 30 30"
-        id="chevron-right"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M17.586 15l-6.293-6.293a1 1 0 011.414-1.414l7 7a1 1 0 010 1.414l-7 7a1 1 0 01-1.414-1.414L17.586 15z"
-        />
-        <mask
-          id="avmask0_0_675"
-          style="mask-type: alpha"
-          maskunits="userSpaceOnUse"
-          x="11"
-          y="7"
-          width="9"
-          height="16"
-        >
-          <path
-            d="M17.586 15l-6.293-6.293a1 1 0 011.414-1.414l7 7a1 1 0 010 1.414l-7 7a1 1 0 01-1.414-1.414L17.586 15z"
-          />
-        </mask>
-        <g mask="url(#avmask0_0_675)"><path d="M0 0h30v30H0z" /></g>
-      </symbol>
-      <symbol viewbox="0 0 30 30" id="alert" xmlns="http://www.w3.org/2000/svg">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M15.874 5.514a1 1 0 00-1.748 0l-10 18A1 1 0 005 25h20a1 1 0 00.874-1.486l-10-18zM6.7 23L15 8.06 23.3 23H6.7zM14 13a1 1 0 112 0v4a1 1 0 11-2 0v-4zm1 6a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1z"
-        />
-        <mask
-          id="acmask0_0_656"
-          style="mask-type: alpha"
-          maskunits="userSpaceOnUse"
-          x="3"
-          y="5"
-          width="24"
-          height="20"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M15.874 5.514a1 1 0 00-1.748 0l-10 18A1 1 0 005 25h20a1 1 0 00.874-1.486l-10-18zM6.7 23L15 8.06 23.3 23H6.7zM14 13a1 1 0 112 0v4a1 1 0 11-2 0v-4zm1 6a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1z"
-          />
-        </mask>
-        <g mask="url(#acmask0_0_656)"><path d="M0 0h30v30H0z" /></g>
-      </symbol>
-    </svg>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="RevKit UI Kit. Controls page. For education purpose"
+		/>
+		<title>RevKit - Controls</title>
+		<link rel="stylesheet" href="/styles.css" />
+		<script src="/script.js" defer></script>
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="/icons/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/icons/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/icons/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/icons/site.webmanifest" />
+		<link rel="shortcut icon" href="/icons/favicon.ico" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="msapplication-config" content="/icons/browserconfig.xml" />
+		<meta name="theme-color" content="#ffffff" />
+	</head>
+	<body>
+		<main>
+			<div class="container">
+				<!-- Form -->
+				<section class="form">
+					<h2 class="section-heading">
+						<span class="section-heading__number">04.</span>
+						Form
+					</h2>
+					<!-- Form Inputs -->
+					<div class="form__wrapper section-wrapper">
+						<div class="form__inputs">
+							<!-- Form Input. Placeholder, error message -->
+							<div class="form__field text-field">
+								<label
+									for="form-field-01"
+									class="text-field__label"
+									>Label</label
+								>
+								<div class="text-field__input-wrapper">
+									<input
+										id="form-field-01"
+										type="text"
+										class="text-field__input"
+										placeholder="Placeholder"
+									/>
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--success
+									"
+								>
+									Validation success message
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--visible
+										text-field__helper-text--error
+									"
+								>
+									Validation error message
+								</div>
+							</div>
+							<!-- Form Input. Value, success message -->
+							<div class="form__field text-field">
+								<label
+									for="form-field-02"
+									class="text-field__label"
+									>Label</label
+								>
+								<div class="text-field__input-wrapper">
+									<input
+										id="form-field-02"
+										type="text"
+										class="text-field__input"
+										placeholder="Placeholder"
+										value="Value"
+									/>
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--visible
+										text-field__helper-text--success
+									"
+								>
+									Validation success message
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--error
+									"
+								>
+									Validation error message
+								</div>
+							</div>
+							<!-- Form Input. Placeholder, error message, focus -->
+							<div class="form__field text-field">
+								<label
+									for="form-field-03"
+									class="text-field__label"
+									>Label</label
+								>
+								<div class="text-field__input-wrapper">
+									<input
+										id="form-field-03"
+										type="text"
+										class="text-field__input"
+										placeholder="Placeholder"
+									/>
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--success
+									"
+								>
+									Validation success message
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--visible
+										text-field__helper-text--error
+									"
+								>
+									Validation error message
+								</div>
+							</div>
+							<!-- Form Input. Value, error message, disabled -->
+							<div class="form__field text-field">
+								<label
+									for="form-field-04"
+									class="text-field__label"
+									>Label</label
+								>
+								<div class="text-field__input-wrapper">
+									<input
+										id="form-field-04"
+										type="text"
+										class="text-field__input"
+										placeholder="Placeholder"
+										value="Value"
+										disabled
+									/>
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--success
+									"
+								>
+									Validation success message
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--visible
+										text-field__helper-text--error
+									"
+								>
+									Validation error message
+								</div>
+							</div>
+							<!-- Form Input. Placeholder, icon -->
+							<div class="form__field text-field">
+								<label
+									for="form-field-05"
+									class="text-field__label"
+									>Label</label
+								>
+								<div class="text-field__input-wrapper">
+									<input
+										id="form-field-05"
+										type="text"
+										class="text-field__input"
+										placeholder="Placeholder"
+									/>
+									<svg class="text-field__icon">
+										<use
+											href="/icons/icon-sprite.svg#search"
+										/>
+									</svg>
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--success
+									"
+								>
+									Validation success message
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--error
+									"
+								>
+									Validation error message
+								</div>
+							</div>
+							<!-- Form Input. Value, success message, icon -->
+							<div class="form__field text-field">
+								<label
+									for="form-field-06"
+									class="text-field__label"
+									>Label</label
+								>
+								<div class="text-field__input-wrapper">
+									<input
+										id="form-field-06"
+										type="text"
+										class="text-field__input"
+										placeholder="Placeholder"
+										value="Value"
+									/>
+									<svg class="text-field__icon">
+										<use
+											href="/icons/icon-sprite.svg#chevron-left-arrow"
+										/>
+									</svg>
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--visible
+										text-field__helper-text--success
+									"
+								>
+									Validation success message
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--error
+									"
+								>
+									Validation error message
+								</div>
+							</div>
+							<!-- Form Input. Value, error message, icon, focus -->
+							<div class="form__field text-field">
+								<label
+									for="form-field-07"
+									class="text-field__label"
+									>Label</label
+								>
+								<div class="text-field__input-wrapper">
+									<input
+										id="form-field-07"
+										type="text"
+										class="text-field__input"
+										placeholder="Placeholder"
+										value="Value"
+									/>
+									<svg class="text-field__icon">
+										<use
+											href="/icons/icon-sprite.svg#alert-error"
+										/>
+									</svg>
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--success
+									"
+								>
+									Validation success message
+								</div>
+								<div
+									class="
+										text-field__helper-text
+										text-field__helper-text--visible
+										text-field__helper-text--error
+									"
+								>
+									Validation error message
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+		<a href="/" class="page-link page-link--prev" title="To index page">
+			<svg class="icons__item icon icon--tint">
+				<use href="/icons/icon-sprite.svg#chevron-left-arrow" />
+			</svg>
+		</a>
+	</body>
 </html>

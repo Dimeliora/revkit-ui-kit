@@ -170,7 +170,7 @@ const makeFavicons = (done) =>
 
 // ======== Favicons Injection Handler ========
 const injectFavicons = () =>
-  src(`${SRC_PATH}/index.html`)
+  src(`${SRC_PATH}/*.html`)
     .pipe(
       realFavicon.injectFaviconMarkups(
         JSON.parse(fs.readFileSync(FAVICON_DATA_PATH)).favicon.html_code

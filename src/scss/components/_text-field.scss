@@ -50,9 +50,10 @@
 		top: 50%;
 		right: 10px;
 		transform: translateY(-50%);
-		width: 30px;
-		height: 30px;
-		fill: var(--accent-color);
+		width: 25px;
+		height: 25px;
+		stroke: var(--accent-color);
+		fill: none;
 	}
 
 	&__helper-text {

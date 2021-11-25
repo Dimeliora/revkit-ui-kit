@@ -1,41 +1,42 @@
 .icon {
-	width: 30px;
-	height: 30px;
-	fill: var(--primary-color);
+	width: 25px;
+	height: 25px;
+	stroke: var(--primary-color);
+	fill: none;
 
 	&--accent {
-		fill: var(--accent-color);
+		stroke: var(--accent-color);
 	}
 
 	&--warning {
-		fill: var(--warning-color);
+		stroke: var(--warning-color);
 	}
 
 	&--success {
-		fill: var(--success-color);
+		stroke: var(--success-color);
 	}
 
 	&--error {
-		fill: var(--error-color);
+		stroke: var(--error-color);
 	}
 
 	&--secondary {
-		fill: var(--secondary-color);
+		stroke: var(--secondary-color);
 	}
 
 	&--muted {
-		fill: var(--muted-color);
+		stroke: var(--muted-color);
 	}
 
 	&--bright {
-		fill: var(--bright-color);
+		stroke: var(--bright-color);
 	}
 
 	&--shade {
-		fill: var(--shade-color);
+		stroke: var(--shade-color);
 	}
 
 	&--tint {
-		fill: var(--tint-color);
+		stroke: var(--tint-color);
 	}
 }
