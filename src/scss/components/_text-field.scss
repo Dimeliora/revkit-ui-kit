@@ -2,10 +2,18 @@
     display: flex;
     flex-direction: column;
 
+    &--multiline {
+        .text-field__input {
+            resize: none;
+            min-height: 120px;
+        }
+    }
+
     &__label {
         position: relative;
         display: flex;
         flex-direction: column;
+        margin-bottom: 5px;
         color: var(--secondary-color);
         font-size: 1.6rem;
         font-weight: 500;
@@ -13,7 +21,6 @@
 
     &__input-wrapper {
         position: relative;
-        margin-top: 5px;
     }
 
     &__input {

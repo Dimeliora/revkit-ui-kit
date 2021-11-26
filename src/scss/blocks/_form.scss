@@ -18,5 +18,16 @@
             grid-column: 2 / 4;
             max-width: 360px;
         }
+        &:nth-of-type(10) {
+            grid-column: 1 / 4;
+            max-width: 360px;
+        }
+    }
+
+    &__textarea {
+        &:nth-of-type(12) {
+            grid-column: 2 / 4;
+            max-width: 360px;
+        }
     }
 }
