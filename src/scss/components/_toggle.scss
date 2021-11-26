@@ -1,0 +1,82 @@
+.toggle {
+    --toggle-width: 52px;
+    --thumb-width: 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__input {
+        position: absolute;
+        appearance: none;
+
+        &:checked + .toggle__label {
+            &::before {
+                border-color: var(--accent-color);
+                background-color: var(--accent-color);
+            }
+
+            &::after {
+                left: calc(var(--toggle-width) - var(--thumb-width) - 3px);
+            }
+        }
+
+        &:disabled + .toggle__label {
+            pointer-events: none;
+
+            &::before {
+                background-color: transparent;
+            }
+
+            &::after {
+                background-color: transparent;
+            }
+        }
+
+        &:disabled:checked + .toggle__label {
+            &::before {
+                border-color: var(--shade-color);
+            }
+
+            &::after {
+                left: calc(var(--toggle-width) - var(--thumb-width) - 3px);
+            }
+        }
+    }
+
+    &__label {
+        padding-left: 60px;
+        color: var(--secondary-color);
+        font-size: 1.6rem;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: var(--toggle-width);
+            height: 30px;
+            border: 1px solid var(--shade-color);
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+            background-color: var(--bright-color);
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 3px;
+            transform: translateY(-50%);
+            width: var(--thumb-width);
+            height: 24px;
+            border: 1px solid var(--shade-color);
+            border-radius: 50%;
+            box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+            background-color: var(--bright-color);
+            transition: left 0.15s ease-in-out;
+        }
+    }
+}

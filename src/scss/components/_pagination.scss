@@ -22,7 +22,7 @@
         color: var(--primary-color);
         font-size: 1.6rem;
         cursor: pointer;
-        transition: background-color 0.2s ease-in;
+        transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
 
         & + .pagination__button {
             border-left: none;
@@ -44,6 +44,7 @@
         &:focus-visible {
             outline: none;
             background-color: var(--accent-color);
+            border-color: var(--accent-color);
             color: var(--bright-color);
 
             .pagination__icon {
