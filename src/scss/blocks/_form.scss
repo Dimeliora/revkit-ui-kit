@@ -30,4 +30,16 @@
             max-width: 360px;
         }
     }
+
+    &__paginations {
+        margin-top: 80px;
+    }
+
+    &__pagination-item {
+        margin-right: 40px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }
