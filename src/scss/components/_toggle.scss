@@ -59,7 +59,7 @@
             height: 30px;
             border: 1px solid var(--shade-color);
             border-radius: 15px;
-            box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+            box-shadow: 0px 4px 8px var(--shadow-color);
             background-color: var(--bright-color);
             transition: background-color 0.15s ease-in-out;
         }
@@ -74,7 +74,7 @@
             height: 24px;
             border: 1px solid var(--shade-color);
             border-radius: 50%;
-            box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+            box-shadow: 0px 4px 8px var(--shadow-color);
             background-color: var(--bright-color);
             transition: left 0.15s ease-in-out;
         }

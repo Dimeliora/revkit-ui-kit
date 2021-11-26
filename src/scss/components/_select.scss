@@ -39,7 +39,7 @@
         padding: 16px;
         border: 1px solid var(--shade-color);
         border-radius: 6px;
-        box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+        box-shadow: 0px 4px 8px var(--shadow-color);
         background-color: var(--bright-color);
         cursor: pointer;
 
@@ -83,7 +83,7 @@
         overflow-y: auto;
         border: 1px solid var(--shade-color);
         border-radius: 6px;
-        box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+        box-shadow: 0px 4px 8px var(--shadow-color);
         background-color: var(--bright-color);
     }
 

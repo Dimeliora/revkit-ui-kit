@@ -1,6 +1,6 @@
 .pagination {
     display: inline-flex;
-    box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.08);
+    box-shadow: 0px 4px 8px var(--shadow-color);
 
     &--disabled {
         pointer-events: none;

@@ -1,4 +1,5 @@
 import { Select } from "./select";
+import { SliderProgress } from "./slider-progress";
 
 const SELECT_ITEMS = [
     {
@@ -34,4 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         data: SELECT_ITEMS,
         disabled: true,
     });
+
+    new SliderProgress("#form-slider-01");
+    new SliderProgress("#form-slider-02");
 });

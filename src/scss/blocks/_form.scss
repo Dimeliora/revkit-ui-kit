@@ -55,4 +55,17 @@
         grid-template-columns: repeat(2, 155px);
         gap: 40px 50px;
     }
+
+    &__sliders {
+        display: flex;
+    }
+
+    &__slider-item {
+        width: 350px;
+        margin-right: 65px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }
