@@ -1,5 +1,5 @@
 export class Select {
-    static getHTMLTemplate(label, placeholder, data, selected) {
+    static createHTMLTemplate(label, placeholder, data, selected, disabled) {
         const options = data.map(({ value }, idx) => {
             let optionActiveClass = "";
             if (selected === idx) {
@@ -17,15 +17,18 @@ export class Select {
             `;
         });
 
+        const numOfExistingSelects =
+            document.querySelectorAll(".select").length;
+        const currentSelectLabelId = `select-label-${String(
+            numOfExistingSelects
+        ).padStart(2, "0")}`;
+
+        const selectTabIndex = disabled ? "-1" : "0";
+
         let text = placeholder;
         if (selected !== null) {
             text = data[selected].value;
         }
-
-        const createdSelectElements = document.querySelectorAll(".select");
-        const currentSelectLabelId = `select-label-${String(
-            createdSelectElements.length
-        ).padStart(2, "0")}`;
 
         return `
             <div
@@ -37,16 +40,14 @@ export class Select {
             </div>
             <div
                 class="select__field"
-                tabindex="0"
+                tabindex="${selectTabIndex}"
                 role="button"
                 aria-labelledby=${currentSelectLabelId}
                 data-select-element="field"
             >
                 <span class="select__text" data-select-element="text">${text}</span>
-                <svg class="select__icon">
-                    <use
-                        href="/icons/icon-sprite.svg#chevron-down-arrow"
-                    ></use>
+                <svg class="select__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 8L12 16L20 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <div
@@ -62,6 +63,16 @@ export class Select {
         `;
     }
 
+    /**
+     * @param {Object} options - Options object for custom select creation
+     * @param {string} options.selector - CSS selector for custom select element injection
+     * @param {string=} options.label - Text for select label
+     * @param {string=} options.placeholder - Placeholder for select field
+     * @param {Object[]} options.data - Array of objects for select options creation
+     * @param {string} options.data.value - Value for select option
+     * @param {number=} options.selected - Index of selected option
+     * @param {boolean=} options.disabled - Disabled attribute, makes the select element not focusable
+     */
     constructor({
         selector,
         label = "Label",
@@ -91,14 +102,12 @@ export class Select {
             this._root.classList.add("select--disabled");
         }
 
-        this._root.insertAdjacentHTML(
-            "afterBegin",
-            Select.getHTMLTemplate(
-                this._label,
-                this._placeholder,
-                this._data,
-                this._selected
-            )
+        this._root.innerHTML = Select.createHTMLTemplate(
+            this._label,
+            this._placeholder,
+            this._data,
+            this._selected,
+            this.disabled
         );
     }
 
@@ -117,10 +126,15 @@ export class Select {
             '[data-select-element="dropdown"]'
         );
 
-        this._root.addEventListener("click", this.#selectClickHandler);
-        this._root.addEventListener("keydown", this.#selectKeyboardHandler);
-        this._selectLabel.addEventListener("click", this.#labelClickHandler);
-        document.addEventListener("click", this.#outsideClickHandler);
+        if (!this.disabled) {
+            this._root.addEventListener("click", this.#selectClickHandler);
+            this._root.addEventListener("keydown", this.#selectKeyboardHandler);
+            this._selectLabel.addEventListener(
+                "click",
+                this.#labelClickHandler
+            );
+            document.addEventListener("click", this.#outsideClickHandler);
+        }
     }
 
     #selectClickHandler = (e) => {

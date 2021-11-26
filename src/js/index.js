@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Select({
         selector: "#form-select-02",
         data: SELECT_ITEMS,
+        selected: 1,
     });
     new Select({
         selector: "#form-select-03",
