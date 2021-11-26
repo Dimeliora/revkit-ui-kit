@@ -31,7 +31,7 @@
         }
     }
 
-    &__paginations {
+    &__elements-wrapper {
         margin-top: 80px;
     }
 
@@ -41,5 +41,11 @@
         &:last-child {
             margin-right: 0;
         }
+    }
+
+    &__checkboxes {
+        display: grid;
+        grid-template-columns: repeat(3, 155px);
+        gap: 30px 50px;
     }
 }
