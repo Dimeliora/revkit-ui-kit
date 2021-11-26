@@ -48,4 +48,10 @@
         grid-template-columns: repeat(3, 155px);
         gap: 30px 50px;
     }
+
+    &__radios {
+        display: grid;
+        grid-template-columns: repeat(2, 155px);
+        gap: 30px 50px;
+    }
 }
