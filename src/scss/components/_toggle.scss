@@ -9,6 +9,12 @@
         position: absolute;
         appearance: none;
 
+        &:focus-visible + .toggle__label {
+            &::before {
+                outline: 2px solid var(--primary-color);
+            }
+        }
+
         &:checked + .toggle__label {
             &::before {
                 border-color: var(--accent-color);

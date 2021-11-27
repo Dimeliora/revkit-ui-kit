@@ -114,16 +114,20 @@ export class Stepper {
     };
 
     #checkBorderValues() {
-        if (this.value - this.step < this.min) {
+        if (this.value - this.step < this.min || this.disabled) {
             this._decButton.classList.add("stepper__button--inactive");
+            this._decButton.setAttribute("tabindex", "-1");
         } else {
             this._decButton.classList.remove("stepper__button--inactive");
+            this._decButton.removeAttribute("tabindex");
         }
 
-        if (this.value + this.step > this.max) {
+        if (this.value + this.step > this.max || this.disabled) {
             this._incButton.classList.add("stepper__button--inactive");
+            this._incButton.setAttribute("tabindex", "-1");
         } else {
             this._incButton.classList.remove("stepper__button--inactive");
+            this._incButton.removeAttribute("tabindex");
         }
     }
 

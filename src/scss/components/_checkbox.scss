@@ -21,6 +21,12 @@
         position: absolute;
         appearance: none;
 
+        &:focus-visible + .checkbox__label {
+            &::before {
+                outline: 2px solid var(--primary-color);
+            }
+        }
+
         &:checked + .checkbox__label {
             &::before {
                 border-width: 2px;

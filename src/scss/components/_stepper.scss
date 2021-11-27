@@ -46,8 +46,7 @@
             background-color: transparent;
             opacity: 0.25;
 
-            &:hover,
-            &:focus-visible {
+            &:hover {
                 background-color: transparent;
                 border-color: var(--shade-color);
 
