@@ -1,6 +1,7 @@
 import { Select } from "./select";
 import { SliderProgress } from "./slider-progress";
 import { Stepper } from "./stepper";
+import { Progress } from "./progress";
 
 const SELECT_ITEMS = [
     {
@@ -60,4 +61,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new SliderProgress("#form-slider-01");
     new SliderProgress("#form-slider-02");
+
+    const progressBar_1 = new Progress({
+        selector: "#form-progress-01",
+        value: 60,
+    });
+    const progressBar_2 = new Progress({
+        selector: "#form-progress-02",
+        value: 40,
+        type: "warning",
+    });
+    const progressBar_3 = new Progress({
+        selector: "#form-progress-03",
+        value: 80,
+        type: "success",
+    });
+    const progressBar_4 = new Progress({
+        selector: "#form-progress-04",
+        value: 50,
+        type: "error",
+    });
+    setInterval(() => {
+        const value = Math.floor(Math.random() * 100);
+        progressBar_1.onChange(value);
+    }, 1000);
+    setInterval(() => {
+        const value = Math.floor(Math.random() * 100);
+        progressBar_2.onChange(value);
+    }, 2000);
+    setInterval(() => {
+        const value = Math.floor(Math.random() * 100);
+        progressBar_3.onChange(value);
+    }, 4000);
+    setInterval(() => {
+        const value = Math.floor(Math.random() * 100);
+        progressBar_4.onChange(value);
+    }, 3500);
 });

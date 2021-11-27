@@ -92,11 +92,17 @@
         grid-template-columns: repeat(4, 180px);
     }
 
-    &__alert-item {
+    &__alert-item,
+    &__progress-item {
+        max-width: 800px;
         margin-bottom: 30px;
 
         &:last-child {
             margin-bottom: 0;
         }
+    }
+
+    &__progress-item {
+        margin-bottom: 50px;
     }
 }

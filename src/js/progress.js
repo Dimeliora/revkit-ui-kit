@@ -1,0 +1,44 @@
+export class Progress {
+    static progressTypeClassnames = {
+        warning: "progress--warning",
+        success: "progress--success",
+        error: "progress--error",
+    };
+
+    constructor({ selector, value = 0, type = null }) {
+        this._root = document.querySelector(selector);
+        this.value = value;
+        this.type = type;
+
+        this.#setup();
+    }
+
+    #setup() {
+        if (this._root === null) {
+            throw new Error("DOM element not found");
+        }
+
+        this._root.classList.add("progress");
+        if (this.type !== null) {
+            this._root.classList.add(
+                Progress.progressTypeClassnames[this.type]
+            );
+        }
+
+        this.onChange(this.value);
+    }
+
+    onChange(value) {
+        this._root.style.setProperty("--progress-fill-width", `${value}%`);
+    }
+
+    destroy() {
+        this._root.classList.remove("progress");
+        this._root.removeAttribute("style");
+        if (this.type !== null) {
+            this._root.classList.remove(
+                Progress.progressTypeClassnames[this.type]
+            );
+        }
+    }
+}
