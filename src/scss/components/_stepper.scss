@@ -1,16 +1,17 @@
-.pagination {
+.stepper {
     display: inline-flex;
     box-shadow: 0px 4px 8px var(--shadow-color);
 
     &--disabled {
         pointer-events: none;
 
-        .pagination__button {
+        .stepper__button,
+        .stepper__value {
             background-color: transparent;
             opacity: 0.25;
         }
 
-        .pagination__icon {
+        .stepper__icon {
             stroke: var(--primary-color);
         }
     }
@@ -19,18 +20,8 @@
         padding: 15px 20px;
         border: 1px solid var(--shade-color);
         background-color: var(--bright-color);
-        color: var(--primary-color);
-        font-size: 1.6rem;
         cursor: pointer;
         transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
-
-        & + .pagination__button {
-            border-left: none;
-        }
-
-        &--outside {
-            padding: 15px 20px;
-        }
 
         &:first-of-type {
             border-radius: 6px 0 0 6px;
@@ -45,12 +36,38 @@
             outline: none;
             background-color: var(--accent-color);
             border-color: var(--accent-color);
-            color: var(--bright-color);
 
-            .pagination__icon {
+            .stepper__icon {
                 stroke: var(--bright-color);
             }
         }
+
+        &--inactive {
+            background-color: transparent;
+            opacity: 0.25;
+
+            &:hover,
+            &:focus-visible {
+                background-color: transparent;
+                border-color: var(--shade-color);
+
+                .stepper__icon {
+                    stroke: var(--primary-color);
+                }
+            }
+        }
+    }
+
+    &__value {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        border-top: 1px solid var(--shade-color);
+        border-bottom: 1px solid var(--shade-color);
+        background-color: var(--bright-color);
+        color: var(--primary-color);
+        font-size: 1.6rem;
     }
 
     &__icon {

@@ -1,5 +1,6 @@
 import { Select } from "./select";
 import { SliderProgress } from "./slider-progress";
+import { Stepper } from "./stepper";
 
 const SELECT_ITEMS = [
     {
@@ -33,6 +34,27 @@ document.addEventListener("DOMContentLoaded", () => {
     new Select({
         selector: "#form-select-03",
         data: SELECT_ITEMS,
+        disabled: true,
+    });
+
+    new Stepper({
+        selector: "#form-stepper-01",
+        value: 1,
+        max: 5,
+    });
+    new Stepper({
+        selector: "#form-stepper-02",
+        value: 1,
+        max: 10,
+        step: 2,
+    });
+    new Stepper({
+        selector: "#form-stepper-03",
+        value: 1,
+    });
+    new Stepper({
+        selector: "#form-stepper-04",
+        value: 1,
         disabled: true,
     });
 

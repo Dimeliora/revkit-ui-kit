@@ -450,121 +450,28 @@ Value</textarea
                                 </div>
                             </div>
                         </div>
-                        <!-- Pagination elements -->
+                        <!-- Steppers -->
                         <div class="form__elements-wrapper">
-                            <!-- Pagination -->
-                            <div class="form__pagination-item pagination">
-                                <button
-                                    class="pagination__button"
-                                    aria-label="Previous page"
-                                >
-                                    <svg class="pagination__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#subtract-minus-remove"
-                                        ></use>
-                                    </svg>
-                                </button>
-                                <button class="pagination__button">01</button>
-                                <button
-                                    class="
-                                        pagination__button
-                                        pagination__button--outside
-                                    "
-                                    aria-label="Next page"
-                                >
-                                    <svg class="pagination__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#add-plus"
-                                        ></use>
-                                    </svg>
-                                </button>
-                            </div>
-                            <!-- Pagination. Focus on minus -->
-                            <div class="form__pagination-item pagination">
-                                <button
-                                    class="pagination__button"
-                                    aria-label="Previous page"
-                                >
-                                    <svg class="pagination__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#subtract-minus-remove"
-                                        ></use>
-                                    </svg>
-                                </button>
-                                <button class="pagination__button">01</button>
-                                <button
-                                    class="
-                                        pagination__button
-                                        pagination__button--outside
-                                    "
-                                    aria-label="Next page"
-                                >
-                                    <svg class="pagination__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#add-plus"
-                                        ></use>
-                                    </svg>
-                                </button>
-                            </div>
-                            <!-- Pagination. Focus on plus -->
-                            <div class="form__pagination-item pagination">
-                                <button
-                                    class="pagination__button"
-                                    aria-label="Previous page"
-                                >
-                                    <svg class="pagination__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#subtract-minus-remove"
-                                        ></use>
-                                    </svg>
-                                </button>
-                                <button class="pagination__button">01</button>
-                                <button
-                                    class="
-                                        pagination__button
-                                        pagination__button--outside
-                                    "
-                                    aria-label="Next page"
-                                >
-                                    <svg class="pagination__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#add-plus"
-                                        ></use>
-                                    </svg>
-                                </button>
-                            </div>
-                            <!-- Pagination. Disabled -->
+                            <!-- Stepper -->
                             <div
-                                class="
-                                    form__pagination-item
-                                    pagination pagination--disabled
-                                "
-                            >
-                                <button
-                                    class="pagination__button"
-                                    aria-label="Previous page"
-                                >
-                                    <svg class="pagination__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#subtract-minus-remove"
-                                        ></use>
-                                    </svg>
-                                </button>
-                                <button class="pagination__button">01</button>
-                                <button
-                                    class="
-                                        pagination__button
-                                        pagination__button--outside
-                                    "
-                                    aria-label="Next page"
-                                >
-                                    <svg class="pagination__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#add-plus"
-                                        ></use>
-                                    </svg>
-                                </button>
-                            </div>
+                                class="form__stepper-item"
+                                id="form-stepper-01"
+                            ></div>
+                            <!-- Stepper decrease button active -->
+                            <div
+                                class="form__stepper-item"
+                                id="form-stepper-02"
+                            ></div>
+                            <!-- Stepper increase button active -->
+                            <div
+                                class="form__stepper-item"
+                                id="form-stepper-03"
+                            ></div>
+                            <!-- Stepper disabled -->
+                            <div
+                                class="form__stepper-item"
+                                id="form-stepper-04"
+                            ></div>
                         </div>
                         <!-- Checkboxes -->
                         <div class="form__elements-wrapper">
@@ -822,12 +729,14 @@ Value</textarea
                         <div class="form__elements-wrapper">
                             <div class="form__labels">
                                 <!-- Label -->
-                                <div class="form__label-item label label--bright">
+                                <div
+                                    class="form__label-item label label--bright"
+                                >
                                     <span class="label__text">Label</span>
                                     <button class="label__button">
                                         <svg
                                             class="label__icon"
-                                            viewBox="0 0 24 24"
+                                            viewbox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
                                             <path
@@ -845,7 +754,7 @@ Value</textarea
                                     <button class="label__button">
                                         <svg
                                             class="label__icon"
-                                            viewBox="0 0 24 24"
+                                            viewbox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
                                             <path
@@ -858,12 +767,14 @@ Value</textarea
                                     </button>
                                 </div>
                                 <!-- Label accent-->
-                                <div class="form__label-item label label--accent">
+                                <div
+                                    class="form__label-item label label--accent"
+                                >
                                     <span class="label__text">Label</span>
                                     <button class="label__button">
                                         <svg
                                             class="label__icon"
-                                            viewBox="0 0 24 24"
+                                            viewbox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
                                             <path
@@ -876,12 +787,17 @@ Value</textarea
                                     </button>
                                 </div>
                                 <!-- Label warning-->
-                                <div class="form__label-item label label--warning">
+                                <div
+                                    class="
+                                        form__label-item
+                                        label label--warning
+                                    "
+                                >
                                     <span class="label__text">Label</span>
                                     <button class="label__button">
                                         <svg
                                             class="label__icon"
-                                            viewBox="0 0 24 24"
+                                            viewbox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
                                             <path
@@ -894,12 +810,17 @@ Value</textarea
                                     </button>
                                 </div>
                                 <!-- Label success-->
-                                <div class="form__label-item label label--success">
+                                <div
+                                    class="
+                                        form__label-item
+                                        label label--success
+                                    "
+                                >
                                     <span class="label__text">Label</span>
                                     <button class="label__button">
                                         <svg
                                             class="label__icon"
-                                            viewBox="0 0 24 24"
+                                            viewbox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
                                             <path
@@ -912,12 +833,14 @@ Value</textarea
                                     </button>
                                 </div>
                                 <!-- Label error-->
-                                <div class="form__label-item label label--error">
+                                <div
+                                    class="form__label-item label label--error"
+                                >
                                     <span class="label__text">Label</span>
                                     <button class="label__button">
                                         <svg
                                             class="label__icon"
-                                            viewBox="0 0 24 24"
+                                            viewbox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
                                             <path
