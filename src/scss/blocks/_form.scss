@@ -91,4 +91,12 @@
     &__buttons--large {
         grid-template-columns: repeat(4, 180px);
     }
+
+    &__alert-item {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }

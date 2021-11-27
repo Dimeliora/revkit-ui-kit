@@ -1,0 +1,100 @@
+.alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    padding: 20px 25px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--bright-color);
+    box-shadow: 0px 24px 48px rgba(44, 39, 56, 0.08);
+
+    &--bright {
+        background-color: transparent;
+        box-shadow: none;
+
+        .alert__text {
+            color: var(--accent-color);
+        }
+
+        .alert__button {
+            &:hover,
+            &:focus-visible {
+                &::before {
+                    background-color: var(--shadow-color);
+                }
+            }
+        }
+
+        .alert__icon {
+            stroke: var(--accent-color);
+        }
+    }
+
+    &--accent {
+        background-color: var(--accent-color);
+    }
+
+    &--warning {
+        background-color: var(--warning-color);
+    }
+
+    &--success {
+        background-color: var(--success-color);
+    }
+
+    &--error {
+        background-color: var(--error-color);
+    }
+
+    &__text {
+        display: block;
+        max-width: 90%;
+        overflow: hidden;
+        opacity: 0.85;
+        color: var(--bright-color);
+        font-size: 1.8rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &__button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background-color: var(--bright-shadow-color);
+            transition: width 0.15s ease-in, height 0.15s ease-in;
+        }
+
+        &:hover,
+        &:focus-visible {
+            outline: none;
+
+            &::before {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        stroke: var(--bright-color);
+    }
+}
