@@ -105,4 +105,17 @@
     &__progress-item {
         margin-bottom: 50px;
     }
+
+    &__spinners {
+        display: flex;
+        align-items: center;
+    }
+
+    &__spinner-item {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }

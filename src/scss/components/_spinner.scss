@@ -1,0 +1,34 @@
+.spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid var(--accent-color);
+    border-right-color: var(--shade-color);
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    animation: spin 2.5s infinite cubic-bezier(0.175, 0.885, 0.32, 1.175);
+
+    &--warning {
+        border-color: var(--warning-color);
+        border-right-color: var(--shade-color);
+    }
+
+    &--success {
+        border-color: var(--success-color);
+        border-right-color: var(--shade-color);
+    }
+
+    &--error {
+        border-color: var(--error-color);
+        border-right-color: var(--shade-color);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: rotate(315deg);
+    }
+}

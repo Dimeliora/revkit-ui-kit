@@ -5,14 +5,9 @@
     &--disabled {
         pointer-events: none;
 
-        .stepper__button,
         .stepper__value {
             background-color: transparent;
-            opacity: 0.25;
-        }
-
-        .stepper__icon {
-            stroke: var(--primary-color);
+            color: var(--muted-shadow-color);
         }
     }
 
@@ -44,14 +39,17 @@
 
         &--inactive {
             background-color: transparent;
-            opacity: 0.25;
+
+            .stepper__icon {
+                stroke: var(--muted-shadow-color);
+            }
 
             &:hover {
                 background-color: transparent;
                 border-color: var(--shade-color);
 
                 .stepper__icon {
-                    stroke: var(--primary-color);
+                    stroke: var(--muted-shadow-color);
                 }
             }
         }
