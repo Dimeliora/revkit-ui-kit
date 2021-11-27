@@ -77,4 +77,18 @@
             margin-right: 0;
         }
     }
+
+    &__buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 140px);
+        gap: 30px 40px;
+    }
+
+    &__buttons--small {
+        grid-template-columns: repeat(4, 100px);
+    }
+
+    &__buttons--large {
+        grid-template-columns: repeat(4, 180px);
+    }
 }

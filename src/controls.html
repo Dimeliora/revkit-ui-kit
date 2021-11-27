@@ -1,8 +1,1197 @@
-<!DOCTYPE html><html lang="en">    <head>        <meta charset="UTF-8">        <meta http-equiv="X-UA-Compatible" content="IE=edge">        <meta name="viewport" content="width=device-width, initial-scale=1.0">        <meta name="description" content="RevKit UI Kit. Controls page. For education purpose">        <title>RevKit - Controls</title>        <link rel="stylesheet" href="/styles.css">        <script src="/script.js" defer></script>    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-<link rel="manifest" href="/icons/site.webmanifest">
-<link rel="shortcut icon" href="/icons/favicon.ico">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="/icons/browserconfig.xml">
-<meta name="theme-color" content="#ffffff"></head>    <body>        <main>            <div class="container">                <!-- Form -->                <section class="form">                    <h2 class="section-heading">                        <span class="section-heading__number">04.</span>                        Form                    </h2>                    <!-- Form Inputs -->                    <div class="form__wrapper section-wrapper">                        <div class="form__inputs">                            <!-- Form Input. Placeholder, error message -->                            <div class="form__field text-field">                                <label for="form-field-01" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-01" type="text" class="text-field__input" placeholder="Placeholder">                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Value, success message -->                            <div class="form__field text-field">                                <label for="form-field-02" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-02" type="text" class="text-field__input" placeholder="Placeholder" value="Value">                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Placeholder, error message, focus -->                            <div class="form__field text-field">                                <label for="form-field-03" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-03" type="text" class="text-field__input" placeholder="Placeholder">                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Value, error message, disabled -->                            <div class="form__field text-field">                                <label for="form-field-04" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-04" type="text" class="text-field__input" placeholder="Placeholder" value="Value" disabled>                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Placeholder, icon -->                            <div class="form__field text-field">                                <label for="form-field-05" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-05" type="text" class="text-field__input" placeholder="Placeholder">                                    <svg class="text-field__icon">                                        <use href="/icons/icon-sprite.svg#search"/>                                    </svg>                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Value, success message, icon -->                            <div class="form__field text-field">                                <label for="form-field-06" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-06" type="text" class="text-field__input" placeholder="Placeholder" value="Value">                                    <svg class="text-field__icon">                                        <use href="/icons/icon-sprite.svg#chevron-left-arrow"/>                                    </svg>                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Value, error message, icon, focus -->                            <div class="form__field text-field">                                <label for="form-field-07" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-07" type="text" class="text-field__input" placeholder="Placeholder" value="Value">                                    <svg class="text-field__icon">                                        <use href="/icons/icon-sprite.svg#alert-error"/>                                    </svg>                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Dropdown -->                            <div class="form__select" id="form-select-01"></div>                            <!-- Dropdown opened -->                            <div class="form__select" id="form-select-02"></div>                            <!-- Dropdown disabled -->                            <div class="form__select" id="form-select-03"></div>                            <!-- Textarea. Placeholder, error message -->                            <div class="                                    form__textarea                                    text-field text-field--multiline                                ">                                <label for="form-textarea-01" class="text-field__label">Label</label>                                <textarea id="form-textarea-01" class="text-field__input" placeholder="Placeholder"></textarea>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Textarea. Value, error message -->                            <div class="                                    form__textarea                                    text-field text-field--multiline                                ">                                <label for="form-textarea-02" class="text-field__label">Label</label>                                <textarea id="form-textarea-02" class="text-field__input" placeholder="Placeholder">Value</textarea>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Textarea. Value, error message, focus -->                            <div class="                                    form__textarea                                    text-field text-field--multiline                                ">                                <label for="form-textarea-03" class="text-field__label">Label</label>                                <textarea id="form-textarea-03" class="text-field__input" placeholder="Placeholder">Value</textarea>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Textarea. Value, error message, disabled -->                            <div class="                                    form__textarea                                    text-field text-field--multiline                                ">                                <label for="form-textarea-04" class="text-field__label">Label</label>                                <textarea id="form-textarea-04" class="text-field__input" placeholder="Placeholder" disabled>Value</textarea>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                        </div>                        <!-- Steppers -->                        <div class="form__elements-wrapper">                            <!-- Stepper -->                            <div class="form__stepper-item" id="form-stepper-01"></div>                            <!-- Stepper decrease button active -->                            <div class="form__stepper-item" id="form-stepper-02"></div>                            <!-- Stepper increase button active -->                            <div class="form__stepper-item" id="form-stepper-03"></div>                            <!-- Stepper disabled -->                            <div class="form__stepper-item" id="form-stepper-04"></div>                        </div>                        <!-- Checkboxes -->                        <div class="form__elements-wrapper">                            <div class="form__checkboxes">                                <!-- Checkbox -->                                <div class="checkbox">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-01">                                    <label for="form-checkbox-01" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox checked-->                                <div class="checkbox">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-02" checked>                                    <label for="form-checkbox-02" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox partial checked-->                                <div class="checkbox checkbox--partial">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-03" checked>                                    <label for="form-checkbox-03" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox disabled -->                                <div class="checkbox">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-04" disabled>                                    <label for="form-checkbox-04" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox checked disabled-->                                <div class="checkbox">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-05" checked disabled>                                    <label for="form-checkbox-05" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox partial checked disabled-->                                <div class="checkbox checkbox--partial">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-06" checked disabled>                                    <label for="form-checkbox-06" class="checkbox__label">Label</label>                                </div>                            </div>                        </div>                        <!-- Radiobuttons -->                        <div class="form__elements-wrapper">                            <div class="form__radios">                                <!-- Radiobutton -->                                <div class="radio">                                    <input type="radio" name="radio-01" class="radio__input" id="form-radio-01">                                    <label for="form-radio-01" class="radio__label">Label</label>                                </div>                                <!-- Radiobutton checked -->                                <div class="radio">                                    <input type="radio" name="radio-01" class="radio__input" id="form-radio-02" checked>                                    <label for="form-radio-02" class="radio__label">Label</label>                                </div>                                <!-- Radiobutton disabled -->                                <div class="radio">                                    <input type="radio" name="radio-02" class="radio__input" id="form-radio-03" disabled>                                    <label for="form-radio-03" class="radio__label">Label</label>                                </div>                                <!-- Radiobutton disabled checked -->                                <div class="radio">                                    <input type="radio" name="radio-02" class="radio__input" id="form-radio-04" checked disabled>                                    <label for="form-radio-04" class="radio__label">Label</label>                                </div>                            </div>                        </div>                        <!-- Toggle switches -->                        <div class="form__elements-wrapper">                            <div class="form__toggles">                                <!-- Toggle -->                                <div class="toggle">                                    <input type="checkbox" class="toggle__input" id="form-toggle-01">                                    <label for="form-toggle-01" class="toggle__label">Label</label>                                </div>                                <!-- Toggle checked-->                                <div class="toggle">                                    <input type="checkbox" class="toggle__input" id="form-toggle-02" checked>                                    <label for="form-toggle-02" class="toggle__label">Label</label>                                </div>                                <!-- Toggle disabled -->                                <div class="toggle">                                    <input type="checkbox" class="toggle__input" id="form-toggle-03" disabled>                                    <label for="form-toggle-03" class="toggle__label">Label</label>                                </div>                                <!-- Toggle disabled checked -->                                <div class="toggle">                                    <input type="checkbox" class="toggle__input" id="form-toggle-04" checked disabled>                                    <label for="form-toggle-04" class="toggle__label">Label</label>                                </div>                            </div>                        </div>                        <!-- Sliders -->                        <div class="form__elements-wrapper">                            <div class="form__sliders">                                <!-- Slider -->                                <div class="form__slider-item slider" id="form-slider-01">                                    <input type="range" class="slider__input" min="0" max="100" step="1" value="75">                                    <div class="slider__progress"></div>                                </div>                                <!-- Slider disabled -->                                <div class="form__slider-item slider" id="form-slider-02">                                    <input type="range" class="slider__input" min="0" max="100" step="1" value="25" disabled>                                    <div class="slider__progress"></div>                                </div>                            </div>                        </div>                        <!-- Labels -->                        <div class="form__elements-wrapper">                            <div class="form__labels">                                <!-- Label -->                                <div class="form__label-item label label--bright">                                    <span class="label__text">Label</span>                                    <button class="label__button">                                        <svg class="label__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <path d="M5 5L19 19M5 19L19 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>                                        </svg>                                    </button>                                </div>                                <!-- Label dark-->                                <div class="form__label-item label">                                    <span class="label__text">Label</span>                                    <button class="label__button">                                        <svg class="label__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <path d="M5 5L19 19M5 19L19 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>                                        </svg>                                    </button>                                </div>                                <!-- Label accent-->                                <div class="form__label-item label label--accent">                                    <span class="label__text">Label</span>                                    <button class="label__button">                                        <svg class="label__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <path d="M5 5L19 19M5 19L19 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>                                        </svg>                                    </button>                                </div>                                <!-- Label warning-->                                <div class="                                        form__label-item                                        label label--warning                                    ">                                    <span class="label__text">Label</span>                                    <button class="label__button">                                        <svg class="label__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <path d="M5 5L19 19M5 19L19 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>                                        </svg>                                    </button>                                </div>                                <!-- Label success-->                                <div class="                                        form__label-item                                        label label--success                                    ">                                    <span class="label__text">Label</span>                                    <button class="label__button">                                        <svg class="label__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <path d="M5 5L19 19M5 19L19 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>                                        </svg>                                    </button>                                </div>                                <!-- Label error-->                                <div class="form__label-item label label--error">                                    <span class="label__text">Label</span>                                    <button class="label__button">                                        <svg class="label__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <path d="M5 5L19 19M5 19L19 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>                                        </svg>                                    </button>                                </div>                            </div>                        </div>                    </div>                </section>            </div>        </main>        <a href="/" class="page-link page-link--prev" title="To index page">            <svg class="icons__item icon icon--tint">                <use href="/icons/icon-sprite.svg#chevron-left-arrow"/>            </svg>        </a>    </body></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="RevKit UI Kit. Controls page. For education purpose"
+        />
+        <title>RevKit - Controls</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <script src="/script.js" defer></script>
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="/icons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/icons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/icons/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/icons/site.webmanifest" />
+        <link rel="shortcut icon" href="/icons/favicon.ico" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="msapplication-config" content="/icons/browserconfig.xml" />
+        <meta name="theme-color" content="#ffffff" />
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <!-- Form -->
+                <section class="form">
+                    <h2 class="section-heading">
+                        <span class="section-heading__number">04.</span>
+                        Form
+                    </h2>
+                    <!-- Form Inputs -->
+                    <div class="form__wrapper section-wrapper">
+                        <div class="form__inputs">
+                            <!-- Form Input. Placeholder, error message -->
+                            <div class="form__field text-field">
+                                <label
+                                    for="form-field-01"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <div class="text-field__input-wrapper">
+                                    <input
+                                        id="form-field-01"
+                                        type="text"
+                                        class="text-field__input"
+                                        placeholder="Placeholder"
+                                    />
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Form Input. Value, success message -->
+                            <div class="form__field text-field">
+                                <label
+                                    for="form-field-02"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <div class="text-field__input-wrapper">
+                                    <input
+                                        id="form-field-02"
+                                        type="text"
+                                        class="text-field__input"
+                                        placeholder="Placeholder"
+                                        value="Value"
+                                    />
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Form Input. Placeholder, error message, focus -->
+                            <div class="form__field text-field">
+                                <label
+                                    for="form-field-03"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <div class="text-field__input-wrapper">
+                                    <input
+                                        id="form-field-03"
+                                        type="text"
+                                        class="text-field__input"
+                                        placeholder="Placeholder"
+                                    />
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Form Input. Value, error message, disabled -->
+                            <div class="form__field text-field">
+                                <label
+                                    for="form-field-04"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <div class="text-field__input-wrapper">
+                                    <input
+                                        id="form-field-04"
+                                        type="text"
+                                        class="text-field__input"
+                                        placeholder="Placeholder"
+                                        value="Value"
+                                        disabled
+                                    />
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Form Input. Placeholder, icon -->
+                            <div class="form__field text-field">
+                                <label
+                                    for="form-field-05"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <div class="text-field__input-wrapper">
+                                    <input
+                                        id="form-field-05"
+                                        type="text"
+                                        class="text-field__input"
+                                        placeholder="Placeholder"
+                                    />
+                                    <svg class="text-field__icon">
+                                        <use
+                                            href="/icons/icon-sprite.svg#search"
+                                        />
+                                    </svg>
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Form Input. Value, success message, icon -->
+                            <div class="form__field text-field">
+                                <label
+                                    for="form-field-06"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <div class="text-field__input-wrapper">
+                                    <input
+                                        id="form-field-06"
+                                        type="text"
+                                        class="text-field__input"
+                                        placeholder="Placeholder"
+                                        value="Value"
+                                    />
+                                    <svg class="text-field__icon">
+                                        <use
+                                            href="/icons/icon-sprite.svg#chevron-left-arrow"
+                                        />
+                                    </svg>
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Form Input. Value, error message, icon, focus -->
+                            <div class="form__field text-field">
+                                <label
+                                    for="form-field-07"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <div class="text-field__input-wrapper">
+                                    <input
+                                        id="form-field-07"
+                                        type="text"
+                                        class="text-field__input"
+                                        placeholder="Placeholder"
+                                        value="Value"
+                                    />
+                                    <svg class="text-field__icon">
+                                        <use
+                                            href="/icons/icon-sprite.svg#alert-error"
+                                        />
+                                    </svg>
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Dropdown -->
+                            <div class="form__select" id="form-select-01"></div>
+                            <!-- Dropdown opened -->
+                            <div class="form__select" id="form-select-02"></div>
+                            <!-- Dropdown disabled -->
+                            <div class="form__select" id="form-select-03"></div>
+                            <!-- Textarea. Placeholder, error message -->
+                            <div
+                                class="
+                                    form__textarea
+                                    text-field text-field--multiline
+                                "
+                            >
+                                <label
+                                    for="form-textarea-01"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <textarea
+                                    id="form-textarea-01"
+                                    class="text-field__input"
+                                    placeholder="Placeholder"
+                                ></textarea>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Textarea. Value, error message -->
+                            <div
+                                class="
+                                    form__textarea
+                                    text-field text-field--multiline
+                                "
+                            >
+                                <label
+                                    for="form-textarea-02"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <textarea
+                                    id="form-textarea-02"
+                                    class="text-field__input"
+                                    placeholder="Placeholder"
+                                >
+Value</textarea
+                                >
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Textarea. Value, error message, focus -->
+                            <div
+                                class="
+                                    form__textarea
+                                    text-field text-field--multiline
+                                "
+                            >
+                                <label
+                                    for="form-textarea-03"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <textarea
+                                    id="form-textarea-03"
+                                    class="text-field__input"
+                                    placeholder="Placeholder"
+                                >
+Value</textarea
+                                >
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                            <!-- Textarea. Value, error message, disabled -->
+                            <div
+                                class="
+                                    form__textarea
+                                    text-field text-field--multiline
+                                "
+                            >
+                                <label
+                                    for="form-textarea-04"
+                                    class="text-field__label"
+                                    >Label</label
+                                >
+                                <textarea
+                                    id="form-textarea-04"
+                                    class="text-field__input"
+                                    placeholder="Placeholder"
+                                    disabled
+                                >
+Value</textarea
+                                >
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--success
+                                    "
+                                >
+                                    Validation success message
+                                </div>
+                                <div
+                                    class="
+                                        text-field__helper-text
+                                        text-field__helper-text--visible
+                                        text-field__helper-text--error
+                                    "
+                                >
+                                    Validation error message
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Steppers -->
+                        <div class="form__elements-wrapper">
+                            <!-- Stepper -->
+                            <div
+                                class="form__stepper-item"
+                                id="form-stepper-01"
+                            ></div>
+                            <!-- Stepper decrease button active -->
+                            <div
+                                class="form__stepper-item"
+                                id="form-stepper-02"
+                            ></div>
+                            <!-- Stepper increase button active -->
+                            <div
+                                class="form__stepper-item"
+                                id="form-stepper-03"
+                            ></div>
+                            <!-- Stepper disabled -->
+                            <div
+                                class="form__stepper-item"
+                                id="form-stepper-04"
+                            ></div>
+                        </div>
+                        <!-- Checkboxes -->
+                        <div class="form__elements-wrapper">
+                            <div class="form__checkboxes">
+                                <!-- Checkbox -->
+                                <div class="checkbox">
+                                    <input
+                                        type="checkbox"
+                                        class="checkbox__input"
+                                        id="form-checkbox-01"
+                                    />
+                                    <label
+                                        for="form-checkbox-01"
+                                        class="checkbox__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Checkbox checked-->
+                                <div class="checkbox">
+                                    <input
+                                        type="checkbox"
+                                        class="checkbox__input"
+                                        id="form-checkbox-02"
+                                        checked
+                                    />
+                                    <label
+                                        for="form-checkbox-02"
+                                        class="checkbox__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Checkbox partial checked-->
+                                <div class="checkbox checkbox--partial">
+                                    <input
+                                        type="checkbox"
+                                        class="checkbox__input"
+                                        id="form-checkbox-03"
+                                        checked
+                                    />
+                                    <label
+                                        for="form-checkbox-03"
+                                        class="checkbox__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Checkbox disabled -->
+                                <div class="checkbox">
+                                    <input
+                                        type="checkbox"
+                                        class="checkbox__input"
+                                        id="form-checkbox-04"
+                                        disabled
+                                    />
+                                    <label
+                                        for="form-checkbox-04"
+                                        class="checkbox__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Checkbox checked disabled-->
+                                <div class="checkbox">
+                                    <input
+                                        type="checkbox"
+                                        class="checkbox__input"
+                                        id="form-checkbox-05"
+                                        checked
+                                        disabled
+                                    />
+                                    <label
+                                        for="form-checkbox-05"
+                                        class="checkbox__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Checkbox partial checked disabled-->
+                                <div class="checkbox checkbox--partial">
+                                    <input
+                                        type="checkbox"
+                                        class="checkbox__input"
+                                        id="form-checkbox-06"
+                                        checked
+                                        disabled
+                                    />
+                                    <label
+                                        for="form-checkbox-06"
+                                        class="checkbox__label"
+                                        >Label</label
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Radiobuttons -->
+                        <div class="form__elements-wrapper">
+                            <div class="form__radios">
+                                <!-- Radiobutton -->
+                                <div class="radio">
+                                    <input
+                                        type="radio"
+                                        name="radio-01"
+                                        class="radio__input"
+                                        id="form-radio-01"
+                                    />
+                                    <label
+                                        for="form-radio-01"
+                                        class="radio__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Radiobutton checked -->
+                                <div class="radio">
+                                    <input
+                                        type="radio"
+                                        name="radio-01"
+                                        class="radio__input"
+                                        id="form-radio-02"
+                                        checked
+                                    />
+                                    <label
+                                        for="form-radio-02"
+                                        class="radio__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Radiobutton disabled -->
+                                <div class="radio">
+                                    <input
+                                        type="radio"
+                                        name="radio-02"
+                                        class="radio__input"
+                                        id="form-radio-03"
+                                        disabled
+                                    />
+                                    <label
+                                        for="form-radio-03"
+                                        class="radio__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Radiobutton disabled checked -->
+                                <div class="radio">
+                                    <input
+                                        type="radio"
+                                        name="radio-02"
+                                        class="radio__input"
+                                        id="form-radio-04"
+                                        checked
+                                        disabled
+                                    />
+                                    <label
+                                        for="form-radio-04"
+                                        class="radio__label"
+                                        >Label</label
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Toggle switches -->
+                        <div class="form__elements-wrapper">
+                            <div class="form__toggles">
+                                <!-- Toggle -->
+                                <div class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        class="toggle__input"
+                                        id="form-toggle-01"
+                                    />
+                                    <label
+                                        for="form-toggle-01"
+                                        class="toggle__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Toggle checked-->
+                                <div class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        class="toggle__input"
+                                        id="form-toggle-02"
+                                        checked
+                                    />
+                                    <label
+                                        for="form-toggle-02"
+                                        class="toggle__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Toggle disabled -->
+                                <div class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        class="toggle__input"
+                                        id="form-toggle-03"
+                                        disabled
+                                    />
+                                    <label
+                                        for="form-toggle-03"
+                                        class="toggle__label"
+                                        >Label</label
+                                    >
+                                </div>
+                                <!-- Toggle disabled checked -->
+                                <div class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        class="toggle__input"
+                                        id="form-toggle-04"
+                                        checked
+                                        disabled
+                                    />
+                                    <label
+                                        for="form-toggle-04"
+                                        class="toggle__label"
+                                        >Label</label
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sliders -->
+                        <div class="form__elements-wrapper">
+                            <div class="form__sliders">
+                                <!-- Slider -->
+                                <div
+                                    class="form__slider-item slider"
+                                    id="form-slider-01"
+                                >
+                                    <input
+                                        type="range"
+                                        class="slider__input"
+                                        min="0"
+                                        max="100"
+                                        step="1"
+                                        value="75"
+                                    />
+                                    <div class="slider__progress"></div>
+                                </div>
+                                <!-- Slider disabled -->
+                                <div
+                                    class="form__slider-item slider"
+                                    id="form-slider-02"
+                                >
+                                    <input
+                                        type="range"
+                                        class="slider__input"
+                                        min="0"
+                                        max="100"
+                                        step="1"
+                                        value="25"
+                                        disabled
+                                    />
+                                    <div class="slider__progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Labels -->
+                        <div class="form__elements-wrapper">
+                            <div class="form__labels">
+                                <!-- Label -->
+                                <div
+                                    class="form__label-item label label--bright"
+                                >
+                                    <span class="label__text">Label</span>
+                                    <button class="label__button">
+                                        <svg
+                                            class="label__icon"
+                                            viewbox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M5 5L19 19M5 19L19 5"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <!-- Label dark-->
+                                <div class="form__label-item label">
+                                    <span class="label__text">Label</span>
+                                    <button class="label__button">
+                                        <svg
+                                            class="label__icon"
+                                            viewbox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M5 5L19 19M5 19L19 5"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <!-- Label accent-->
+                                <div
+                                    class="form__label-item label label--accent"
+                                >
+                                    <span class="label__text">Label</span>
+                                    <button class="label__button">
+                                        <svg
+                                            class="label__icon"
+                                            viewbox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M5 5L19 19M5 19L19 5"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <!-- Label warning-->
+                                <div
+                                    class="
+                                        form__label-item
+                                        label label--warning
+                                    "
+                                >
+                                    <span class="label__text">Label</span>
+                                    <button class="label__button">
+                                        <svg
+                                            class="label__icon"
+                                            viewbox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M5 5L19 19M5 19L19 5"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <!-- Label success-->
+                                <div
+                                    class="
+                                        form__label-item
+                                        label label--success
+                                    "
+                                >
+                                    <span class="label__text">Label</span>
+                                    <button class="label__button">
+                                        <svg
+                                            class="label__icon"
+                                            viewbox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M5 5L19 19M5 19L19 5"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <!-- Label error-->
+                                <div
+                                    class="form__label-item label label--error"
+                                >
+                                    <span class="label__text">Label</span>
+                                    <button class="label__button">
+                                        <svg
+                                            class="label__icon"
+                                            viewbox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M5 5L19 19M5 19L19 5"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons small -->
+                        <div class="form__elements-wrapper">
+                            <div class="form__buttons form__buttons--small">
+                                <!-- Button small -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small hover-->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small focus-->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small disabled-->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small
+                                    "
+                                    disabled
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small contained-->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small button--contained
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small contained hover-->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small button--contained
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small contained focus -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small button--contained
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small contained disabled -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small button--contained
+                                    "
+                                    disabled
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small outlined -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small button--outlined
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small outlined hover -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small button--outlined
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small outlined focus -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small button--outlined
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button small outlined disabled -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--small button--outlined
+                                    "
+                                    disabled
+                                >
+                                    Button
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="form__elements-wrapper">
+                            <div class="form__buttons">
+                                <!-- Button -->
+                                <button class="form__button-item button">
+                                    Button
+                                </button>
+                                <!-- Button hover -->
+                                <button class="form__button-item button">
+                                    Button
+                                </button>
+                                <!-- Button focus -->
+                                <button class="form__button-item button">
+                                    Button
+                                </button>
+                                <!-- Button disabled -->
+                                <button
+                                    class="form__button-item button"
+                                    disabled
+                                >
+                                    Button
+                                </button>
+                                <!-- Button contained -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--contained
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button contained hover -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--contained
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button contained focus -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--contained
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button contained disabled -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--contained
+                                    "
+                                    disabled
+                                >
+                                    Button
+                                </button>
+                                <!-- Button outlined -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--outlined
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button outlined hover -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--outlined
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button outlined focus -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--outlined
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button outlined disabled -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--outlined
+                                    "
+                                    disabled
+                                >
+                                    Button
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Buttons large -->
+                        <div class="form__elements-wrapper">
+                            <div class="form__buttons form__buttons--large">
+                                <!-- Button large -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--large
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large hover -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--large
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large focus -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--large
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large disabled -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--large
+                                    "
+                                    disabled
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large contained -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--contained button--large
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large contained hover -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--contained button--large
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large contained focus -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--contained button--large
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large contained disabled -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--contained button--large
+                                    "
+                                    disabled
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large outlined -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--outlined button--large
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large outlined hover -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--outlined button--large
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large outlined focus -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--outlined button--large
+                                    "
+                                >
+                                    Button
+                                </button>
+                                <!-- Button large outlined disabled -->
+                                <button
+                                    class="
+                                        form__button-item
+                                        button button--outlined button--large
+                                    "
+                                    disabled
+                                >
+                                    Button
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <a href="/" class="page-link page-link--prev" title="To index page">
+            <svg class="icons__item icon icon--tint">
+                <use href="/icons/icon-sprite.svg#chevron-left-arrow" />
+            </svg>
+        </a>
+    </body>
+</html>
