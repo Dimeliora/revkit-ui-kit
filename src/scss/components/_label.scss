@@ -22,7 +22,8 @@
         }
 
         .label__button {
-            &:hover {
+            &:hover,
+            &:focus-visible {
                 &::before {
                     background-color: var(--shadow-color);
                 }
@@ -80,7 +81,10 @@
             transition: width 0.15s ease-in, height 0.15s ease-in;
         }
 
-        &:hover {
+        &:hover,
+        &:focus-visible {
+            outline: none;
+
             &::before {
                 width: 24px;
                 height: 24px;
