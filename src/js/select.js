@@ -1,12 +1,12 @@
 export class Select {
-    static createHTMLTemplate(label, placeholder, data, selected, disabled) {
-        const options = data.map(({ value }, idx) => {
-            let optionActiveClass = "";
-            if (selected === idx) {
-                optionActiveClass = "select__option--selected";
-            }
+	static createHTMLTemplate(label, placeholder, data, selected, disabled) {
+		const options = data.map(({ value }, idx) => {
+			let optionActiveClass = "";
+			if (selected === idx) {
+				optionActiveClass = "select__option--selected";
+			}
 
-            return `
+			return `
             <li
                 class="select__option ${optionActiveClass}"
                 data-select-element="option"
@@ -15,22 +15,22 @@ export class Select {
                 ${value}
             </li>
             `;
-        });
+		});
 
-        const numOfExistingSelects =
-            document.querySelectorAll(".select").length;
-        const currentSelectLabelId = `select-label-${String(
-            numOfExistingSelects
-        ).padStart(2, "0")}`;
+		const numOfExistingSelects =
+			document.querySelectorAll(".select").length;
+		const currentSelectLabelId = `select-label-${String(
+			numOfExistingSelects
+		).padStart(2, "0")}`;
 
-        const selectTabIndex = disabled ? "-1" : "0";
+		const selectTabIndex = disabled ? "-1" : "0";
 
-        let text = placeholder;
-        if (selected !== null) {
-            text = data[selected].value;
-        }
+		let text = placeholder;
+		if (selected !== null) {
+			text = data[selected].value;
+		}
 
-        return `
+		return `
             <div
                 class="select__label"
                 id="${currentSelectLabelId}"
@@ -61,201 +61,205 @@ export class Select {
                 </ul>
             </div>
         `;
-    }
+	}
 
-    /**
-     * @param {Object} options - Options object for custom select creation
-     * @param {string} options.selector - CSS selector for custom select element injection
-     * @param {string=} options.label - Text for select label
-     * @param {string=} options.placeholder - Placeholder for select field
-     * @param {Object[]} options.data - Array of objects for select options creation
-     * @param {string} options.data.value - Value for select option
-     * @param {number=} options.selected - Index of selected option
-     * @param {boolean=} options.disabled - Disabled attribute, makes the select element not focusable
-     */
-    constructor({
-        selector,
-        label = "Label",
-        placeholder = "Dropdown",
-        data = [],
-        selected = null,
-        disabled = false,
-    }) {
-        this._root = document.querySelector(selector);
-        this._label = label;
-        this._placeholder = placeholder;
-        this._data = data;
-        this._selected = selected;
-        this.disabled = disabled;
+	/**
+	 * @param {Object} options - Options object for custom select creation
+	 * @param {string} options.selector - CSS selector for custom select element injection
+	 * @param {string=} options.label - Text for select label
+	 * @param {string=} options.placeholder - Placeholder for select field
+	 * @param {Object[]} options.data - Array of objects for select options creation
+	 * @param {string} options.data.value - Value for select option
+	 * @param {number=} options.selected - Index of selected option
+	 * @param {boolean=} options.disabled - Disabled attribute, makes the select element not focusable
+	 */
+	constructor({
+		selector,
+		label = "Label",
+		placeholder = "Dropdown",
+		data = [],
+		selected = null,
+		disabled = false,
+	}) {
+		this._root = document.querySelector(selector);
+		this._label = label;
+		this._placeholder = placeholder;
+		this._data = data;
+		this._selected = selected;
+		this._disabled = disabled;
 
-        this.#render();
-        this.#setup();
-    }
+		this.#render();
+		this.#setup();
+	}
 
-    #render() {
-        if (this._root === null) {
-            throw new Error("Container element for select is not available");
-        }
+	#render() {
+		if (this._root === null) {
+			throw new Error("Container element for select is not available");
+		}
 
-        this._root.classList.add("select");
-        if (this.disabled) {
-            this._root.classList.add("select--disabled");
-        }
+		this._root.classList.add("select");
+		if (this._disabled) {
+			this._root.classList.add("select--disabled");
+		}
 
-        this._root.innerHTML = Select.createHTMLTemplate(
-            this._label,
-            this._placeholder,
-            this._data,
-            this._selected,
-            this.disabled
-        );
-    }
+		this._root.innerHTML = Select.createHTMLTemplate(
+			this._label,
+			this._placeholder,
+			this._data,
+			this._selected,
+			this._disabled
+		);
+	}
 
-    #setup() {
-        this.value = null;
-        this._selectLabel = this._root.querySelector(
-            '[data-select-element="label"]'
-        );
-        this._selectField = this._root.querySelector(
-            '[data-select-element="field"]'
-        );
-        this._selectText = this._root.querySelector(
-            '[data-select-element="text"]'
-        );
-        this._selectDropdown = this._root.querySelector(
-            '[data-select-element="dropdown"]'
-        );
+	#setup() {
+		this.value = "";
+		if (this._selected !== null) {
+			this.value = this._data[this._selected].value;
+		}
 
-        if (!this.disabled) {
-            this._root.addEventListener("click", this.#selectClickHandler);
-            this._root.addEventListener("keydown", this.#selectKeyboardHandler);
-            this._selectLabel.addEventListener(
-                "click",
-                this.#labelClickHandler
-            );
-            document.addEventListener("click", this.#outsideClickHandler);
-        }
-    }
+		this._selectLabel = this._root.querySelector(
+			'[data-select-element="label"]'
+		);
+		this._selectField = this._root.querySelector(
+			'[data-select-element="field"]'
+		);
+		this._selectText = this._root.querySelector(
+			'[data-select-element="text"]'
+		);
+		this._selectDropdown = this._root.querySelector(
+			'[data-select-element="dropdown"]'
+		);
 
-    #selectClickHandler = (e) => {
-        if (e.target.closest('[data-select-element="field"]')) {
-            this.#fieldStateHandler();
-            return;
-        }
+		if (!this._disabled) {
+			this._root.addEventListener("click", this.#selectClickHandler);
+			this._root.addEventListener("keydown", this.#selectKeyboardHandler);
+			this._selectLabel.addEventListener(
+				"click",
+				this.#labelClickHandler
+			);
+			document.addEventListener("click", this.#outsideClickHandler);
+		}
+	}
 
-        if (e.target.closest('[data-select-element="option"]')) {
-            this._selected = Number(e.target.dataset.optionIdx);
-            this.#optionsStateHandler();
-            this.close();
-            return;
-        }
-    };
+	#selectClickHandler = (e) => {
+		if (e.target.closest('[data-select-element="field"]')) {
+			this.#fieldStateHandler();
+			return;
+		}
 
-    #selectKeyboardHandler = (e) => {
-        switch (e.key) {
-            case "Tab":
-                this.close();
-                return;
+		if (e.target.closest('[data-select-element="option"]')) {
+			this._selected = Number(e.target.dataset.optionIdx);
+			this.#optionsStateHandler();
+			this.close();
+			return;
+		}
+	};
 
-            case "Enter":
-                e.preventDefault();
-                this.#fieldStateHandler();
-                return;
+	#selectKeyboardHandler = (e) => {
+		switch (e.key) {
+			case "Tab":
+				this.close();
+				return;
 
-            case " ":
-                e.preventDefault();
-                this.open();
-                return;
+			case "Enter":
+				e.preventDefault();
+				this.#fieldStateHandler();
+				return;
 
-            case "Escape":
-                e.preventDefault();
-                this.close();
-                return;
+			case " ":
+				e.preventDefault();
+				this.open();
+				return;
 
-            case "ArrowUp":
-                e.preventDefault();
-                this.#selectOptionByKeyboardHandler(-1);
-                return;
+			case "Escape":
+				e.preventDefault();
+				this.close();
+				return;
 
-            case "ArrowDown":
-                e.preventDefault();
-                this.#selectOptionByKeyboardHandler(1);
-                return;
+			case "ArrowUp":
+				e.preventDefault();
+				this.#selectOptionByKeyboardHandler(-1);
+				return;
 
-            default:
-                return;
-        }
-    };
+			case "ArrowDown":
+				e.preventDefault();
+				this.#selectOptionByKeyboardHandler(1);
+				return;
 
-    #selectOptionByKeyboardHandler = (step) => {
-        if (this._selected === null && step < 0) {
-            return;
-        }
+			default:
+				return;
+		}
+	};
 
-        if (this._selected === null && step > 0) {
-            this._selected = 0;
-        } else {
-            this._selected += step;
-        }
+	#selectOptionByKeyboardHandler = (step) => {
+		if (this._selected === null && step < 0) {
+			return;
+		}
 
-        this._selected = Math.max(0, this._selected);
-        this._selected = Math.min(this._selected, this._data.length - 1);
+		if (this._selected === null && step > 0) {
+			this._selected = 0;
+		} else {
+			this._selected += step;
+		}
 
-        this.#optionsStateHandler();
-    };
+		this._selected = Math.max(0, this._selected);
+		this._selected = Math.min(this._selected, this._data.length - 1);
 
-    #fieldStateHandler = () => {
-        if (this._root.classList.contains("select--opened")) {
-            this.close();
-        } else {
-            this.open();
-        }
-    };
+		this.#optionsStateHandler();
+	};
 
-    #optionsStateHandler = () => {
-        this.value = this._data[this._selected].value;
-        this._selectText.textContent = this.value;
+	#fieldStateHandler = () => {
+		if (this._root.classList.contains("select--opened")) {
+			this.close();
+		} else {
+			this.open();
+		}
+	};
 
-        const options = this._root.querySelectorAll(
-            '[data-select-element="option"]'
-        );
-        options.forEach((option) => {
-            option.classList.remove("select__option--selected");
+	#optionsStateHandler = () => {
+		this.value = this._data[this._selected].value;
+		this._selectText.textContent = this.value;
 
-            if (Number(option.dataset.optionIdx) === this._selected) {
-                option.classList.add("select__option--selected");
-            }
-        });
-    };
+		const options = this._root.querySelectorAll(
+			'[data-select-element="option"]'
+		);
+		options.forEach((option) => {
+			option.classList.remove("select__option--selected");
 
-    #outsideClickHandler = (e) => {
-        if (!e.composedPath().includes(this._root)) {
-            this.close();
-        }
-    };
+			if (Number(option.dataset.optionIdx) === this._selected) {
+				option.classList.add("select__option--selected");
+			}
+		});
+	};
 
-    #labelClickHandler = () => {
-        this._selectField.focus();
-        this.close();
-    };
+	#outsideClickHandler = (e) => {
+		if (!e.composedPath().includes(this._root)) {
+			this.close();
+		}
+	};
 
-    open() {
-        this._root.classList.add("select--opened");
-        this._selectDropdown.setAttribute("aria-expanded", "true");
-    }
+	#labelClickHandler = () => {
+		this._selectField.focus();
+		this.close();
+	};
 
-    close() {
-        this._root.classList.remove("select--opened");
-        this._selectDropdown.setAttribute("aria-expanded", "false");
-    }
+	open() {
+		this._root.classList.add("select--opened");
+		this._selectDropdown.setAttribute("aria-expanded", "true");
+	}
 
-    destroy() {
-        this._root.removeEventListener("click", this.#selectClickHandler);
-        this._root.removeEventListener("keydown", this.#selectKeyboardHandler);
-        this._selectLabel.removeEventListener("click", this.#labelClickHandler);
-        document.removeEventListener("click", this.#outsideClickHandler);
+	close() {
+		this._root.classList.remove("select--opened");
+		this._selectDropdown.setAttribute("aria-expanded", "false");
+	}
 
-        this._root.classList.remove("select", "select--disabled");
-        this._root.innerHTML = "";
-    }
+	destroy() {
+		this._root.removeEventListener("click", this.#selectClickHandler);
+		this._root.removeEventListener("keydown", this.#selectKeyboardHandler);
+		this._selectLabel.removeEventListener("click", this.#labelClickHandler);
+		document.removeEventListener("click", this.#outsideClickHandler);
+
+		this._root.classList.remove("select", "select--disabled");
+		this._root.innerHTML = "";
+	}
 }
