@@ -1,0 +1,7 @@
+.messages {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 240px);
+        gap: 40px;
+    }
+}

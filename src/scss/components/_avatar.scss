@@ -33,7 +33,7 @@
 
     &__initials {
         display: none;
-        color: rgba(255, 255, 255, 0.86);
+        color: var(--bright-transparent-color);
         font-size: 1.6rem;
         font-weight: 500;
         text-transform: uppercase;

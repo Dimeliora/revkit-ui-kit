@@ -1,0 +1,69 @@
+.message {
+    --arrow-width: 9px;
+    position: relative;
+    max-width: 240px;
+    padding: 16px;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: var(--bright-transparent-color);
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: calc(var(--arrow-width) * -1);
+        z-index: -1;
+        border: var(--arrow-width) solid;
+        border-color: transparent transparent transparent #585364;
+    }
+
+    &--bright {
+        background-color: var(--bright-color);
+        color: var(--secondary-color);
+
+        &::before {
+            border-color: transparent transparent transparent #d5d6d7;
+        }
+    }
+
+    &--blueberry {
+        background-color: var(--blueberry-color);
+
+        &::before {
+            border-color: transparent transparent transparent #4874e9;
+        }
+    }
+
+    &--strawberry {
+        background-color: var(--strawberry-color);
+
+        &::before {
+            border-color: transparent transparent transparent #df3468;
+        }
+    }
+
+    &--br {
+        &::before {
+            right: 0;
+            transform: rotate(180deg);
+        }
+    }
+
+    &--tl {
+        &::before {
+            bottom: unset;
+            top: calc(var(--arrow-width) * -1);
+        }
+    }
+
+    &--tr {
+        &::before {
+            bottom: unset;
+            right: 0;
+            top: calc(var(--arrow-width) * -1);
+            transform: rotate(180deg);
+        }
+    }
+}
