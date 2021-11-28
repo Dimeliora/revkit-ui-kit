@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		disabled: true,
 	});
 
-	window.sl1 = new Slider({
+	new Slider({
 		selector: "#form-slider-01",
 		value: 75,
 	});
-	window.sl2 = new Slider({
+	new Slider({
 		selector: "#form-slider-02",
 		value: 25,
 		disabled: true,

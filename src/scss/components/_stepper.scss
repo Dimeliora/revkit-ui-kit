@@ -1,77 +1,77 @@
 .stepper {
-    display: inline-flex;
-    box-shadow: 0px 4px 8px var(--shadow-color);
+	display: inline-flex;
+	box-shadow: 0px 4px 8px var(--shadow-color);
 
-    &--disabled {
-        pointer-events: none;
+	&--disabled {
+		pointer-events: none;
 
-        .stepper__value {
-            background-color: transparent;
-            color: var(--muted-shadow-color);
-        }
-    }
+		.stepper__value {
+			background-color: transparent;
+			color: var(--muted-shadow-color);
+		}
+	}
 
-    &__button {
-        padding: 15px 20px;
-        border: 1px solid var(--shade-color);
-        background-color: var(--bright-color);
-        cursor: pointer;
-        transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
+	&__button {
+		padding: 15px 20px;
+		border: 1px solid var(--shade-color);
+		background-color: var(--bright-color);
+		cursor: pointer;
+		transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
 
-        &:first-of-type {
-            border-radius: 6px 0 0 6px;
-        }
+		&:first-of-type {
+			border-radius: 6px 0 0 6px;
+		}
 
-        &:last-of-type {
-            border-radius: 0 6px 6px 0;
-        }
+		&:last-of-type {
+			border-radius: 0 6px 6px 0;
+		}
 
-        &:hover,
-        &:focus-visible {
-            outline: none;
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
+		&:hover,
+		&:focus-visible {
+			outline: none;
+			background-color: var(--accent-color);
+			border-color: var(--accent-color);
 
-            .stepper__icon {
-                stroke: var(--bright-color);
-            }
-        }
+			.stepper__icon {
+				stroke: var(--bright-color);
+			}
+		}
 
-        &--inactive {
-            background-color: transparent;
+		&:disabled {
+			background-color: transparent;
 
-            .stepper__icon {
-                stroke: var(--muted-shadow-color);
-            }
+			.stepper__icon {
+				stroke: var(--muted-shadow-color);
+			}
 
-            &:hover {
-                background-color: transparent;
-                border-color: var(--shade-color);
+			&:hover {
+				background-color: transparent;
+				border-color: var(--shade-color);
 
-                .stepper__icon {
-                    stroke: var(--muted-shadow-color);
-                }
-            }
-        }
-    }
+				.stepper__icon {
+					stroke: var(--muted-shadow-color);
+				}
+			}
+		}
+	}
 
-    &__value {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 20px;
-        border-top: 1px solid var(--shade-color);
-        border-bottom: 1px solid var(--shade-color);
-        background-color: var(--bright-color);
-        color: var(--primary-color);
-        font-size: 1.6rem;
-    }
+	&__value {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 20px;
+		border-top: 1px solid var(--shade-color);
+		border-bottom: 1px solid var(--shade-color);
+		background-color: var(--bright-color);
+		color: var(--primary-color);
+		font-size: 1.6rem;
+	}
 
-    &__icon {
-        width: 20px;
-        height: 20px;
-        fill: none;
-        stroke: var(--accent-color);
-        transition: stroke 0.2s ease-in;
-    }
+	&__icon {
+		width: 20px;
+		height: 20px;
+		fill: none;
+		stroke: var(--accent-color);
+		transition: stroke 0.2s ease-in;
+	}
 }

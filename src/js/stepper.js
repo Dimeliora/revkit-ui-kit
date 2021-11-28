@@ -58,7 +58,7 @@ export class Stepper {
 
 	#render() {
 		if (this._root === null) {
-			throw new Error("DOM element not found");
+			throw new Error("Container element for stepper is not available");
 		}
 
 		if (this.min >= this.max) {
@@ -115,18 +115,18 @@ export class Stepper {
 
 	#checkBorderValues() {
 		if (this.value - this.step < this.min || this.disabled) {
-			this._decButton.classList.add("stepper__button--inactive");
+			this._decButton.setAttribute("disabled", "true");
 			this._decButton.setAttribute("tabindex", "-1");
 		} else {
-			this._decButton.classList.remove("stepper__button--inactive");
+			this._decButton.removeAttribute("disabled");
 			this._decButton.removeAttribute("tabindex");
 		}
 
 		if (this.value + this.step > this.max || this.disabled) {
-			this._incButton.classList.add("stepper__button--inactive");
+			this._incButton.setAttribute("disabled", "true");
 			this._incButton.setAttribute("tabindex", "-1");
 		} else {
-			this._incButton.classList.remove("stepper__button--inactive");
+			this._incButton.removeAttribute("disabled");
 			this._incButton.removeAttribute("tabindex");
 		}
 	}
