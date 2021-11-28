@@ -21,7 +21,7 @@ export class Progress {
 
     #setup() {
         if (this._root === null) {
-            throw new Error("DOM element not found");
+            throw new Error("Container element for progress is not available");
         }
 
         this._root.classList.add("progress");
