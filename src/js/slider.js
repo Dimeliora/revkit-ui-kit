@@ -44,6 +44,10 @@ export class Slider {
 		this.#setup();
 	}
 
+	get value() {
+		return this._value;
+	}
+
 	#render() {
 		if (this._root === null) {
 			throw new Error("Container element for slider is not available");
@@ -58,10 +62,6 @@ export class Slider {
 			this._value,
 			this._disabled
 		);
-	}
-
-	get value() {
-		return this._value;
 	}
 
 	#setup() {

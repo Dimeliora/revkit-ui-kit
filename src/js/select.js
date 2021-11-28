@@ -1,5 +1,12 @@
 export class Select {
-	static createHTMLTemplate(label, placeholder, data, selected, disabled) {
+	static createHTMLTemplate(
+		label,
+		placeholder,
+		data,
+		value,
+		selected,
+		disabled
+	) {
 		const options = data.map(({ value }, idx) => {
 			let optionActiveClass = "";
 			if (selected === idx) {
@@ -25,10 +32,7 @@ export class Select {
 
 		const selectTabIndex = disabled ? "-1" : "0";
 
-		let text = placeholder;
-		if (selected !== null) {
-			text = data[selected].value;
-		}
+		const text = value ? value : placeholder;
 
 		return `
             <div
@@ -45,9 +49,23 @@ export class Select {
                 aria-labelledby=${currentSelectLabelId}
                 data-select-element="field"
             >
-                <span class="select__text" data-select-element="text">${text}</span>
-                <svg class="select__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 8L12 16L20 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <span
+									class="select__text"
+									data-select-element="text"
+								>
+									${text}
+								</span>
+                <svg
+									class="select__icon"
+									viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+                    <path
+											d="M4 8L12 16L20 8"
+											stroke-width="2"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
                 </svg>
             </div>
             <div
@@ -66,12 +84,12 @@ export class Select {
 	/**
 	 * @param {Object} options - Options object for custom select creation
 	 * @param {string} options.selector - CSS selector for custom select element injection
-	 * @param {string=} options.label - Text for select label
-	 * @param {string=} options.placeholder - Placeholder for select field
-	 * @param {Object[]} options.data - Array of objects for select options creation
+	 * @param {string} [options.label='Label'] - Text for select label
+	 * @param {string} [options.placeholder='Dropdown'] - Placeholder for select field
+	 * @param {Object[]} [options.data=[]] - Array of objects for select options creation
 	 * @param {string} options.data.value - Value for select option
-	 * @param {number=} options.selected - Index of selected option
-	 * @param {boolean=} options.disabled - Disabled attribute, makes the select element not focusable
+	 * @param {?number=} options.selected - Index of selected option
+	 * @param {boolean} [options.disabled=false] - Disabled attribute, makes the select element not focusable
 	 */
 	constructor({
 		selector,
@@ -92,6 +110,10 @@ export class Select {
 		this.#setup();
 	}
 
+	get value() {
+		return this._value;
+	}
+
 	#render() {
 		if (this._root === null) {
 			throw new Error("Container element for select is not available");
@@ -102,21 +124,26 @@ export class Select {
 			this._root.classList.add("select--disabled");
 		}
 
+		this._value = "";
+		if (
+			this._selected !== null &&
+			this._selected >= 0 &&
+			this._selected < this._data.length
+		) {
+			this._value = this._data[this._selected].value;
+		}
+
 		this._root.innerHTML = Select.createHTMLTemplate(
 			this._label,
 			this._placeholder,
 			this._data,
+			this._value,
 			this._selected,
 			this._disabled
 		);
 	}
 
 	#setup() {
-		this.value = "";
-		if (this._selected !== null) {
-			this.value = this._data[this._selected].value;
-		}
-
 		this._selectLabel = this._root.querySelector(
 			'[data-select-element="label"]'
 		);
@@ -217,8 +244,8 @@ export class Select {
 	};
 
 	#optionsStateHandler = () => {
-		this.value = this._data[this._selected].value;
-		this._selectText.textContent = this.value;
+		this._value = this._data[this._selected].value;
+		this._selectText.textContent = this._value;
 
 		const options = this._root.querySelectorAll(
 			'[data-select-element="option"]'
