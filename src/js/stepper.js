@@ -46,14 +46,18 @@ export class Stepper {
 		disabled = false,
 	}) {
 		this._root = document.querySelector(selector);
-		this.value = value;
-		this.min = min;
-		this.max = max;
-		this.step = step;
-		this.disabled = disabled;
+		this._value = value;
+		this._min = min;
+		this._max = max;
+		this._step = step;
+		this._disabled = disabled;
 
 		this.#render();
 		this.#setup();
+	}
+
+	get value() {
+		return this._value;
 	}
 
 	#render() {
@@ -61,21 +65,21 @@ export class Stepper {
 			throw new Error("Container element for stepper is not available");
 		}
 
-		if (this.min >= this.max) {
+		if (this._min >= this._max) {
 			throw new Error('Inappropriate "min" and "max" values');
 		}
 
 		this._root.classList.add("stepper");
-		if (this.disabled) {
+		if (this._disabled) {
 			this._root.classList.add("stepper--disabled");
 		}
 
-		this._root.innerHTML = Stepper.createHTMLTemplate(this.step);
+		this._root.innerHTML = Stepper.createHTMLTemplate(this._step);
 	}
 
 	#setup() {
-		this.value = Math.max(this.min, this.value);
-		this.value = Math.min(this.value, this.max);
+		this._value = Math.max(this._min, this._value);
+		this._value = Math.min(this._value, this._max);
 
 		this._incButton = this._root.querySelector(
 			'[data-stepper-button="inc"]'
@@ -86,9 +90,9 @@ export class Stepper {
 		this._valueText = this._root.querySelector("[data-stepper-text]");
 
 		this.#checkBorderValues();
-		this.#updateValueText(this.value);
+		this.#updateValueText(this._value);
 
-		if (!this.disabled) {
+		if (!this._disabled) {
 			this._incButton.addEventListener("click", this.#buttonClickHandler);
 			this._decButton.addEventListener("click", this.#buttonClickHandler);
 		}
@@ -99,13 +103,13 @@ export class Stepper {
 
 		const sign = stepperButton === "inc" ? 1 : -1;
 
-		const nextValue = this.value + this.step * sign;
-		if (nextValue < this.min || nextValue > this.max) {
+		const nextValue = this._value + this._step * sign;
+		if (nextValue < this._min || nextValue > this._max) {
 			return;
 		}
 
-		this.value = nextValue;
-		this.#updateValueText(this.value);
+		this._value = nextValue;
+		this.#updateValueText(this._value);
 		this.#checkBorderValues();
 	};
 
@@ -114,7 +118,7 @@ export class Stepper {
 	};
 
 	#checkBorderValues() {
-		if (this.value - this.step < this.min || this.disabled) {
+		if (this._value - this._step < this._min || this._disabled) {
 			this._decButton.setAttribute("disabled", "true");
 			this._decButton.setAttribute("tabindex", "-1");
 		} else {
@@ -122,7 +126,7 @@ export class Stepper {
 			this._decButton.removeAttribute("tabindex");
 		}
 
-		if (this.value + this.step > this.max || this.disabled) {
+		if (this._value + this._step > this._max || this._disabled) {
 			this._incButton.setAttribute("disabled", "true");
 			this._incButton.setAttribute("tabindex", "-1");
 		} else {
