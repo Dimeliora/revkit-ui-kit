@@ -1,0 +1,15 @@
+.avatars {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    &__item {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
