@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		disabled: true,
 	});
 
-	new Slider({
+	window.sl = new Slider({
 		selector: "#form-slider-01",
 		value: 75,
 	});

@@ -34,11 +34,11 @@ export class Slider {
 		disabled = false,
 	}) {
 		this._root = document.querySelector(selector);
-		this.min = min;
-		this.max = max;
-		this.step = step;
-		this.value = value;
-		this.disabled = disabled;
+		this._min = min;
+		this._max = max;
+		this._step = step;
+		this._value = value;
+		this._disabled = disabled;
 
 		this.#render();
 		this.#setup();
@@ -52,12 +52,16 @@ export class Slider {
 		this._root.classList.add("slider");
 
 		this._root.innerHTML = Slider.createHTMLTemplate(
-			this.min,
-			this.max,
-			this.step,
-			this.value,
-			this.disabled
+			this._min,
+			this._max,
+			this._step,
+			this._value,
+			this._disabled
 		);
+	}
+
+	get value() {
+		return this._value;
 	}
 
 	#setup() {
@@ -66,11 +70,13 @@ export class Slider {
 
 		this.#updateSliderProgress(this._input.value);
 
-		this._input.addEventListener("input", this.#inputChangeHandler);
+		if (!this._disabled) {
+			this._input.addEventListener("input", this.#inputChangeHandler);
+		}
 	}
 
 	#inputChangeHandler = ({ target }) => {
-		this.value = Number(target.value);
+		this._value = Number(target.value);
 		this.#updateSliderProgress(target.value);
 	};
 
