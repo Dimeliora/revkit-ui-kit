@@ -37,6 +37,17 @@ export class Stepper {
 	 * @param {number=} options.step - Step value
 	 * @param {boolean=} options.disabled - Disabled attribute, makes the stepper element not focusable
 	 */
+
+	#value;
+	#min;
+	#max;
+	#step;
+	#disabled;
+	#root;
+	#incButton;
+	#decButton;
+	#valueText;
+
 	constructor({
 		selector,
 		value = 0,
@@ -45,60 +56,60 @@ export class Stepper {
 		step = 1,
 		disabled = false,
 	}) {
-		this._root = document.querySelector(selector);
-		if (this._root === null) {
+		this.#root = document.querySelector(selector);
+		if (this.#root === null) {
 			console.error(
 				`Container element "${selector}" for stepper is not available`
 			);
 			return;
 		}
 
-		if (this._min >= this._max) {
+		if (this.#min >= this.#max) {
 			console.error('Inappropriate "min" and "max" values');
 			return;
 		}
 
-		this._value = value;
-		this._min = min;
-		this._max = max;
-		this._step = step;
-		this._disabled = disabled;
+		this.#value = value;
+		this.#min = min;
+		this.#max = max;
+		this.#step = step;
+		this.#disabled = disabled;
 
 		this.#render();
 		this.#setup();
 	}
 
 	get value() {
-		return this._value;
+		return this.#value;
 	}
 
 	#render() {
-		this._root.classList.add("stepper");
-		if (this._disabled) {
-			this._root.classList.add("stepper--disabled");
+		this.#root.classList.add("stepper");
+		if (this.#disabled) {
+			this.#root.classList.add("stepper--disabled");
 		}
 
-		this._root.innerHTML = Stepper.createHTMLTemplate(this._step);
+		this.#root.innerHTML = Stepper.createHTMLTemplate(this.#step);
 	}
 
 	#setup() {
-		this._value = Math.max(this._min, this._value);
-		this._value = Math.min(this._value, this._max);
+		this.#value = Math.max(this.#min, this.#value);
+		this.#value = Math.min(this.#value, this.#max);
 
-		this._incButton = this._root.querySelector(
+		this.#incButton = this.#root.querySelector(
 			'[data-stepper-button="inc"]'
 		);
-		this._decButton = this._root.querySelector(
+		this.#decButton = this.#root.querySelector(
 			'[data-stepper-button="dec"]'
 		);
-		this._valueText = this._root.querySelector("[data-stepper-text]");
+		this.#valueText = this.#root.querySelector("[data-stepper-text]");
 
 		this.#checkBorderValues();
-		this.#updateValueText(this._value);
+		this.#updateValueText(this.#value);
 
-		if (!this._disabled) {
-			this._incButton.addEventListener("click", this.#buttonClickHandler);
-			this._decButton.addEventListener("click", this.#buttonClickHandler);
+		if (!this.#disabled) {
+			this.#incButton.addEventListener("click", this.#buttonClickHandler);
+			this.#decButton.addEventListener("click", this.#buttonClickHandler);
 		}
 	}
 
@@ -107,43 +118,43 @@ export class Stepper {
 
 		const sign = stepperButton === "inc" ? 1 : -1;
 
-		const nextValue = this._value + this._step * sign;
-		if (nextValue < this._min || nextValue > this._max) {
+		const nextValue = this.#value + this.#step * sign;
+		if (nextValue < this.#min || nextValue > this.#max) {
 			return;
 		}
 
-		this._value = nextValue;
-		this.#updateValueText(this._value);
+		this.#value = nextValue;
+		this.#updateValueText(this.#value);
 		this.#checkBorderValues();
 	};
 
 	#updateValueText = (value) => {
-		this._valueText.textContent = String(value).padStart(2, "0");
+		this.#valueText.textContent = String(value).padStart(2, "0");
 	};
 
 	#checkBorderValues() {
-		if (this._value - this._step < this._min || this._disabled) {
-			this._decButton.setAttribute("disabled", "true");
-			this._decButton.setAttribute("tabindex", "-1");
+		if (this.#value - this.#step < this.#min || this.#disabled) {
+			this.#decButton.setAttribute("disabled", "true");
+			this.#decButton.setAttribute("tabindex", "-1");
 		} else {
-			this._decButton.removeAttribute("disabled");
-			this._decButton.removeAttribute("tabindex");
+			this.#decButton.removeAttribute("disabled");
+			this.#decButton.removeAttribute("tabindex");
 		}
 
-		if (this._value + this._step > this._max || this._disabled) {
-			this._incButton.setAttribute("disabled", "true");
-			this._incButton.setAttribute("tabindex", "-1");
+		if (this.#value + this.#step > this.#max || this.#disabled) {
+			this.#incButton.setAttribute("disabled", "true");
+			this.#incButton.setAttribute("tabindex", "-1");
 		} else {
-			this._incButton.removeAttribute("disabled");
-			this._incButton.removeAttribute("tabindex");
+			this.#incButton.removeAttribute("disabled");
+			this.#incButton.removeAttribute("tabindex");
 		}
 	}
 
 	destroy() {
-		this._incButton.removeEventListener("click", this.#buttonClickHandler);
-		this._decButton.removeEventListener("click", this.#buttonClickHandler);
+		this.#incButton.removeEventListener("click", this.#buttonClickHandler);
+		this.#decButton.removeEventListener("click", this.#buttonClickHandler);
 
-		this._root.classList.remove("stepper", "stepper--disabled");
-		this._root.innerHTML = "";
+		this.#root.classList.remove("stepper", "stepper--disabled");
+		this.#root.innerHTML = "";
 	}
 }

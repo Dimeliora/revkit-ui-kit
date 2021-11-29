@@ -50,22 +50,22 @@ export class Select {
                 data-select-element="field"
             >
                 <span
-									class="select__text"
-									data-select-element="text"
-								>
-									${text}
-								</span>
+					class="select__text"
+					data-select-element="text"
+				>
+					${text}
+				</span>
                 <svg
-									class="select__icon"
-									viewBox="0 0 24 24"
-									xmlns="http://www.w3.org/2000/svg"
-								>
+					class="select__icon"
+					viewBox="0 0 24 24"
+					xmlns="http://www.w3.org/2000/svg"
+				>
                     <path
-											d="M4 8L12 16L20 8"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
+						d="M4 8L12 16L20 8"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
                 </svg>
             </div>
             <div
@@ -91,6 +91,19 @@ export class Select {
 	 * @param {?number=} options.selected - Index of selected option
 	 * @param {boolean} [options.disabled=false] - Disabled attribute, makes the select element not focusable
 	 */
+
+	#label;
+	#placeholder;
+	#data;
+	#selected;
+	#disabled;
+	#root;
+	#selectLabel;
+	#selectField;
+	#selectText;
+	#selectDropdown;
+	#value = "";
+
 	constructor({
 		selector,
 		label = "Label",
@@ -99,71 +112,70 @@ export class Select {
 		selected = null,
 		disabled = false,
 	}) {
-		this._root = document.querySelector(selector);
-		if (this._root === null) {
+		this.#root = document.querySelector(selector);
+		if (this.#root === null) {
 			console.error(
 				`Container element "${selector}" for select is not available`
 			);
 			return;
 		}
 
-		this._label = label;
-		this._placeholder = placeholder;
-		this._data = data;
-		this._selected = selected;
-		this._disabled = disabled;
+		this.#label = label;
+		this.#placeholder = placeholder;
+		this.#data = data;
+		this.#selected = selected;
+		this.#disabled = disabled;
 
 		this.#render();
 		this.#setup();
 	}
 
 	get value() {
-		return this._value;
+		return this.#value;
 	}
 
 	#render() {
-		this._root.classList.add("select");
-		if (this._disabled) {
-			this._root.classList.add("select--disabled");
+		this.#root.classList.add("select");
+		if (this.#disabled) {
+			this.#root.classList.add("select--disabled");
 		}
 
-		this._value = "";
 		if (
-			this._selected !== null &&
-			this._selected >= 0 &&
-			this._selected < this._data.length
+			this.#selected !== null &&
+			this.#selected >= 0 &&
+			this.#selected < this.#data.length
 		) {
-			this._value = this._data[this._selected].value;
+			this.#value = this.#data[this.#selected].value;
 		}
 
-		this._root.innerHTML = Select.createHTMLTemplate(
-			this._label,
-			this._placeholder,
-			this._data,
-			this._value,
-			this._selected,
-			this._disabled
+		this.#root.innerHTML = Select.createHTMLTemplate(
+			this.#label,
+			this.#placeholder,
+			this.#data,
+			this.#value,
+			this.#selected,
+			this.#disabled
 		);
 	}
 
 	#setup() {
-		this._selectLabel = this._root.querySelector(
+		this.#selectLabel = this.#root.querySelector(
 			'[data-select-element="label"]'
 		);
-		this._selectField = this._root.querySelector(
+		this.#selectField = this.#root.querySelector(
 			'[data-select-element="field"]'
 		);
-		this._selectText = this._root.querySelector(
+		this.#selectText = this.#root.querySelector(
 			'[data-select-element="text"]'
 		);
-		this._selectDropdown = this._root.querySelector(
+		this.#selectDropdown = this.#root.querySelector(
 			'[data-select-element="dropdown"]'
 		);
 
-		if (!this._disabled) {
-			this._root.addEventListener("click", this.#selectClickHandler);
-			this._root.addEventListener("keydown", this.#selectKeyboardHandler);
-			this._selectLabel.addEventListener(
+		if (!this.#disabled) {
+			this.#root.addEventListener("click", this.#selectClickHandler);
+			this.#root.addEventListener("keydown", this.#selectKeyboardHandler);
+			this.#selectLabel.addEventListener(
 				"click",
 				this.#labelClickHandler
 			);
@@ -178,7 +190,7 @@ export class Select {
 		}
 
 		if (e.target.closest('[data-select-element="option"]')) {
-			this._selected = Number(e.target.dataset.optionIdx);
+			this.#selected = Number(e.target.dataset.optionIdx);
 			this.#optionsStateHandler();
 			this.close();
 			return;
@@ -222,24 +234,24 @@ export class Select {
 	};
 
 	#selectOptionByKeyboardHandler = (step) => {
-		if (this._selected === null && step < 0) {
+		if (this.#selected === null && step < 0) {
 			return;
 		}
 
-		if (this._selected === null && step > 0) {
-			this._selected = 0;
+		if (this.#selected === null && step > 0) {
+			this.#selected = 0;
 		} else {
-			this._selected += step;
+			this.#selected += step;
 		}
 
-		this._selected = Math.max(0, this._selected);
-		this._selected = Math.min(this._selected, this._data.length - 1);
+		this.#selected = Math.max(0, this.#selected);
+		this.#selected = Math.min(this.#selected, this.#data.length - 1);
 
 		this.#optionsStateHandler();
 	};
 
 	#fieldStateHandler = () => {
-		if (this._root.classList.contains("select--opened")) {
+		if (this.#root.classList.contains("select--opened")) {
 			this.close();
 		} else {
 			this.open();
@@ -247,49 +259,49 @@ export class Select {
 	};
 
 	#optionsStateHandler = () => {
-		this._value = this._data[this._selected].value;
-		this._selectText.textContent = this._value;
+		this.#value = this.#data[this.#selected].value;
+		this.#selectText.textContent = this.#value;
 
-		const options = this._root.querySelectorAll(
+		const options = this.#root.querySelectorAll(
 			'[data-select-element="option"]'
 		);
 		options.forEach((option) => {
 			option.classList.remove("select__option--selected");
 
-			if (Number(option.dataset.optionIdx) === this._selected) {
+			if (Number(option.dataset.optionIdx) === this.#selected) {
 				option.classList.add("select__option--selected");
 			}
 		});
 	};
 
 	#outsideClickHandler = (e) => {
-		if (!e.composedPath().includes(this._root)) {
+		if (!e.composedPath().includes(this.#root)) {
 			this.close();
 		}
 	};
 
 	#labelClickHandler = () => {
-		this._selectField.focus();
+		this.#selectField.focus();
 		this.close();
 	};
 
 	open() {
-		this._root.classList.add("select--opened");
-		this._selectDropdown.setAttribute("aria-expanded", "true");
+		this.#root.classList.add("select--opened");
+		this.#selectDropdown.setAttribute("aria-expanded", "true");
 	}
 
 	close() {
-		this._root.classList.remove("select--opened");
-		this._selectDropdown.setAttribute("aria-expanded", "false");
+		this.#root.classList.remove("select--opened");
+		this.#selectDropdown.setAttribute("aria-expanded", "false");
 	}
 
 	destroy() {
-		this._root.removeEventListener("click", this.#selectClickHandler);
-		this._root.removeEventListener("keydown", this.#selectKeyboardHandler);
-		this._selectLabel.removeEventListener("click", this.#labelClickHandler);
+		this.#root.removeEventListener("click", this.#selectClickHandler);
+		this.#root.removeEventListener("keydown", this.#selectKeyboardHandler);
+		this.#selectLabel.removeEventListener("click", this.#labelClickHandler);
 		document.removeEventListener("click", this.#outsideClickHandler);
 
-		this._root.classList.remove("select", "select--disabled");
-		this._root.innerHTML = "";
+		this.#root.classList.remove("select", "select--disabled");
+		this.#root.innerHTML = "";
 	}
 }

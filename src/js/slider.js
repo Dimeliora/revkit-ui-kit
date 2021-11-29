@@ -25,6 +25,16 @@ export class Slider {
 	 * @param {number=} options.step - Step slider value
 	 * @param {boolean=} options.disabled - Disabled attribute, makes the slider element not focusable
 	 */
+
+	#min;
+	#max;
+	#step;
+	#value;
+	#disabled;
+	#root;
+	#input;
+	#progress;
+
 	constructor({
 		selector,
 		value = 0,
@@ -33,63 +43,63 @@ export class Slider {
 		step = 1,
 		disabled = false,
 	}) {
-		this._root = document.querySelector(selector);
-		if (this._root === null) {
+		this.#root = document.querySelector(selector);
+		if (this.#root === null) {
 			console.error(
 				`Container element "${selector}" for slider is not available`
 			);
 			return;
 		}
 
-		this._min = min;
-		this._max = max;
-		this._step = step;
-		this._value = value;
-		this._disabled = disabled;
+		this.#min = min;
+		this.#max = max;
+		this.#step = step;
+		this.#value = value;
+		this.#disabled = disabled;
 
 		this.#render();
 		this.#setup();
 	}
 
 	get value() {
-		return this._value;
+		return this.#value;
 	}
 
 	#render() {
-		this._root.classList.add("slider");
+		this.#root.classList.add("slider");
 
-		this._root.innerHTML = Slider.createHTMLTemplate(
-			this._min,
-			this._max,
-			this._step,
-			this._value,
-			this._disabled
+		this.#root.innerHTML = Slider.createHTMLTemplate(
+			this.#min,
+			this.#max,
+			this.#step,
+			this.#value,
+			this.#disabled
 		);
 	}
 
 	#setup() {
-		this._input = this._root.querySelector(".slider__input");
-		this._progress = this._root.querySelector(".slider__progress");
+		this.#input = this.#root.querySelector(".slider__input");
+		this.#progress = this.#root.querySelector(".slider__progress");
 
-		this.#updateSliderProgress(this._input.value);
+		this.#updateSliderProgress(this.#input.value);
 
-		if (!this._disabled) {
-			this._input.addEventListener("input", this.#inputChangeHandler);
+		if (!this.#disabled) {
+			this.#input.addEventListener("input", this.#inputChangeHandler);
 		}
 	}
 
 	#inputChangeHandler = ({ target }) => {
-		this._value = Number(target.value);
+		this.#value = Number(target.value);
 		this.#updateSliderProgress(target.value);
 	};
 
 	#updateSliderProgress(value) {
-		this._progress.style.setProperty("width", `${value}%`);
+		this.#progress.style.setProperty("width", `${value}%`);
 	}
 
 	destroy() {
-		this._input.removeEventListener("input", this.#inputChangeHandler);
-		this._root.classList.remove("slider");
-		this._root.innerHTML = "";
+		this.#input.removeEventListener("input", this.#inputChangeHandler);
+		this.#root.classList.remove("slider");
+		this.#root.innerHTML = "";
 	}
 }
