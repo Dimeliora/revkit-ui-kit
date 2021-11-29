@@ -2,6 +2,7 @@ import { Select } from "./select";
 import { Slider } from "./slider";
 import { Stepper } from "./stepper";
 import { Progress } from "./progress";
+import { Rating } from "./rating";
 
 const SELECT_ITEMS = [
 	{
@@ -90,4 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		const value = Math.floor(Math.random() * 100);
 		progressBar_4.onChange(value);
 	}, 3500);
+
+	new Rating({
+		selector: "#rating-01",
+	});
 });
