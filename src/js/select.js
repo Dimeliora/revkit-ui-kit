@@ -100,6 +100,13 @@ export class Select {
 		disabled = false,
 	}) {
 		this._root = document.querySelector(selector);
+		if (this._root === null) {
+			console.error(
+				`Container element "${selector}" for select is not available`
+			);
+			return;
+		}
+
 		this._label = label;
 		this._placeholder = placeholder;
 		this._data = data;
@@ -115,10 +122,6 @@ export class Select {
 	}
 
 	#render() {
-		if (this._root === null) {
-			throw new Error("Container element for select is not available");
-		}
-
 		this._root.classList.add("select");
 		if (this._disabled) {
 			this._root.classList.add("select--disabled");

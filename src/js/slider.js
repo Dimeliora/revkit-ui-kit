@@ -34,6 +34,13 @@ export class Slider {
 		disabled = false,
 	}) {
 		this._root = document.querySelector(selector);
+		if (this._root === null) {
+			console.error(
+				`Container element "${selector}" for slider is not available`
+			);
+			return;
+		}
+
 		this._min = min;
 		this._max = max;
 		this._step = step;
@@ -49,10 +56,6 @@ export class Slider {
 	}
 
 	#render() {
-		if (this._root === null) {
-			throw new Error("Container element for slider is not available");
-		}
-
 		this._root.classList.add("slider");
 
 		this._root.innerHTML = Slider.createHTMLTemplate(

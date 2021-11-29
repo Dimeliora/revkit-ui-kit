@@ -46,6 +46,18 @@ export class Stepper {
 		disabled = false,
 	}) {
 		this._root = document.querySelector(selector);
+		if (this._root === null) {
+			console.error(
+				`Container element "${selector}" for stepper is not available`
+			);
+			return;
+		}
+
+		if (this._min >= this._max) {
+			console.error('Inappropriate "min" and "max" values');
+			return;
+		}
+
 		this._value = value;
 		this._min = min;
 		this._max = max;
@@ -61,14 +73,6 @@ export class Stepper {
 	}
 
 	#render() {
-		if (this._root === null) {
-			throw new Error("Container element for stepper is not available");
-		}
-
-		if (this._min >= this._max) {
-			throw new Error('Inappropriate "min" and "max" values');
-		}
-
 		this._root.classList.add("stepper");
 		if (this._disabled) {
 			this._root.classList.add("stepper--disabled");

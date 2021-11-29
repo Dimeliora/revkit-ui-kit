@@ -13,6 +13,13 @@ export class Progress {
 	 */
 	constructor({ selector, value = 0, type = null }) {
 		this._root = document.querySelector(selector);
+		if (this._root === null) {
+			console.error(
+				`Container element "${selector}" for progress is not available`
+			);
+			return;
+		}
+
 		this._value = value;
 		this._type = type;
 
@@ -20,10 +27,6 @@ export class Progress {
 	}
 
 	#setup() {
-		if (this._root === null) {
-			throw new Error("Container element for progress is not available");
-		}
-
 		this._root.classList.add("progress");
 		if (this._type !== null) {
 			this._root.classList.add(
@@ -35,7 +38,9 @@ export class Progress {
 	}
 
 	onChange(value) {
-		this._root.style.setProperty("--progress-fill-width", `${value}%`);
+		if (this._root !== null) {
+			this._root.style.setProperty("--progress-fill-width", `${value}%`);
+		}
 	}
 
 	destroy() {
