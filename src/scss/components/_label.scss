@@ -4,10 +4,10 @@
     justify-content: center;
     width: 90px;
     padding: 8px 0;
-    border: 1px solid var(--primary-color);
+    border-color: var(--accent-color);
     border-radius: 17px;
     box-shadow: 0px 2px 4px var(--shadow-color);
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
 
     &--bright {
         background-color: var(--bright-color);
@@ -31,9 +31,9 @@
         }
     }
 
-    &--accent {
-        background-color: var(--accent-color);
-        border-color: var(--accent-color);
+    &--dark {
+        border: 1px solid var(--primary-color);
+        background-color: var(--primary-color);
     }
 
     &--warning {

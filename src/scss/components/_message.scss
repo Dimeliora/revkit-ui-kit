@@ -4,7 +4,8 @@
     max-width: 240px;
     padding: 16px;
     border-radius: 6px;
-    background-color: var(--primary-color);
+    background-color: var(--blueberry-color);
+
     color: var(--bright-transparent-color);
     font-size: 1.4rem;
     line-height: 1.8rem;
@@ -13,10 +14,11 @@
         content: "";
         position: absolute;
         left: 0;
-        bottom: calc(var(--arrow-width) * -1);
+        bottom: 0;
+        transform: translateY(50%);
         z-index: -1;
         border: var(--arrow-width) solid;
-        border-color: transparent transparent transparent #585364;
+        border-color: transparent transparent transparent #4874e9;
     }
 
     &--bright {
@@ -28,11 +30,11 @@
         }
     }
 
-    &--blueberry {
-        background-color: var(--blueberry-color);
+    &--dark {
+        background-color: var(--primary-color);
 
         &::before {
-            border-color: transparent transparent transparent #4874e9;
+            border-color: transparent transparent transparent #585364;
         }
     }
 
@@ -46,24 +48,27 @@
 
     &--br {
         &::before {
+            left: unset;
             right: 0;
-            transform: rotate(180deg);
+            transform: rotate(180deg) translateY(-50%);
         }
     }
 
     &--tl {
         &::before {
             bottom: unset;
-            top: calc(var(--arrow-width) * -1);
+            top: 0;
+            transform: translateY(-50%);
         }
     }
 
     &--tr {
         &::before {
             bottom: unset;
+            left: unset;
+            top: 0;
             right: 0;
-            top: calc(var(--arrow-width) * -1);
-            transform: rotate(180deg);
+            transform: rotate(180deg) translateY(50%);
         }
     }
 }
