@@ -1,6 +1,17 @@
 .list-rating {
     &__wrapper {
+        display: flex;
         padding-top: 40px;
+    }
+
+    &__column {
+        &:first-child {
+            margin-right: 120px;
+        }
+
+        &:last-child {
+            margin-left: 80px;
+        }
     }
 
     &__item {

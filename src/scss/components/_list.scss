@@ -3,6 +3,7 @@
 
     &__item {
         position: relative;
+        width: fit-content;
         padding: 5px 0 5px 35px;
         color: var(--secondary-color);
         font-size: 1.6rem;
@@ -49,6 +50,17 @@
         .list__item {
             &::before {
                 background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMTBweCIgeT0iMTBweCINCgkgd2lkdGg9IjEwcHgiIGhlaWdodD0iMTBweCIgdmlld0JveD0iMCAwIDEwIDEwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMCAxMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiMwODgwYWUiLz4NCjwvc3ZnPg0K");
+            }
+        }
+    }
+
+    &--right {
+        .list__item {
+            padding: 5px 35px 5px 0;
+
+            &::before {
+                left: unset;
+                right: 0;
             }
         }
     }
