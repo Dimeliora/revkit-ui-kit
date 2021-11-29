@@ -42,16 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	new Stepper({
 		selector: "#form-stepper-02",
 		value: 1,
-		max: 10,
-		step: 2,
-	});
-	new Stepper({
-		selector: "#form-stepper-03",
-		value: 1,
-	});
-	new Stepper({
-		selector: "#form-stepper-04",
-		value: 1,
 		disabled: true,
 	});
 

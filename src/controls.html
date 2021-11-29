@@ -46,7 +46,7 @@
 					<div class="form__wrapper section-wrapper">
 						<!-- Form Inputs -->
 						<div class="form__inputs">
-							<!-- Form Input. Placeholder, error message -->
+							<!-- Form Input. Placeholder -->
 							<div class="form__field text-field">
 								<label
 									for="form-field-01"
@@ -72,7 +72,6 @@
 								<div
 									class="
 										text-field__helper-text
-										text-field__helper-text--visible
 										text-field__helper-text--error
 									"
 								>
@@ -107,39 +106,6 @@
 								<div
 									class="
 										text-field__helper-text
-										text-field__helper-text--error
-									"
-								>
-									Validation error message
-								</div>
-							</div>
-							<!-- Form Input. Placeholder, error message, focus -->
-							<div class="form__field text-field">
-								<label
-									for="form-field-03"
-									class="text-field__label"
-									>Label</label
-								>
-								<div class="text-field__input-wrapper">
-									<input
-										id="form-field-03"
-										type="text"
-										class="text-field__input"
-										placeholder="Placeholder"
-									/>
-								</div>
-								<div
-									class="
-										text-field__helper-text
-										text-field__helper-text--success
-									"
-								>
-									Validation success message
-								</div>
-								<div
-									class="
-										text-field__helper-text
-										text-field__helper-text--visible
 										text-field__helper-text--error
 									"
 								>
@@ -302,7 +268,7 @@
 							<div class="form__select" id="form-select-02"></div>
 							<!-- Dropdown disabled -->
 							<div class="form__select" id="form-select-03"></div>
-							<!-- Textarea. Placeholder, error message -->
+							<!-- Textarea. Placeholder -->
 							<div
 								class="
 									form__textarea
@@ -330,14 +296,13 @@
 								<div
 									class="
 										text-field__helper-text
-										text-field__helper-text--visible
 										text-field__helper-text--error
 									"
 								>
 									Validation error message
 								</div>
 							</div>
-							<!-- Textarea. Value, error message -->
+							<!-- Textarea. Value, success message -->
 							<div
 								class="
 									form__textarea
@@ -359,6 +324,7 @@ Value</textarea
 								<div
 									class="
 										text-field__helper-text
+										text-field__helper-text--visible
 										text-field__helper-text--success
 									"
 								>
@@ -367,44 +333,6 @@ Value</textarea
 								<div
 									class="
 										text-field__helper-text
-										text-field__helper-text--visible
-										text-field__helper-text--error
-									"
-								>
-									Validation error message
-								</div>
-							</div>
-							<!-- Textarea. Value, error message, focus -->
-							<div
-								class="
-									form__textarea
-									text-field text-field--multiline
-								"
-							>
-								<label
-									for="form-textarea-03"
-									class="text-field__label"
-									>Label</label
-								>
-								<textarea
-									id="form-textarea-03"
-									class="text-field__input"
-									placeholder="Placeholder"
-								>
-Value</textarea
-								>
-								<div
-									class="
-										text-field__helper-text
-										text-field__helper-text--success
-									"
-								>
-									Validation success message
-								</div>
-								<div
-									class="
-										text-field__helper-text
-										text-field__helper-text--visible
 										text-field__helper-text--error
 									"
 								>
@@ -457,20 +385,10 @@ Value</textarea
 								class="form__stepper-item"
 								id="form-stepper-01"
 							></div>
-							<!-- Stepper decrease button active -->
-							<div
-								class="form__stepper-item"
-								id="form-stepper-02"
-							></div>
-							<!-- Stepper increase button active -->
-							<div
-								class="form__stepper-item"
-								id="form-stepper-03"
-							></div>
 							<!-- Stepper disabled -->
 							<div
 								class="form__stepper-item"
-								id="form-stepper-04"
+								id="form-stepper-02"
 							></div>
 						</div>
 						<!-- Checkboxes -->
@@ -843,24 +761,6 @@ Value</textarea
 								>
 									Button
 								</button>
-								<!-- Button small hover-->
-								<button
-									class="
-										form__button-item
-										button button--small
-									"
-								>
-									Button
-								</button>
-								<!-- Button small focus-->
-								<button
-									class="
-										form__button-item
-										button button--small
-									"
-								>
-									Button
-								</button>
 								<!-- Button small disabled-->
 								<button
 									class="
@@ -872,24 +772,6 @@ Value</textarea
 									Button
 								</button>
 								<!-- Button small contained-->
-								<button
-									class="
-										form__button-item
-										button button--small button--contained
-									"
-								>
-									Button
-								</button>
-								<!-- Button small contained hover-->
-								<button
-									class="
-										form__button-item
-										button button--small button--contained
-									"
-								>
-									Button
-								</button>
-								<!-- Button small contained focus -->
 								<button
 									class="
 										form__button-item
@@ -917,24 +799,6 @@ Value</textarea
 								>
 									Button
 								</button>
-								<!-- Button small outlined hover -->
-								<button
-									class="
-										form__button-item
-										button button--small button--outlined
-									"
-								>
-									Button
-								</button>
-								<!-- Button small outlined focus -->
-								<button
-									class="
-										form__button-item
-										button button--small button--outlined
-									"
-								>
-									Button
-								</button>
 								<!-- Button small outlined disabled -->
 								<button
 									class="
@@ -954,14 +818,6 @@ Value</textarea
 								<button class="form__button-item button">
 									Button
 								</button>
-								<!-- Button hover (basic) -->
-								<button class="form__button-item button">
-									Button
-								</button>
-								<!-- Button focus (basic) -->
-								<button class="form__button-item button">
-									Button
-								</button>
 								<!-- Button disabled (basic) -->
 								<button
 									class="form__button-item button"
@@ -970,24 +826,6 @@ Value</textarea
 									Button
 								</button>
 								<!-- Button contained -->
-								<button
-									class="
-										form__button-item
-										button button--contained
-									"
-								>
-									Button
-								</button>
-								<!-- Button contained hover -->
-								<button
-									class="
-										form__button-item
-										button button--contained
-									"
-								>
-									Button
-								</button>
-								<!-- Button contained focus -->
 								<button
 									class="
 										form__button-item
@@ -1007,24 +845,6 @@ Value</textarea
 									Button
 								</button>
 								<!-- Button outlined -->
-								<button
-									class="
-										form__button-item
-										button button--outlined
-									"
-								>
-									Button
-								</button>
-								<!-- Button outlined hover -->
-								<button
-									class="
-										form__button-item
-										button button--outlined
-									"
-								>
-									Button
-								</button>
-								<!-- Button outlined focus -->
 								<button
 									class="
 										form__button-item
@@ -1057,24 +877,6 @@ Value</textarea
 								>
 									Button
 								</button>
-								<!-- Button large hover -->
-								<button
-									class="
-										form__button-item
-										button button--large
-									"
-								>
-									Button
-								</button>
-								<!-- Button large focus -->
-								<button
-									class="
-										form__button-item
-										button button--large
-									"
-								>
-									Button
-								</button>
 								<!-- Button large disabled -->
 								<button
 									class="
@@ -1094,24 +896,6 @@ Value</textarea
 								>
 									Button
 								</button>
-								<!-- Button large contained hover -->
-								<button
-									class="
-										form__button-item
-										button button--contained button--large
-									"
-								>
-									Button
-								</button>
-								<!-- Button large contained focus -->
-								<button
-									class="
-										form__button-item
-										button button--contained button--large
-									"
-								>
-									Button
-								</button>
 								<!-- Button large contained disabled -->
 								<button
 									class="
@@ -1123,24 +907,6 @@ Value</textarea
 									Button
 								</button>
 								<!-- Button large outlined -->
-								<button
-									class="
-										form__button-item
-										button button--outlined button--large
-									"
-								>
-									Button
-								</button>
-								<!-- Button large outlined hover -->
-								<button
-									class="
-										form__button-item
-										button button--outlined button--large
-									"
-								>
-									Button
-								</button>
-								<!-- Button large outlined focus -->
 								<button
 									class="
 										form__button-item
