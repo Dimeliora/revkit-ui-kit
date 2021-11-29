@@ -1,0 +1,13 @@
+.list-rating {
+    &__wrapper {
+        padding-top: 40px;
+    }
+
+    &__item {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
