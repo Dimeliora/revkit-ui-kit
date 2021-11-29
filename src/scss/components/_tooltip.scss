@@ -1,38 +1,24 @@
 @import "../mixins/block-arrows";
 
-.popover {
+.tooltip {
     --bg-color: var(--accent-color);
-    --heading-color: var(--bright-color);
-    --text-color: var(--bright-transparent-color);
     position: relative;
-    max-width: 180px;
-    padding: 16px;
-    border-radius: 8px;
+    padding: 7px 10px;
+    border-radius: 4px;
     background-color: var(--bg-color);
-
-    &__heading {
-        color: var(--heading-color);
-        font-size: 1.4rem;
-        font-weight: 600;
-    }
-
-    &__text {
-        margin-top: 5px;
-        color: var(--text-color);
-        font-size: 1.4rem;
-        line-height: 1.8rem;
-    }
+    color: var(--bright-transparent-color);
+    font-size: 1.4rem;
+    text-align: center;
 
     &::before {
         content: "";
         position: absolute;
-        @include arrow-top(10px, var(--bg-color));
+        @include arrow-top(5px, var(--bg-color));
     }
 
     &--bright {
         --bg-color: var(--bright-color);
-        --heading-color: var(--primary-color);
-        --text-color: var(--secondary-color);
+        color: var(--secondary-color);
     }
 
     &--dark {
@@ -57,19 +43,19 @@
 
     &--right {
         &::before {
-            @include arrow-right(10px, var(--bg-color));
+            @include arrow-right(5px, var(--bg-color));
         }
     }
 
     &--bottom {
         &::before {
-            @include arrow-bottom(10px, var(--bg-color));
+            @include arrow-bottom(5px, var(--bg-color));
         }
     }
 
     &--left {
         &::before {
-            @include arrow-left(10px, var(--bg-color));
+            @include arrow-left(5px, var(--bg-color));
         }
     }
 }

@@ -1,0 +1,7 @@
+.tooltips {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(6, 115px);
+        gap: 30px 40px;
+    }
+}
