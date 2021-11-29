@@ -1,0 +1,31 @@
+@mixin arrow-top($arrow-width) {
+    border-width: $arrow-width;
+    border-style: solid;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+@mixin arrow-right($arrow-width) {
+    border-width: $arrow-width;
+    border-style: solid;
+    top: 50%;
+    left: 100%;
+    transform: rotate(90deg) translate(-50%, 0);
+}
+
+@mixin arrow-bottom($arrow-width) {
+    border-width: $arrow-width;
+    border-style: solid;
+    top: 100%;
+    left: 50%;
+    transform: rotate(180deg) translate(50%, 0);
+}
+
+@mixin arrow-left($arrow-width) {
+    border-width: $arrow-width;
+    border-style: solid;
+    top: 50%;
+    left: 0;
+    transform: rotate(-90deg) translate(50%, -100%);
+}

@@ -1,8 +1,9 @@
+@import "../mixins/block-arrows";
+
 .popover {
     --bg-color: var(--accent-color);
     --heading-color: var(--bright-color);
     --text-color: var(--bright-transparent-color);
-    --arrow-width: 10px;
     position: relative;
     max-width: 180px;
     padding: 16px;
@@ -25,10 +26,7 @@
     &::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -100%);
-        border: var(--arrow-width) solid;
+        @include arrow-top(10px);
         border-color: transparent transparent var(--bg-color) transparent;
     }
 
@@ -60,24 +58,19 @@
 
     &--right {
         &::before {
-            left: 100%;
-            top: 50%;
-            transform: rotate(90deg) translateX(-50%);
+            @include arrow-right(10px);
         }
     }
 
     &--bottom {
         &::before {
-            top: 100%;
-            transform: rotate(180deg) translate(50%, 0);
+            @include arrow-bottom(10px);
         }
     }
 
     &--left {
         &::before {
-            left: 0;
-            top: 50%;
-            transform: rotate(-90deg) translate(50%, -100%);
+            @include arrow-left(10px);
         }
     }
 }
