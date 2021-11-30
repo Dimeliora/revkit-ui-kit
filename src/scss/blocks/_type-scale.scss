@@ -1,0 +1,19 @@
+.type-scale {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 60px;
+    }
+
+    &__column {
+        flex: 0 0 calc(100% / 3);
+    }
+
+    &__item {
+        margin-bottom: 50px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+.typography {
+    margin: 0;
+    padding: 0;
+    color: var(--primary-color);
+
+    &--h1 {
+        font-size: 7.2rem;
+        font-weight: 700;
+        line-height: 8.6rem;
+    }
+
+    &--h2 {
+        font-size: 6.4rem;
+        font-weight: 700;
+        line-height: 7.6rem;
+    }
+
+    &--h3 {
+        font-size: 5.6rem;
+        font-weight: 700;
+        line-height: 6.8rem;
+    }
+
+    &--h4 {
+        font-size: 3.4rem;
+        font-weight: 700;
+        line-height: 4.4rem;
+    }
+
+    &--h5 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 3.6rem;
+    }
+
+    &--h6 {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+    }
+
+    &--p1 {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
+
+    &--p2 {
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    &--label {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    &--secondary {
+        color: var(--secondary-color);
+    }
+
+    &--muted {
+        color: var(--muted-color);
+    }
+
+    &--accent {
+        color: var(--accent-color);
+    }
+
+    &--warning {
+        color: var(--warning-color);
+    }
+
+    &--success {
+        color: var(--success-color);
+    }
+
+    &--error {
+        color: var(--error-color);
+    }
+
+    &--bright {
+        color: var(--bright-color);
+    }
+}
