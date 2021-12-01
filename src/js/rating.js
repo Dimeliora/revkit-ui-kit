@@ -111,7 +111,7 @@ export class Rating {
 	}
 
 	#render() {
-		this.#root.classList.add("select");
+		this.#root.classList.add("rating");
 		this.#root.innerHTML = Rating.createHTMLTemplate();
 	}
 
@@ -192,7 +192,7 @@ export class Rating {
 			);
 		});
 
-		this.#root.classList.remove("select");
+		this.#root.classList.remove("rating");
 		this.#root.innerHTML = "";
 	}
 }
