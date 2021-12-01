@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: var(--bright-color);
+
+    &__logo-link {
+        display: block;
+        text-decoration: none;
+    }
+
+    &__logo {
+        margin-right: 60px;
+    }
+
+    &__menu-link {
+        display: inline-block;
+        margin-right: 25px;
+        padding: 5px 0;
+        color: var(--primary-color);
+        font-size: 1.6rem;
+        text-decoration: none;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover,
+        &:focus-visible {
+            outline: none;
+            text-decoration: underline;
+        }
+    }
+
+    &__controls {
+        margin-left: auto;
+    }
+
+    &__control-button {
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
