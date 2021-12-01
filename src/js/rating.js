@@ -1,6 +1,6 @@
 export class Rating {
-    static getStarItemTemplate(value) {
-        return `
+	static getStarItemTemplate(value) {
+		return `
             <button
                 class="rating__star-item"
                 data-rating-value="${value}"
@@ -9,10 +9,10 @@ export class Rating {
             >
 				<svg
 					class="rating__star-icon rating__star-icon--left"
+                    viewBox="0 0 10 20"
 					xmlns="http://www.w3.org/2000/svg"
 				>
 					<path
-						viewBox="0 0 10 20"
 						d="M 10 15 L 4.1222 18.0902 L 5.2447 11.5451 L 0.4894 6.9098 L 7.0611 5.9549 L 10 0 L 10 15 Z"
 					/>
 				</svg>
@@ -27,14 +27,14 @@ export class Rating {
 				</svg>
             </button>
         `;
-    }
+	}
 
-    static createHTMLTemplate() {
-        const starButtons = [...Array(5).keys()]
-            .map((item) => Rating.getStarItemTemplate(item + 1))
-            .reverse();
+	static createHTMLTemplate() {
+		const starButtons = [...Array(5).keys()]
+			.map((item) => Rating.getStarItemTemplate(item + 1))
+			.reverse();
 
-        return `
+		return `
             <div class="rating__top">
                 <div class="rating__stars">
                     ${starButtons.join(" ")}
@@ -43,114 +43,156 @@ export class Rating {
             </div>
             <div class="rating__bottom" data-rating-element="votes"></div>
         `;
-    }
+	}
 
-    #ratings = 0;
-    #votes = 0;
-    #value = 0;
-    #root;
-    #ratingButtons;
-    #ratingValue;
-    #ratingVotes;
+	static calculateOverallRating(ratings) {
+		const votesCount = Object.values(ratings).reduce(
+			(sum, value) => sum + value,
+			0
+		);
+		const allRatingsSum = Object.entries(ratings).reduce(
+			(sum, [rate, count]) => sum + rate * count,
+			0
+		);
+		const overallRating =
+			Number((allRatingsSum / votesCount).toFixed(1)) || 0;
 
-    /**
-     * @param {Object} options - Options object for rating creation
-     * @param {string} options.selector - CSS selector for rating element injection
-     */
-    constructor({ selector }) {
-        this.#root = document.querySelector(selector);
-        if (this.#root === null) {
-            console.error(
-                `Container element "${selector}" for rating is not available`
-            );
-            return;
-        }
+		return { votesCount, overallRating };
+	}
 
-        this.#render();
-        this.#setup();
-    }
+	get ratings() {
+		return this.#ratings;
+	}
 
-    get value() {
-        return Number(this.#value.toFixed(1));
-    }
+	get overallRating() {
+		return this.#overallRating;
+	}
 
-    get count() {
-        return this.#votes;
-    }
+	get totalVotes() {
+		return this.#totalVotes;
+	}
 
-    #render() {
-        this.#root.classList.add("select");
-        this.#root.innerHTML = Rating.createHTMLTemplate();
-    }
+	#ratings = {
+		1: 0,
+		2: 0,
+		3: 0,
+		4: 0,
+		5: 0,
+	};
+	#totalVotes = 0;
+	#overallRating = 0;
+	#root;
+	#ratingButtons;
+	#ratingValue;
+	#ratingVotes;
 
-    #setup() {
-        this.#ratingButtons = this.#root.querySelectorAll(
-            '[data-rating-element="button-item"]'
-        );
-        this.#ratingValue = this.#root.querySelector(
-            '[data-rating-element="value"]'
-        );
-        this.#ratingVotes = this.#root.querySelector(
-            '[data-rating-element="votes"]'
-        );
+	/**
+	 * @param {Object} options - Options object for rating creation
+	 * @param {string} options.selector - CSS selector for rating element injection
+	 * @param {Object} options.initialRatings - Object with initial vote counts for every rating value
+	 */
+	constructor({ selector, initialRatings }) {
+		this.#root = document.querySelector(selector);
+		if (this.#root === null) {
+			console.error(
+				`Container element "${selector}" for rating is not available`
+			);
+			return;
+		}
 
-        this.#ratingButtons.forEach((button) => {
-            button.addEventListener("click", this.#ratingButtonsClickHandler);
-        });
-    }
+		this.#render();
+		this.#setup();
 
-    #ratingButtonsClickHandler = ({ currentTarget }) => {
-        const ratingButtonValue = Number(currentTarget.dataset.ratingValue);
-        this.#ratings += ratingButtonValue;
+		if (initialRatings) {
+			this.#ratings = initialRatings;
+			this.#calculateRating();
+			this.#updateRatingView();
+		}
+	}
 
-        this.#votes += 1;
+	#render() {
+		this.#root.classList.add("select");
+		this.#root.innerHTML = Rating.createHTMLTemplate();
+	}
 
-        this.#value = this.#ratings / this.#votes;
+	#setup() {
+		this.#ratingButtons = this.#root.querySelectorAll(
+			'[data-rating-element="button-item"]'
+		);
+		this.#ratingValue = this.#root.querySelector(
+			'[data-rating-element="value"]'
+		);
+		this.#ratingVotes = this.#root.querySelector(
+			'[data-rating-element="votes"]'
+		);
 
-        this.#updateRatingView();
+		this.#ratingButtons.forEach((button) => {
+			button.addEventListener("click", this.#ratingButtonsClickHandler);
+		});
+	}
 
-        currentTarget.blur();
-    };
+	#ratingButtonsClickHandler = ({ currentTarget }) => {
+		const ratingButtonValue = Number(currentTarget.dataset.ratingValue);
 
-    #updateRatingView() {
-        this.#ratingValue.textContent = this.#value.toFixed(1);
+		this.#ratings[ratingButtonValue] += 1;
 
-        this.#ratingVotes.textContent = `based on ${this.#votes} ratings`;
+		this.#calculateRating();
+		this.#updateRatingView();
 
-        const intRating = Math.floor(this.value);
-        const fracRating = this.value - intRating;
+		currentTarget.blur();
+	};
 
-        this.#ratingButtons.forEach((button) => {
-            const ratingButtonValue = Number(button.dataset.ratingValue);
+	#calculateRating() {
+		const overall = Rating.calculateOverallRating(this.#ratings);
+		this.#totalVotes = overall.votesCount;
+		this.#overallRating = overall.overallRating;
+	}
 
-            if (ratingButtonValue <= intRating) {
-                button.classList.add("rating__star-item--full");
-            } else {
-                button.classList.remove(
-                    "rating__star-item--full",
-                    "rating__star-item--half"
-                );
-            }
+	#updateRatingView() {
+		if (this.#overallRating > 0) {
+			this.#ratingValue.textContent = this.#overallRating.toFixed(1);
+		}
 
-            if (fracRating && ratingButtonValue === intRating + 1) {
-                if (fracRating < 0.5) {
-                    button.classList.add("rating__star-item--half");
-                } else {
-                    button.classList.add("rating__star-item--full");
-                }
-            }
-        });
-    }
+		if (this.#totalVotes > 0) {
+			this.#ratingVotes.textContent = `based on ${
+				this.#totalVotes
+			} ratings`;
+		}
 
-    destroy() {
-        this.#ratingButtons.forEach((button) => {
-            button.removeEventListener(
-                "click",
-                this.#ratingButtonsClickHandler
-            );
-        });
+		const intRating = Math.floor(this.#overallRating);
+		const fracRating = this.#overallRating - intRating;
 
-        this.#root.classList.remove("select");
-        this.#root.innerHTML = "";
-    }
+		this.#ratingButtons.forEach((button) => {
+			const ratingButtonValue = Number(button.dataset.ratingValue);
+
+			if (ratingButtonValue <= intRating) {
+				button.classList.add("rating__star-item--full");
+			} else {
+				button.classList.remove(
+					"rating__star-item--full",
+					"rating__star-item--half"
+				);
+			}
+
+			if (fracRating && ratingButtonValue === intRating + 1) {
+				if (fracRating < 0.5) {
+					button.classList.add("rating__star-item--half");
+				} else {
+					button.classList.add("rating__star-item--full");
+				}
+			}
+		});
+	}
+
+	destroy() {
+		this.#ratingButtons.forEach((button) => {
+			button.removeEventListener(
+				"click",
+				this.#ratingButtonsClickHandler
+			);
+		});
+
+		this.#root.classList.remove("select");
+		this.#root.innerHTML = "";
+	}
 }

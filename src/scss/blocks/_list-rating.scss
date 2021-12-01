@@ -1,24 +1,34 @@
 .list-rating {
-    &__wrapper {
-        display: flex;
-        padding-top: 40px;
-    }
+	&__wrapper {
+		display: flex;
+		padding-top: 40px;
+	}
 
-    &__column {
-        &:first-child {
-            margin-right: 120px;
-        }
+	&__column {
+		margin-right: 80px;
 
-        &:last-child {
-            margin-left: 80px;
-        }
-    }
+		&:first-child {
+			margin-right: 120px;
+		}
 
-    &__item {
-        margin-bottom: 15px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
+	&__item {
+		margin-bottom: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__rating-item {
+		margin-bottom: 40px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
