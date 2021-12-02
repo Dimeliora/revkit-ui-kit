@@ -1,0 +1,47 @@
+.form {
+    padding: 40px 30px;
+    background-color: var(--bright-color);
+    border-radius: 24px;
+
+    &__header {
+        margin-bottom: 30px;
+    }
+
+    &__heading {
+        margin-bottom: 5px;
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: 4px;
+        color: var(--accent-color);
+        font-size: 1.6rem;
+        text-decoration: none;
+
+        &:empty {
+            display: none;
+        }
+
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+        }
+
+        &--footer {
+            margin-top: 25px;
+        }
+    }
+
+    &__controls {
+        margin-bottom: 35px;
+    }
+
+    &__field {
+        margin-bottom: 35px;
+        box-shadow: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
