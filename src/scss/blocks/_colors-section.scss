@@ -1,0 +1,26 @@
+.colors-section {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 300px);
+        grid-auto-rows: 300px;
+        gap: 40px;
+    }
+
+    &__paper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    &__name {
+        opacity: 0.55;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    &__code {
+        margin-top: 10px;
+        font-size: 3.4rem;
+        font-weight: 700;
+    }
+}

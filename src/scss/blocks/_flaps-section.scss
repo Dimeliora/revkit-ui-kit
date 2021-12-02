@@ -1,4 +1,4 @@
-.flaps {
+.flaps-section {
     &__item {
         margin-bottom: 60px;
 
@@ -16,7 +16,7 @@
         border-radius: 20px;
         background-color: var(--bright-color);
 
-        .flaps__item {
+        .flaps-section__item {
             margin-bottom: 0;
         }
     }

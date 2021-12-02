@@ -38,16 +38,16 @@
         <main>
             <div class="container">
                 <!-- Form -->
-                <section class="form">
+                <section class="form-section">
                     <h2 class="section-heading">
                         <span class="section-heading__number">04.</span>
                         Form
                     </h2>
-                    <div class="form__wrapper section-wrapper">
+                    <div class="form-section__wrapper section-wrapper">
                         <!-- Form Inputs -->
-                        <div class="form__inputs">
+                        <div class="form-section__inputs">
                             <!-- Form Input. Placeholder -->
-                            <div class="form__field text-field">
+                            <div class="form-section__field text-field">
                                 <label
                                     for="form-field-01"
                                     class="text-field__label"
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                             <!-- Form Input. Value, success message -->
-                            <div class="form__field text-field">
+                            <div class="form-section__field text-field">
                                 <label
                                     for="form-field-02"
                                     class="text-field__label"
@@ -113,7 +113,7 @@
                                 </div>
                             </div>
                             <!-- Form Input. Value, error message, disabled -->
-                            <div class="form__field text-field">
+                            <div class="form-section__field text-field">
                                 <label
                                     for="form-field-04"
                                     class="text-field__label"
@@ -148,7 +148,7 @@
                                 </div>
                             </div>
                             <!-- Form Input. Placeholder, icon -->
-                            <div class="form__field text-field">
+                            <div class="form-section__field text-field">
                                 <label
                                     for="form-field-05"
                                     class="text-field__label"
@@ -185,7 +185,7 @@
                                 </div>
                             </div>
                             <!-- Form Input. Value, success message, icon -->
-                            <div class="form__field text-field">
+                            <div class="form-section__field text-field">
                                 <label
                                     for="form-field-06"
                                     class="text-field__label"
@@ -224,7 +224,7 @@
                                 </div>
                             </div>
                             <!-- Form Input. Value, error message, icon, focus -->
-                            <div class="form__field text-field">
+                            <div class="form-section__field text-field">
                                 <label
                                     for="form-field-07"
                                     class="text-field__label"
@@ -263,15 +263,24 @@
                                 </div>
                             </div>
                             <!-- Dropdown -->
-                            <div class="form__select" id="form-select-01"></div>
+                            <div
+                                class="form-section__select"
+                                id="form-select-01"
+                            ></div>
                             <!-- Dropdown opened -->
-                            <div class="form__select" id="form-select-02"></div>
+                            <div
+                                class="form-section__select"
+                                id="form-select-02"
+                            ></div>
                             <!-- Dropdown disabled -->
-                            <div class="form__select" id="form-select-03"></div>
+                            <div
+                                class="form-section__select"
+                                id="form-select-03"
+                            ></div>
                             <!-- Textarea. Placeholder -->
                             <div
                                 class="
-                                    form__textarea
+                                    form-section__textarea
                                     text-field text-field--multiline
                                 "
                             >
@@ -305,7 +314,7 @@
                             <!-- Textarea. Value, success message -->
                             <div
                                 class="
-                                    form__textarea
+                                    form-section__textarea
                                     text-field text-field--multiline
                                 "
                             >
@@ -342,7 +351,7 @@ Value</textarea
                             <!-- Textarea. Value, error message, disabled -->
                             <div
                                 class="
-                                    form__textarea
+                                    form-section__textarea
                                     text-field text-field--multiline
                                 "
                             >
@@ -379,21 +388,21 @@ Value</textarea
                             </div>
                         </div>
                         <!-- Steppers -->
-                        <div class="form__elements-wrapper">
+                        <div class="form-section__elements-wrapper">
                             <!-- Stepper -->
                             <div
-                                class="form__stepper-item"
+                                class="form-section__stepper-item"
                                 id="form-stepper-01"
                             ></div>
                             <!-- Stepper disabled -->
                             <div
-                                class="form__stepper-item"
+                                class="form-section__stepper-item"
                                 id="form-stepper-02"
                             ></div>
                         </div>
                         <!-- Checkboxes -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__checkboxes">
+                        <div class="form-section__elements-wrapper">
+                            <div class="form-section__checkboxes">
                                 <!-- Checkbox -->
                                 <div class="checkbox">
                                     <input
@@ -482,8 +491,8 @@ Value</textarea
                             </div>
                         </div>
                         <!-- Radiobuttons -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__radios">
+                        <div class="form-section__elements-wrapper">
+                            <div class="form-section__radios">
                                 <!-- Radiobutton -->
                                 <div class="radio">
                                     <input
@@ -547,8 +556,8 @@ Value</textarea
                             </div>
                         </div>
                         <!-- Toggle switches -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__toggles">
+                        <div class="form-section__elements-wrapper">
+                            <div class="form-section__toggles">
                                 <!-- Toggle -->
                                 <div class="toggle">
                                     <input
@@ -608,26 +617,29 @@ Value</textarea
                             </div>
                         </div>
                         <!-- Sliders -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__sliders">
+                        <div class="form-section__elements-wrapper">
+                            <div class="form-section__sliders">
                                 <!-- Slider -->
                                 <div
-                                    class="form__slider-item"
+                                    class="form-section__slider-item"
                                     id="form-slider-01"
                                 ></div>
                                 <!-- Slider disabled -->
                                 <div
-                                    class="form__slider-item"
+                                    class="form-section__slider-item"
                                     id="form-slider-02"
                                 ></div>
                             </div>
                         </div>
                         <!-- Labels (basic - accent) -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__labels">
+                        <div class="form-section__elements-wrapper">
+                            <div class="form-section__labels">
                                 <!-- Label -->
                                 <div
-                                    class="form__label-item label label--bright"
+                                    class="
+                                        form-section__label-item
+                                        label label--bright
+                                    "
                                 >
                                     <span class="label__text">Label</span>
                                     <button
@@ -651,7 +663,12 @@ Value</textarea
                                     </button>
                                 </div>
                                 <!-- Label dark-->
-                                <div class="form__label-item label label--dark">
+                                <div
+                                    class="
+                                        form-section__label-item
+                                        label label--dark
+                                    "
+                                >
                                     <span class="label__text">Label</span>
                                     <button
                                         class="
@@ -674,7 +691,7 @@ Value</textarea
                                     </button>
                                 </div>
                                 <!-- Label accent-->
-                                <div class="form__label-item label">
+                                <div class="form-section__label-item label">
                                     <span class="label__text">Label</span>
                                     <button
                                         class="
@@ -699,7 +716,7 @@ Value</textarea
                                 <!-- Label warning-->
                                 <div
                                     class="
-                                        form__label-item
+                                        form-section__label-item
                                         label label--warning
                                     "
                                 >
@@ -727,7 +744,7 @@ Value</textarea
                                 <!-- Label success-->
                                 <div
                                     class="
-                                        form__label-item
+                                        form-section__label-item
                                         label label--success
                                     "
                                     aria-label="Label close"
@@ -754,7 +771,10 @@ Value</textarea
                                 </div>
                                 <!-- Label error-->
                                 <div
-                                    class="form__label-item label label--error"
+                                    class="
+                                        form-section__label-item
+                                        label label--error
+                                    "
                                 >
                                     <span class="label__text">Label</span>
                                     <button
@@ -780,12 +800,17 @@ Value</textarea
                             </div>
                         </div>
                         <!-- Buttons small -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__buttons form__buttons--small">
+                        <div class="form-section__elements-wrapper">
+                            <div
+                                class="
+                                    form-section__buttons
+                                    form-section__buttons--small
+                                "
+                            >
                                 <!-- Button small -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--small
                                     "
                                 >
@@ -794,7 +819,7 @@ Value</textarea
                                 <!-- Button small disabled-->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--small
                                     "
                                     disabled
@@ -804,7 +829,7 @@ Value</textarea
                                 <!-- Button small contained-->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--small button--contained
                                     "
                                 >
@@ -813,7 +838,7 @@ Value</textarea
                                 <!-- Button small contained disabled -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--small button--contained
                                     "
                                     disabled
@@ -823,7 +848,7 @@ Value</textarea
                                 <!-- Button small outlined -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--small button--outlined
                                     "
                                 >
@@ -832,7 +857,7 @@ Value</textarea
                                 <!-- Button small outlined disabled -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--small button--outlined
                                     "
                                     disabled
@@ -842,15 +867,17 @@ Value</textarea
                             </div>
                         </div>
                         <!-- Buttons -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__buttons">
+                        <div class="form-section__elements-wrapper">
+                            <div class="form-section__buttons">
                                 <!-- Button (basic) -->
-                                <button class="form__button-item button">
+                                <button
+                                    class="form-section__button-item button"
+                                >
                                     Button
                                 </button>
                                 <!-- Button disabled (basic) -->
                                 <button
-                                    class="form__button-item button"
+                                    class="form-section__button-item button"
                                     disabled
                                 >
                                     Button
@@ -858,7 +885,7 @@ Value</textarea
                                 <!-- Button contained -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--contained
                                     "
                                 >
@@ -867,7 +894,7 @@ Value</textarea
                                 <!-- Button contained disabled -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--contained
                                     "
                                     disabled
@@ -877,7 +904,7 @@ Value</textarea
                                 <!-- Button outlined -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--outlined
                                     "
                                 >
@@ -886,7 +913,7 @@ Value</textarea
                                 <!-- Button outlined disabled -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--outlined
                                     "
                                     disabled
@@ -896,12 +923,17 @@ Value</textarea
                             </div>
                         </div>
                         <!-- Buttons large -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__buttons form__buttons--large">
+                        <div class="form-section__elements-wrapper">
+                            <div
+                                class="
+                                    form-section__buttons
+                                    form-section__buttons--large
+                                "
+                            >
                                 <!-- Button large -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--large
                                     "
                                 >
@@ -910,7 +942,7 @@ Value</textarea
                                 <!-- Button large disabled -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--large
                                     "
                                     disabled
@@ -920,7 +952,7 @@ Value</textarea
                                 <!-- Button large contained -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--contained button--large
                                     "
                                 >
@@ -929,7 +961,7 @@ Value</textarea
                                 <!-- Button large contained disabled -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--contained button--large
                                     "
                                     disabled
@@ -939,7 +971,7 @@ Value</textarea
                                 <!-- Button large outlined -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--outlined button--large
                                     "
                                 >
@@ -948,7 +980,7 @@ Value</textarea
                                 <!-- Button large outlined disabled -->
                                 <button
                                     class="
-                                        form__button-item
+                                        form-section__button-item
                                         button button--outlined button--large
                                     "
                                     disabled
@@ -958,11 +990,14 @@ Value</textarea
                             </div>
                         </div>
                         <!-- Alerts (basic - accent)-->
-                        <div class="form__elements-wrapper">
-                            <div class="form__alerts">
+                        <div class="form-section__elements-wrapper">
+                            <div class="form-section__alerts">
                                 <!-- Alert bright -->
                                 <div
-                                    class="form__alert-item alert alert--bright"
+                                    class="
+                                        form-section__alert-item
+                                        alert alert--bright
+                                    "
                                 >
                                     <span class="alert__text"
                                         >A bright alert flash for dark
@@ -988,7 +1023,12 @@ Value</textarea
                                     </button>
                                 </div>
                                 <!-- Alert dark -->
-                                <div class="form__alert-item alert alert--dark">
+                                <div
+                                    class="
+                                        form-section__alert-item
+                                        alert alert--dark
+                                    "
+                                >
                                     <span class="alert__text"
                                         >A dark alert flash for bright
                                         backgrounds, which never lose the
@@ -1013,7 +1053,7 @@ Value</textarea
                                     </button>
                                 </div>
                                 <!-- Alert accent -->
-                                <div class="form__alert-item alert">
+                                <div class="form-section__alert-item alert">
                                     <span class="alert__text"
                                         >A primary alert flash that looks pretty
                                         nice.</span
@@ -1039,7 +1079,7 @@ Value</textarea
                                 <!-- Alert warning -->
                                 <div
                                     class="
-                                        form__alert-item
+                                        form-section__alert-item
                                         alert alert--warning
                                     "
                                 >
@@ -1068,7 +1108,7 @@ Value</textarea
                                 <!-- Alert success -->
                                 <div
                                     class="
-                                        form__alert-item
+                                        form-section__alert-item
                                         alert alert--success
                                     "
                                 >
@@ -1096,7 +1136,10 @@ Value</textarea
                                 </div>
                                 <!-- Alert error -->
                                 <div
-                                    class="form__alert-item alert alert--error"
+                                    class="
+                                        form-section__alert-item
+                                        alert alert--error
+                                    "
                                 >
                                     <span class="alert__text"
                                         >An error alert flash that nobody
@@ -1123,53 +1166,55 @@ Value</textarea
                             </div>
                         </div>
                         <!-- Progresses (basic - accent) -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__progresses">
+                        <div class="form-section__elements-wrapper">
+                            <div class="form-section__progresses">
                                 <!-- Progress accent-->
                                 <div
-                                    class="form__progress-item"
+                                    class="form-section__progress-item"
                                     id="form-progress-01"
                                 ></div>
                                 <!-- Progress warning -->
                                 <div
-                                    class="form__progress-item"
+                                    class="form-section__progress-item"
                                     id="form-progress-02"
                                 ></div>
                                 <!-- Progress success -->
                                 <div
-                                    class="form__progress-item"
+                                    class="form-section__progress-item"
                                     id="form-progress-03"
                                 ></div>
                                 <!-- Progress error -->
                                 <div
-                                    class="form__progress-item"
+                                    class="form-section__progress-item"
                                     id="form-progress-04"
                                 ></div>
                             </div>
                         </div>
                         <!-- Spinners (basic - accent) -->
-                        <div class="form__elements-wrapper">
-                            <div class="form__spinners">
+                        <div class="form-section__elements-wrapper">
+                            <div class="form-section__spinners">
                                 <!-- Spinner accent -->
-                                <div class="form__spinner-item spinner"></div>
+                                <div
+                                    class="form-section__spinner-item spinner"
+                                ></div>
                                 <!-- Spinner warning -->
                                 <div
                                     class="
-                                        form__spinner-item
+                                        form-section__spinner-item
                                         spinner spinner--warning
                                     "
                                 ></div>
                                 <!-- Spinner success -->
                                 <div
                                     class="
-                                        form__spinner-item
+                                        form-section__spinner-item
                                         spinner spinner--success
                                     "
                                 ></div>
                                 <!-- Spinner error -->
                                 <div
                                     class="
-                                        form__spinner-item
+                                        form-section__spinner-item
                                         spinner spinner--error
                                     "
                                 ></div>

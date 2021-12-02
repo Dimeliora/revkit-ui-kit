@@ -1,4 +1,52 @@
 .paper {
-	padding: 35px;
-	border-radius: 60px;
+    padding: 35px;
+    border-radius: 60px;
+    box-shadow: 0px 16px 56px var(--shadow-color);
+    background-color: var(--bright-color);
+    color: var(--primary-color);
+
+    &--accent {
+        background-color: var(--accent-color);
+        color: var(--bright-color);
+    }
+
+    &--warning {
+        background-color: var(--warning-color);
+        color: var(--bright-color);
+    }
+
+    &--success {
+        background-color: var(--success-color);
+        color: var(--bright-color);
+    }
+
+    &--error {
+        background-color: var(--error-color);
+        color: var(--bright-color);
+    }
+
+    &--primary {
+        background-color: var(--primary-color);
+        color: var(--bright-color);
+    }
+
+    &--secondary {
+        background-color: var(--secondary-color);
+        color: var(--bright-color);
+    }
+
+    &--muted {
+        background-color: var(--muted-color);
+        color: var(--primary-color);
+    }
+
+    &--shade {
+        background-color: var(--shade-color);
+        color: var(--primary-color);
+    }
+
+    &--tint {
+        background-color: var(--tint-color);
+        color: var(--primary-color);
+    }
 }
