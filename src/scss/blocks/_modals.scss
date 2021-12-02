@@ -1,0 +1,13 @@
+.modals {
+    &__wrapper {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 60px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

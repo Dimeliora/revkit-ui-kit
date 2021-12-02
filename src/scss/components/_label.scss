@@ -13,21 +13,8 @@
         background-color: var(--bright-color);
         border-color: var(--shade-color);
 
-        .label__icon {
-            stroke: var(--accent-color);
-        }
-
         .label__text {
             color: var(--muted-color);
-        }
-
-        .label__button {
-            &:hover,
-            &:focus-visible {
-                &::before {
-                    background-color: var(--shadow-color);
-                }
-            }
         }
     }
 
@@ -56,45 +43,5 @@
         color: var(--bright-color);
         font-size: 1.4rem;
         font-weight: 500;
-    }
-
-    &__button {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background-color: var(--bright-shadow-color);
-            transition: width 0.15s ease-in, height 0.15s ease-in;
-        }
-
-        &:hover,
-        &:focus-visible {
-            outline: none;
-
-            &::before {
-                width: 24px;
-                height: 24px;
-            }
-        }
-    }
-
-    &__icon {
-        width: 16px;
-        height: 16px;
-        stroke: var(--bright-color);
     }
 }

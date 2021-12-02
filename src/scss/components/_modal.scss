@@ -1,0 +1,52 @@
+.modal {
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--muted-shadow-color);
+    }
+
+    &__content {
+        position: relative;
+        width: 480px;
+        padding: 30px 25px;
+        border-radius: 16px;
+        background-color: var(--bright-color);
+    }
+
+    &__close {
+        position: absolute;
+        top: 30px;
+        right: 25px;
+    }
+
+    &__heading {
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        margin-bottom: 35px;
+    }
+
+    &__actions {
+        text-align: right;
+    }
+
+    &__action-button {
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &--with-actions {
+        .modal__close {
+            display: none;
+        }
+    }
+}
