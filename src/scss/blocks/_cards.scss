@@ -1,0 +1,23 @@
+.cards {
+    &__common {
+        display: flex;
+        margin-bottom: 60px;
+    }
+
+    &__common-item {
+        width: 300px;
+        margin-right: 60px;
+
+        &:last-child {
+            align-self: flex-start;
+            margin-right: 0;
+        }
+    }
+
+    &__solid {
+        display: grid;
+        grid-template-columns: repeat(3, 260px);
+        grid-auto-rows: 240px;
+        gap: 60px;
+    }
+}

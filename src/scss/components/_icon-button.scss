@@ -67,4 +67,19 @@
             }
         }
     }
+
+    &--large {
+        .icon-button__icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            &::before {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
 }
