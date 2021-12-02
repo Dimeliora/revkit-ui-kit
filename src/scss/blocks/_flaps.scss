@@ -1,0 +1,23 @@
+.flaps {
+    &__item {
+        margin-bottom: 60px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 260px);
+        gap: 40px 13px;
+        max-width: 1200px;
+        padding: 60px;
+        border-radius: 20px;
+        background-color: var(--bright-color);
+
+        .flaps__item {
+            margin-bottom: 0;
+        }
+    }
+}

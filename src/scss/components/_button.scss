@@ -32,7 +32,7 @@
         padding: 8px 0;
         font-size: 1.4rem;
     }
-    
+
     &--large {
         width: 180px;
         padding: 18px 0;
@@ -41,7 +41,7 @@
     &--contained {
         border-color: var(--accent-color);
         background-color: var(--accent-color);
-        color: var(--bright-color);
+        color: var(--tint-color);
 
         &:hover {
             border-color: var(--muted-color);
