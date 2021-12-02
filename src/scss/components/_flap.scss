@@ -5,6 +5,29 @@
     background: var(--bright-color) url("/images/flap-image.png") no-repeat 100%
         0% / contain;
 
+    &__content {
+        max-width: 600px;
+    }
+
+    &__label {
+        margin-bottom: 5px;
+        font-size: 1.6rem;
+    }
+
+    &__heading {
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        margin-bottom: 25px;
+        font-size: 2rem;
+        line-height: 2.8rem;
+    }
+
+    &__image {
+        display: none;
+    }
+
     &--right {
         display: flex;
         flex-direction: row-reverse;
@@ -75,28 +98,5 @@
             margin-bottom: 17px;
             border-radius: 50%;
         }
-    }
-
-    &__content {
-        max-width: 600px;
-    }
-
-    &__label {
-        margin-bottom: 5px;
-        font-size: 1.6rem;
-    }
-
-    &__heading {
-        margin-bottom: 20px;
-    }
-
-    &__text {
-        margin-bottom: 25px;
-        font-size: 2rem;
-        line-height: 2.8rem;
-    }
-
-    &__image {
-        display: none;
     }
 }
