@@ -1,0 +1,16 @@
+.chart {
+    &__heading {
+        padding: 20px;
+        border-radius: 24px 24px 0 0;
+        background-color: #dae8ee;
+        color: var(--secondary-color);
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    &__wrapper {
+        padding: 0 20px 20px;
+        background-color: var(--bright-color);
+        border-radius: 0 0 24px 24px;
+    }
+}

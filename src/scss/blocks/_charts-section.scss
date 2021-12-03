@@ -1,0 +1,10 @@
+.charts-section {
+    &__wrapper {
+        display: flex;
+    }
+
+    &__item {
+        width: 600px;
+        margin-right: 60px;
+    }
+}
