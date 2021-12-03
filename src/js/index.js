@@ -5,6 +5,7 @@ import { Progress } from "./progress";
 import { Rating } from "./rating";
 import { barChart } from "./bar-chart";
 import { lineChart } from "./line-chart";
+import { doughnutChart } from "./doughnut-chart";
 
 const SELECT_ITEMS = [
 	{
@@ -130,6 +131,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	barChart({
 		selector: "#bar-chart",
+		title: "443K Pageviews",
+		subtitle: "in last 7 days",
 		labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
 		barsData: [
 			{
@@ -146,6 +149,8 @@ window.addEventListener("DOMContentLoaded", () => {
 	});
 	lineChart({
 		selector: "#line-chart",
+		title: "984 Signups",
+		subtitle: "in last 7 days",
 		labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
 		linesData: [
 			{
@@ -157,6 +162,20 @@ window.addEventListener("DOMContentLoaded", () => {
 				label: "Ghost Variant",
 				data: [185, 146, 55, 49, 100, 107, 61],
 				color: "#14A38B",
+			},
+		],
+	});
+	doughnutChart({
+		selector: "#doughnut-chart",
+		title: "Sale Channels",
+		subtitle: "in last 7 days",
+		labels: ["Web", "Mobile", "Socials"],
+		doughnutData: [
+			{
+				label: "Sale Channels",
+				data: [35, 45, 20],
+				backgroundColor: ["#14A38B", "#D6CF6E", "#0880AE"],
+				borderWidth: 0,
 			},
 		],
 	});

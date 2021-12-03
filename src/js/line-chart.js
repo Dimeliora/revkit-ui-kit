@@ -1,29 +1,6 @@
-import {
-	Chart,
-	CategoryScale,
-	LinearScale,
-	LineController,
-	LineElement,
-	PointElement,
-	Legend,
-	Title,
-	Tooltip,
-	SubTitle,
-} from "chart.js";
+import Chart from "./charts-config";
 
-Chart.register(
-	CategoryScale,
-	LinearScale,
-	LineController,
-	LineElement,
-	PointElement,
-	Legend,
-	Title,
-	Tooltip,
-	SubTitle
-);
-
-export const lineChart = ({ selector, labels, linesData }) => {
+export const lineChart = ({ selector, title, subtitle, labels, linesData }) => {
 	const root = document.querySelector(selector);
 	if (root === null) {
 		console.error(
@@ -59,20 +36,30 @@ export const lineChart = ({ selector, labels, linesData }) => {
 					boxWidth: 28,
 					boxHeight: 28,
 					padding: 45,
-					color: "#7C9CBF",
 					font: {
-						family: "IBM Plex Sans, sans-serif",
 						size: 14,
 						weight: 500,
+					},
+					generateLabels: (chart) => {
+						const datasets = chart.data.datasets;
+
+						return datasets.map((set, idx) => ({
+							text: set.label,
+							borderRadius: 4,
+							fontColor: "#728191",
+							fillStyle: set.backgroundColor,
+							strokeStyle: set.borderColor,
+							datasetIndex: idx,
+						}));
 					},
 				},
 			},
 			title: {
 				display: true,
+				text: title,
 				align: "start",
 				color: "#2C2738",
 				font: {
-					family: "IBM Plex Sans, sans-serif",
 					size: 34,
 					weight: 600,
 				},
@@ -80,14 +67,13 @@ export const lineChart = ({ selector, labels, linesData }) => {
 					top: 25,
 					bottom: 0,
 				},
-				text: "984 Signups",
 			},
 			subtitle: {
 				display: true,
+				text: subtitle,
 				align: "start",
 				color: "#728191",
 				font: {
-					family: "IBM Plex Sans, sans-serif",
 					size: 18,
 					weight: 500,
 				},
@@ -95,7 +81,6 @@ export const lineChart = ({ selector, labels, linesData }) => {
 					top: 0,
 					bottom: 35,
 				},
-				text: "in last 7 days",
 			},
 		},
 		scales: {
@@ -107,7 +92,6 @@ export const lineChart = ({ selector, labels, linesData }) => {
 					padding: 20,
 					color: "#728191",
 					font: {
-						family: "IBM Plex Sans, sans-serif",
 						size: 14,
 						weight: 500,
 					},
@@ -122,7 +106,6 @@ export const lineChart = ({ selector, labels, linesData }) => {
 					padding: 20,
 					color: "#728191",
 					font: {
-						family: "IBM Plex Sans, sans-serif",
 						size: 14,
 						weight: 500,
 					},

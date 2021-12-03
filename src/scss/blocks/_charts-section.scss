@@ -1,10 +1,12 @@
 .charts-section {
-    &__wrapper {
-        display: flex;
-    }
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 600px);
+		gap: 60px 68px;
+	}
 
-    &__item {
-        width: 600px;
-        margin-right: 60px;
-    }
+	&__item {
+		width: 600px;
+		margin-right: 60px;
+	}
 }
