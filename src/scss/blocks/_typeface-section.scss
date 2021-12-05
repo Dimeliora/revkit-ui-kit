@@ -1,55 +1,75 @@
 .typeface-section {
-	&__wrapper {
-		display: flex;
-		align-items: center;
-	}
+    &__wrapper {
+        display: flex;
+        align-items: center;
 
-	&__literal {
-		margin-right: 60px;
-	}
+        @media screen and (max-width: $lg) {
+            flex-direction: column;
+        }
+    }
 
-	&__paper {
-		width: 320px;
-		height: 320px;
-		background-color: var(--primary-color);
-		color: var(--tint-color);
-		font-size: 19.6rem;
-		font-weight: 700;
-	}
+    &__literal {
+        margin-right: 60px;
 
-	&__title {
-		color: var(--muted-color);
-		font-size: 2rem;
-		font-weight: 700;
-		line-height: 2.8rem;
-	}
+        @media screen and (max-width: $lg) {
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
+    }
 
-	&__font-family {
-		font-size: 3.4rem;
-		font-weight: 700;
-		line-height: 4.4rem;
-	}
+    &__paper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 320px;
+        height: 320px;
+        background-color: var(--primary-color);
+        color: var(--tint-color);
+        font-size: 19.6rem;
+        font-weight: 700;
 
-	&__regular {
-		margin-top: 20px;
-		font-size: 2rem;
-		line-height: 2.6rem;
-	}
+        @media screen and (max-width: $sm) {
+            width: 260px;
+            height: 260px;
+            font-size: 12.6rem;
+        }
+    }
 
-	&__semi-bold {
-		margin-top: 20px;
-		font-size: 2rem;
-		font-weight: 700;
-		line-height: 2.6rem;
-	}
+    &__title {
+        color: var(--muted-color);
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+    }
 
-	&__download {
-		margin-top: 20px;
-		font-size: 1.6rem;
-		line-height: 2.1rem;
-	}
+    &__font-family {
+        font-size: 3.4rem;
+        font-weight: 700;
+        line-height: 4.4rem;
+    }
 
-	&__link {
-		color: var(--accent-color);
-	}
+    &__example-item {
+        margin-top: 20px;
+        font-size: 2rem;
+        line-height: 2.6rem;
+        
+        @media screen and (max-width: $sm) {
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+        }
+    }
+
+    &__semi-bold {
+        font-weight: 700;
+    }
+
+    &__download {
+        margin-top: 20px;
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+    }
+
+    &__link {
+        color: var(--accent-color);
+    }
 }

@@ -36,6 +36,10 @@ body {
     color: var(--primary-color);
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 400;
+
+    @media screen and (max-width: $lg) {
+        padding: 30px;
+    }
 }
 
 h1,
