@@ -1,1244 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="RevKit UI Kit. Controls page. For education purpose"
-        />
-        <title>RevKit - Controls</title>
-        <link rel="stylesheet" href="/styles.css" />
-        <script src="/script.js" defer></script>
-        <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="/icons/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/icons/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/icons/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/icons/site.webmanifest" />
-        <link rel="shortcut icon" href="/icons/favicon.ico" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-        <meta name="theme-color" content="#ffffff" />
-    </head>
-    <body>
-        <main>
-            <div class="container">
-                <!-- Form -->
-                <section class="form-section">
-                    <h2 class="section-heading">
-                        <span class="section-heading__number">04.</span>
-                        Form
-                    </h2>
-                    <div class="form-section__wrapper section-wrapper">
-                        <!-- Form Inputs -->
-                        <div class="form-section__inputs">
-                            <!-- Form Input. Placeholder -->
-                            <div class="form-section__field text-field">
-                                <label
-                                    for="form-field-01"
-                                    class="text-field__label"
-                                    >Label</label
-                                >
-                                <div class="text-field__input-wrapper">
-                                    <input
-                                        id="form-field-01"
-                                        type="text"
-                                        class="text-field__input"
-                                        placeholder="Placeholder"
-                                    />
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--success
-                                    "
-                                >
-                                    Validation success message
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--error
-                                    "
-                                >
-                                    Validation error message
-                                </div>
-                            </div>
-                            <!-- Form Input. Value, success message -->
-                            <div class="form-section__field text-field">
-                                <label
-                                    for="form-field-02"
-                                    class="text-field__label"
-                                    >Label</label
-                                >
-                                <div class="text-field__input-wrapper">
-                                    <input
-                                        id="form-field-02"
-                                        type="text"
-                                        class="text-field__input"
-                                        placeholder="Placeholder"
-                                        value="Value"
-                                    />
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--visible
-                                        text-field__helper-text--success
-                                    "
-                                >
-                                    Validation success message
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--error
-                                    "
-                                >
-                                    Validation error message
-                                </div>
-                            </div>
-                            <!-- Form Input. Value, error message, disabled -->
-                            <div class="form-section__field text-field">
-                                <label
-                                    for="form-field-04"
-                                    class="text-field__label"
-                                    >Label</label
-                                >
-                                <div class="text-field__input-wrapper">
-                                    <input
-                                        id="form-field-04"
-                                        type="text"
-                                        class="text-field__input"
-                                        placeholder="Placeholder"
-                                        value="Value"
-                                        disabled
-                                    />
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--success
-                                    "
-                                >
-                                    Validation success message
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--visible
-                                        text-field__helper-text--error
-                                    "
-                                >
-                                    Validation error message
-                                </div>
-                            </div>
-                            <!-- Form Input. Placeholder, icon -->
-                            <div class="form-section__field text-field">
-                                <label
-                                    for="form-field-05"
-                                    class="text-field__label"
-                                    >Label</label
-                                >
-                                <div class="text-field__input-wrapper">
-                                    <input
-                                        id="form-field-05"
-                                        type="text"
-                                        class="text-field__input"
-                                        placeholder="Placeholder"
-                                    />
-                                    <svg class="text-field__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#search"
-                                        />
-                                    </svg>
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--success
-                                    "
-                                >
-                                    Validation success message
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--error
-                                    "
-                                >
-                                    Validation error message
-                                </div>
-                            </div>
-                            <!-- Form Input. Value, success message, icon -->
-                            <div class="form-section__field text-field">
-                                <label
-                                    for="form-field-06"
-                                    class="text-field__label"
-                                    >Label</label
-                                >
-                                <div class="text-field__input-wrapper">
-                                    <input
-                                        id="form-field-06"
-                                        type="text"
-                                        class="text-field__input"
-                                        placeholder="Placeholder"
-                                        value="Value"
-                                    />
-                                    <svg class="text-field__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#chevron-left-arrow"
-                                        />
-                                    </svg>
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--visible
-                                        text-field__helper-text--success
-                                    "
-                                >
-                                    Validation success message
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--error
-                                    "
-                                >
-                                    Validation error message
-                                </div>
-                            </div>
-                            <!-- Form Input. Value, error message, icon, focus -->
-                            <div class="form-section__field text-field">
-                                <label
-                                    for="form-field-07"
-                                    class="text-field__label"
-                                    >Label</label
-                                >
-                                <div class="text-field__input-wrapper">
-                                    <input
-                                        id="form-field-07"
-                                        type="text"
-                                        class="text-field__input"
-                                        placeholder="Placeholder"
-                                        value="Value"
-                                    />
-                                    <svg class="text-field__icon">
-                                        <use
-                                            href="/icons/icon-sprite.svg#alert-error"
-                                        />
-                                    </svg>
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--success
-                                    "
-                                >
-                                    Validation success message
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--visible
-                                        text-field__helper-text--error
-                                    "
-                                >
-                                    Validation error message
-                                </div>
-                            </div>
-                            <!-- Dropdown -->
-                            <div
-                                class="form-section__select"
-                                id="form-select-01"
-                            ></div>
-                            <!-- Dropdown opened -->
-                            <div
-                                class="form-section__select"
-                                id="form-select-02"
-                            ></div>
-                            <!-- Dropdown disabled -->
-                            <div
-                                class="form-section__select"
-                                id="form-select-03"
-                            ></div>
-                            <!-- Textarea. Placeholder -->
-                            <div
-                                class="
-                                    form-section__textarea
-                                    text-field text-field--multiline
-                                "
-                            >
-                                <label
-                                    for="form-textarea-01"
-                                    class="text-field__label"
-                                    >Label</label
-                                >
-                                <textarea
-                                    id="form-textarea-01"
-                                    class="text-field__input"
-                                    placeholder="Placeholder"
-                                ></textarea>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--success
-                                    "
-                                >
-                                    Validation success message
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--error
-                                    "
-                                >
-                                    Validation error message
-                                </div>
-                            </div>
-                            <!-- Textarea. Value, success message -->
-                            <div
-                                class="
-                                    form-section__textarea
-                                    text-field text-field--multiline
-                                "
-                            >
-                                <label
-                                    for="form-textarea-02"
-                                    class="text-field__label"
-                                    >Label</label
-                                >
-                                <textarea
-                                    id="form-textarea-02"
-                                    class="text-field__input"
-                                    placeholder="Placeholder"
-                                >
-Value</textarea
-                                >
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--visible
-                                        text-field__helper-text--success
-                                    "
-                                >
-                                    Validation success message
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--error
-                                    "
-                                >
-                                    Validation error message
-                                </div>
-                            </div>
-                            <!-- Textarea. Value, error message, disabled -->
-                            <div
-                                class="
-                                    form-section__textarea
-                                    text-field text-field--multiline
-                                "
-                            >
-                                <label
-                                    for="form-textarea-04"
-                                    class="text-field__label"
-                                    >Label</label
-                                >
-                                <textarea
-                                    id="form-textarea-04"
-                                    class="text-field__input"
-                                    placeholder="Placeholder"
-                                    disabled
-                                >
-Value</textarea
-                                >
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--success
-                                    "
-                                >
-                                    Validation success message
-                                </div>
-                                <div
-                                    class="
-                                        text-field__helper-text
-                                        text-field__helper-text--visible
-                                        text-field__helper-text--error
-                                    "
-                                >
-                                    Validation error message
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Steppers -->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__steppers">
-                                <!-- Stepper -->
-                                <div
-                                    class="form-section__stepper-item"
-                                    id="form-stepper-01"
-                                ></div>
-                                <!-- Stepper disabled -->
-                                <div
-                                    class="form-section__stepper-item"
-                                    id="form-stepper-02"
-                                ></div>
-                            </div>
-                        </div>
-                        <!-- Checkboxes -->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__checkboxes">
-                                <!-- Checkbox -->
-                                <div class="checkbox">
-                                    <input
-                                        type="checkbox"
-                                        class="checkbox__input"
-                                        id="form-checkbox-01"
-                                    />
-                                    <label
-                                        for="form-checkbox-01"
-                                        class="checkbox__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Checkbox checked-->
-                                <div class="checkbox">
-                                    <input
-                                        type="checkbox"
-                                        class="checkbox__input"
-                                        id="form-checkbox-02"
-                                        checked
-                                    />
-                                    <label
-                                        for="form-checkbox-02"
-                                        class="checkbox__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Checkbox partial checked-->
-                                <div class="checkbox checkbox--partial">
-                                    <input
-                                        type="checkbox"
-                                        class="checkbox__input"
-                                        id="form-checkbox-03"
-                                        checked
-                                    />
-                                    <label
-                                        for="form-checkbox-03"
-                                        class="checkbox__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Checkbox disabled -->
-                                <div class="checkbox">
-                                    <input
-                                        type="checkbox"
-                                        class="checkbox__input"
-                                        id="form-checkbox-04"
-                                        disabled
-                                    />
-                                    <label
-                                        for="form-checkbox-04"
-                                        class="checkbox__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Checkbox checked disabled-->
-                                <div class="checkbox">
-                                    <input
-                                        type="checkbox"
-                                        class="checkbox__input"
-                                        id="form-checkbox-05"
-                                        checked
-                                        disabled
-                                    />
-                                    <label
-                                        for="form-checkbox-05"
-                                        class="checkbox__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Checkbox partial checked disabled-->
-                                <div class="checkbox checkbox--partial">
-                                    <input
-                                        type="checkbox"
-                                        class="checkbox__input"
-                                        id="form-checkbox-06"
-                                        checked
-                                        disabled
-                                    />
-                                    <label
-                                        for="form-checkbox-06"
-                                        class="checkbox__label"
-                                        >Label</label
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Radiobuttons -->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__radios">
-                                <!-- Radiobutton -->
-                                <div class="radio">
-                                    <input
-                                        type="radio"
-                                        name="radio-01"
-                                        class="radio__input"
-                                        id="form-radio-01"
-                                    />
-                                    <label
-                                        for="form-radio-01"
-                                        class="radio__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Radiobutton checked -->
-                                <div class="radio">
-                                    <input
-                                        type="radio"
-                                        name="radio-01"
-                                        class="radio__input"
-                                        id="form-radio-02"
-                                        checked
-                                    />
-                                    <label
-                                        for="form-radio-02"
-                                        class="radio__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Radiobutton disabled -->
-                                <div class="radio">
-                                    <input
-                                        type="radio"
-                                        name="radio-02"
-                                        class="radio__input"
-                                        id="form-radio-03"
-                                        disabled
-                                    />
-                                    <label
-                                        for="form-radio-03"
-                                        class="radio__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Radiobutton disabled checked -->
-                                <div class="radio">
-                                    <input
-                                        type="radio"
-                                        name="radio-02"
-                                        class="radio__input"
-                                        id="form-radio-04"
-                                        checked
-                                        disabled
-                                    />
-                                    <label
-                                        for="form-radio-04"
-                                        class="radio__label"
-                                        >Label</label
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Toggle switches -->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__toggles">
-                                <!-- Toggle -->
-                                <div class="toggle">
-                                    <input
-                                        type="checkbox"
-                                        class="toggle__input"
-                                        id="form-toggle-01"
-                                    />
-                                    <label
-                                        for="form-toggle-01"
-                                        class="toggle__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Toggle checked-->
-                                <div class="toggle">
-                                    <input
-                                        type="checkbox"
-                                        class="toggle__input"
-                                        id="form-toggle-02"
-                                        checked
-                                    />
-                                    <label
-                                        for="form-toggle-02"
-                                        class="toggle__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Toggle disabled -->
-                                <div class="toggle">
-                                    <input
-                                        type="checkbox"
-                                        class="toggle__input"
-                                        id="form-toggle-03"
-                                        disabled
-                                    />
-                                    <label
-                                        for="form-toggle-03"
-                                        class="toggle__label"
-                                        >Label</label
-                                    >
-                                </div>
-                                <!-- Toggle disabled checked -->
-                                <div class="toggle">
-                                    <input
-                                        type="checkbox"
-                                        class="toggle__input"
-                                        id="form-toggle-04"
-                                        checked
-                                        disabled
-                                    />
-                                    <label
-                                        for="form-toggle-04"
-                                        class="toggle__label"
-                                        >Label</label
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Sliders -->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__sliders">
-                                <!-- Slider -->
-                                <div
-                                    class="form-section__slider-item"
-                                    id="form-slider-01"
-                                ></div>
-                                <!-- Slider disabled -->
-                                <div
-                                    class="form-section__slider-item"
-                                    id="form-slider-02"
-                                ></div>
-                            </div>
-                        </div>
-                        <!-- Labels (basic - accent) -->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__labels">
-                                <!-- Label -->
-                                <div
-                                    class="
-                                        form-section__label-item
-                                        label label--bright
-                                    "
-                                >
-                                    <span class="label__text">Label</span>
-                                    <button
-                                        class="
-                                            label__button
-                                            icon-button
-                                            icon-button--small
-                                            icon-button--accent
-                                        "
-                                        aria-label="Label close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Label dark-->
-                                <div
-                                    class="
-                                        form-section__label-item
-                                        label label--dark
-                                    "
-                                >
-                                    <span class="label__text">Label</span>
-                                    <button
-                                        class="
-                                            label__button
-                                            icon-button
-                                            icon-button--small
-                                            icon-button--bright
-                                        "
-                                        aria-label="Label close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Label accent-->
-                                <div class="form-section__label-item label">
-                                    <span class="label__text">Label</span>
-                                    <button
-                                        class="
-                                            label__button
-                                            icon-button
-                                            icon-button--small
-                                            icon-button--bright
-                                        "
-                                        aria-label="Label close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Label warning-->
-                                <div
-                                    class="
-                                        form-section__label-item
-                                        label label--warning
-                                    "
-                                >
-                                    <span class="label__text">Label</span>
-                                    <button
-                                        class="
-                                            label__button
-                                            icon-button
-                                            icon-button--small
-                                            icon-button--bright
-                                        "
-                                        aria-label="Label close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Label success-->
-                                <div
-                                    class="
-                                        form-section__label-item
-                                        label label--success
-                                    "
-                                    aria-label="Label close"
-                                >
-                                    <span class="label__text">Label</span>
-                                    <button
-                                        class="
-                                            label__button
-                                            icon-button
-                                            icon-button--small
-                                            icon-button--bright
-                                        "
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Label error-->
-                                <div
-                                    class="
-                                        form-section__label-item
-                                        label label--error
-                                    "
-                                >
-                                    <span class="label__text">Label</span>
-                                    <button
-                                        class="
-                                            label__button
-                                            icon-button
-                                            icon-button--small
-                                            icon-button--bright
-                                        "
-                                        aria-label="Label close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Buttons small -->
-                        <div class="form-section__elements-wrapper">
-                            <div
-                                class="
-                                    form-section__buttons
-                                    form-section__buttons--small
-                                "
-                            >
-                                <!-- Button small -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--small
-                                    "
-                                >
-                                    Button
-                                </button>
-                                <!-- Button small disabled-->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--small
-                                    "
-                                    disabled
-                                >
-                                    Button
-                                </button>
-                                <!-- Button small contained-->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--small button--contained
-                                    "
-                                >
-                                    Button
-                                </button>
-                                <!-- Button small contained disabled -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--small button--contained
-                                    "
-                                    disabled
-                                >
-                                    Button
-                                </button>
-                                <!-- Button small outlined -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--small button--outlined
-                                    "
-                                >
-                                    Button
-                                </button>
-                                <!-- Button small outlined disabled -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--small button--outlined
-                                    "
-                                    disabled
-                                >
-                                    Button
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Buttons -->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__buttons">
-                                <!-- Button (basic) -->
-                                <button
-                                    class="form-section__button-item button"
-                                >
-                                    Button
-                                </button>
-                                <!-- Button disabled (basic) -->
-                                <button
-                                    class="form-section__button-item button"
-                                    disabled
-                                >
-                                    Button
-                                </button>
-                                <!-- Button contained -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--contained
-                                    "
-                                >
-                                    Button
-                                </button>
-                                <!-- Button contained disabled -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--contained
-                                    "
-                                    disabled
-                                >
-                                    Button
-                                </button>
-                                <!-- Button outlined -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--outlined
-                                    "
-                                >
-                                    Button
-                                </button>
-                                <!-- Button outlined disabled -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--outlined
-                                    "
-                                    disabled
-                                >
-                                    Button
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Buttons large -->
-                        <div class="form-section__elements-wrapper">
-                            <div
-                                class="
-                                    form-section__buttons
-                                    form-section__buttons--large
-                                "
-                            >
-                                <!-- Button large -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--large
-                                    "
-                                >
-                                    Button
-                                </button>
-                                <!-- Button large disabled -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--large
-                                    "
-                                    disabled
-                                >
-                                    Button
-                                </button>
-                                <!-- Button large contained -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--contained button--large
-                                    "
-                                >
-                                    Button
-                                </button>
-                                <!-- Button large contained disabled -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--contained button--large
-                                    "
-                                    disabled
-                                >
-                                    Button
-                                </button>
-                                <!-- Button large outlined -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--outlined button--large
-                                    "
-                                >
-                                    Button
-                                </button>
-                                <!-- Button large outlined disabled -->
-                                <button
-                                    class="
-                                        form-section__button-item
-                                        button button--outlined button--large
-                                    "
-                                    disabled
-                                >
-                                    Button
-                                </button>
-                            </div>
-                        </div>
-                        <!-- Alerts (basic - accent)-->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__alerts">
-                                <!-- Alert bright -->
-                                <div
-                                    class="
-                                        form-section__alert-item
-                                        alert alert--bright
-                                    "
-                                >
-                                    <span class="alert__text"
-                                        >A bright alert flash for dark
-                                        backgrounds, which never lose the
-                                        contrast.</span
-                                    >
-                                    <button
-                                        class="
-                                            alert__button
-                                            icon-button icon-button--accent
-                                        "
-                                        aria-label="Alert close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Alert dark -->
-                                <div
-                                    class="
-                                        form-section__alert-item
-                                        alert alert--dark
-                                    "
-                                >
-                                    <span class="alert__text"
-                                        >A dark alert flash for bright
-                                        backgrounds, which never lose the
-                                        contrast.</span
-                                    >
-                                    <button
-                                        class="
-                                            alert__button
-                                            icon-button icon-button--bright
-                                        "
-                                        aria-label="Alert close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Alert accent -->
-                                <div class="form-section__alert-item alert">
-                                    <span class="alert__text"
-                                        >A primary alert flash that looks pretty
-                                        nice.</span
-                                    >
-                                    <button
-                                        class="
-                                            alert__button
-                                            icon-button icon-button--bright
-                                        "
-                                        aria-label="Alert close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Alert warning -->
-                                <div
-                                    class="
-                                        form-section__alert-item
-                                        alert alert--warning
-                                    "
-                                >
-                                    <span class="alert__text"
-                                        >A warning alert flash that never
-                                        sucks.</span
-                                    >
-                                    <button
-                                        class="
-                                            alert__button
-                                            icon-button icon-button--bright
-                                        "
-                                        aria-label="Alert close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Alert success -->
-                                <div
-                                    class="
-                                        form-section__alert-item
-                                        alert alert--success
-                                    "
-                                >
-                                    <span class="alert__text"
-                                        >A success alert flash, which never lose
-                                        the contrast.</span
-                                    >
-                                    <button
-                                        class="
-                                            alert__button
-                                            icon-button icon-button--bright
-                                        "
-                                        aria-label="Alert close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Alert error -->
-                                <div
-                                    class="
-                                        form-section__alert-item
-                                        alert alert--error
-                                    "
-                                >
-                                    <span class="alert__text"
-                                        >An error alert flash that nobody
-                                        loves.</span
-                                    >
-                                    <button
-                                        class="
-                                            alert__button
-                                            icon-button icon-button--bright
-                                        "
-                                        aria-label="Alert close"
-                                    >
-                                        <svg
-                                            class="icon-button__icon"
-                                            viewbox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <use
-                                                href="/icons/icon-sprite.svg#x-close-delete"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Progresses (basic - accent) -->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__progresses">
-                                <!-- Progress accent-->
-                                <div
-                                    class="form-section__progress-item"
-                                    id="form-progress-01"
-                                ></div>
-                                <!-- Progress warning -->
-                                <div
-                                    class="form-section__progress-item"
-                                    id="form-progress-02"
-                                ></div>
-                                <!-- Progress success -->
-                                <div
-                                    class="form-section__progress-item"
-                                    id="form-progress-03"
-                                ></div>
-                                <!-- Progress error -->
-                                <div
-                                    class="form-section__progress-item"
-                                    id="form-progress-04"
-                                ></div>
-                            </div>
-                        </div>
-                        <!-- Spinners (basic - accent) -->
-                        <div class="form-section__elements-wrapper">
-                            <div class="form-section__spinners">
-                                <!-- Spinner accent -->
-                                <div
-                                    class="form-section__spinner-item spinner"
-                                ></div>
-                                <!-- Spinner warning -->
-                                <div
-                                    class="
-                                        form-section__spinner-item
-                                        spinner spinner--warning
-                                    "
-                                ></div>
-                                <!-- Spinner success -->
-                                <div
-                                    class="
-                                        form-section__spinner-item
-                                        spinner spinner--success
-                                    "
-                                ></div>
-                                <!-- Spinner error -->
-                                <div
-                                    class="
-                                        form-section__spinner-item
-                                        spinner spinner--error
-                                    "
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
-        <a href="/" class="page-link page-link--prev" title="To index page">
-            <svg class="icons__item icon icon--tint">
-                <use href="/icons/icon-sprite.svg#chevron-left-arrow" />
-            </svg>
-        </a>
-        <a
-            href="/elements.html"
-            class="page-link page-link--next"
-            title="To elements page"
-        >
-            <svg class="icons__item icon icon--tint">
-                <use href="/icons/icon-sprite.svg#chevron-right-arrow" />
-            </svg>
-        </a>
-    </body>
-</html>
+<!DOCTYPE html><html lang="en">    <head>        <meta charset="UTF-8">        <meta http-equiv="X-UA-Compatible" content="IE=edge">        <meta name="viewport" content="width=device-width, initial-scale=1.0">        <meta name="description" content="RevKit UI Kit. Controls page. For education purpose">        <title>RevKit - Controls</title>        <link rel="stylesheet" href="/styles.css">        <script src="/script.js" defer></script><link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="manifest" href="/icons/site.webmanifest">
+<link rel="shortcut icon" href="/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff"></head>    <body>        <main>            <div class="container">                <!-- Form -->                <section class="form-section">                    <h2 class="section-heading">                        <span class="section-heading__number">04.</span>                        Form                    </h2>                    <div class="form-section__wrapper section-wrapper">                        <!-- Form Inputs -->                        <div class="form-section__inputs">                            <!-- Form Input. Placeholder -->                            <div class="form-section__field text-field">                                <label for="form-field-01" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-01" type="text" class="text-field__input" placeholder="Placeholder">                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Value, success message -->                            <div class="form-section__field text-field">                                <label for="form-field-02" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-02" type="text" class="text-field__input" placeholder="Placeholder" value="Value">                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Value, error message, disabled -->                            <div class="form-section__field text-field">                                <label for="form-field-04" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-04" type="text" class="text-field__input" placeholder="Placeholder" value="Value" disabled>                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Placeholder, icon -->                            <div class="form-section__field text-field">                                <label for="form-field-05" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-05" type="text" class="text-field__input" placeholder="Placeholder">                                    <svg class="text-field__icon">                                        <use href="/icons/icon-sprite.svg#search"/>                                    </svg>                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Value, success message, icon -->                            <div class="form-section__field text-field">                                <label for="form-field-06" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-06" type="text" class="text-field__input" placeholder="Placeholder" value="Value">                                    <svg class="text-field__icon">                                        <use href="/icons/icon-sprite.svg#chevron-left-arrow"/>                                    </svg>                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Form Input. Value, error message, icon, focus -->                            <div class="form-section__field text-field">                                <label for="form-field-07" class="text-field__label">Label</label>                                <div class="text-field__input-wrapper">                                    <input id="form-field-07" type="text" class="text-field__input" placeholder="Placeholder" value="Value">                                    <svg class="text-field__icon">                                        <use href="/icons/icon-sprite.svg#alert-error"/>                                    </svg>                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Dropdown -->                            <div class="form-section__select" id="form-select-01"></div>                            <!-- Dropdown opened -->                            <div class="form-section__select" id="form-select-02"></div>                            <!-- Dropdown disabled -->                            <div class="form-section__select" id="form-select-03"></div>                            <!-- Textarea. Placeholder -->                            <div class="                                    form-section__textarea                                    text-field text-field--multiline                                ">                                <label for="form-textarea-01" class="text-field__label">Label</label>                                <textarea id="form-textarea-01" class="text-field__input" placeholder="Placeholder"></textarea>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Textarea. Value, success message -->                            <div class="                                    form-section__textarea                                    text-field text-field--multiline                                ">                                <label for="form-textarea-02" class="text-field__label">Label</label>                                <textarea id="form-textarea-02" class="text-field__input" placeholder="Placeholder">Value</textarea>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                            <!-- Textarea. Value, error message, disabled -->                            <div class="                                    form-section__textarea                                    text-field text-field--multiline                                ">                                <label for="form-textarea-04" class="text-field__label">Label</label>                                <textarea id="form-textarea-04" class="text-field__input" placeholder="Placeholder" disabled>Value</textarea>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--success                                    ">                                    Validation success message                                </div>                                <div class="                                        text-field__helper-text                                        text-field__helper-text--visible                                        text-field__helper-text--error                                    ">                                    Validation error message                                </div>                            </div>                        </div>                        <!-- Steppers -->                        <div class="form-section__elements-wrapper">                            <div class="form-section__steppers">                                <!-- Stepper -->                                <div class="form-section__stepper-item" id="form-stepper-01"></div>                                <!-- Stepper disabled -->                                <div class="form-section__stepper-item" id="form-stepper-02"></div>                            </div>                        </div>                        <!-- Checkboxes -->                        <div class="form-section__elements-wrapper">                            <div class="form-section__checkboxes">                                <!-- Checkbox -->                                <div class="checkbox">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-01">                                    <label for="form-checkbox-01" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox checked-->                                <div class="checkbox">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-02" checked>                                    <label for="form-checkbox-02" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox partial checked-->                                <div class="checkbox checkbox--partial">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-03" checked>                                    <label for="form-checkbox-03" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox disabled -->                                <div class="checkbox">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-04" disabled>                                    <label for="form-checkbox-04" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox checked disabled-->                                <div class="checkbox">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-05" checked disabled>                                    <label for="form-checkbox-05" class="checkbox__label">Label</label>                                </div>                                <!-- Checkbox partial checked disabled-->                                <div class="checkbox checkbox--partial">                                    <input type="checkbox" class="checkbox__input" id="form-checkbox-06" checked disabled>                                    <label for="form-checkbox-06" class="checkbox__label">Label</label>                                </div>                            </div>                        </div>                        <!-- Radiobuttons -->                        <div class="form-section__elements-wrapper">                            <div class="form-section__radios">                                <!-- Radiobutton -->                                <div class="radio">                                    <input type="radio" name="radio-01" class="radio__input" id="form-radio-01">                                    <label for="form-radio-01" class="radio__label">Label</label>                                </div>                                <!-- Radiobutton checked -->                                <div class="radio">                                    <input type="radio" name="radio-01" class="radio__input" id="form-radio-02" checked>                                    <label for="form-radio-02" class="radio__label">Label</label>                                </div>                                <!-- Radiobutton disabled -->                                <div class="radio">                                    <input type="radio" name="radio-02" class="radio__input" id="form-radio-03" disabled>                                    <label for="form-radio-03" class="radio__label">Label</label>                                </div>                                <!-- Radiobutton disabled checked -->                                <div class="radio">                                    <input type="radio" name="radio-02" class="radio__input" id="form-radio-04" checked disabled>                                    <label for="form-radio-04" class="radio__label">Label</label>                                </div>                            </div>                        </div>                        <!-- Toggle switches -->                        <div class="form-section__elements-wrapper">                            <div class="form-section__toggles">                                <!-- Toggle -->                                <div class="toggle">                                    <input type="checkbox" class="toggle__input" id="form-toggle-01">                                    <label for="form-toggle-01" class="toggle__label">Label</label>                                </div>                                <!-- Toggle checked-->                                <div class="toggle">                                    <input type="checkbox" class="toggle__input" id="form-toggle-02" checked>                                    <label for="form-toggle-02" class="toggle__label">Label</label>                                </div>                                <!-- Toggle disabled -->                                <div class="toggle">                                    <input type="checkbox" class="toggle__input" id="form-toggle-03" disabled>                                    <label for="form-toggle-03" class="toggle__label">Label</label>                                </div>                                <!-- Toggle disabled checked -->                                <div class="toggle">                                    <input type="checkbox" class="toggle__input" id="form-toggle-04" checked disabled>                                    <label for="form-toggle-04" class="toggle__label">Label</label>                                </div>                            </div>                        </div>                        <!-- Sliders -->                        <div class="form-section__elements-wrapper">                            <div class="form-section__sliders">                                <!-- Slider -->                                <div class="form-section__slider-item" id="form-slider-01"></div>                                <!-- Slider disabled -->                                <div class="form-section__slider-item" id="form-slider-02"></div>                            </div>                        </div>                        <!-- Labels (basic - accent) -->                        <div class="form-section__elements-wrapper">                            <div class="form-section__labels">                                <!-- Label -->                                <div class="                                        form-section__label-item                                        label label--bright                                    ">                                    <span class="label__text">Label</span>                                    <button class="                                            label__button                                            icon-button                                            icon-button--small                                            icon-button--accent                                        " aria-label="Label close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Label dark-->                                <div class="                                        form-section__label-item                                        label label--dark                                    ">                                    <span class="label__text">Label</span>                                    <button class="                                            label__button                                            icon-button                                            icon-button--small                                            icon-button--bright                                        " aria-label="Label close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Label accent-->                                <div class="form-section__label-item label">                                    <span class="label__text">Label</span>                                    <button class="                                            label__button                                            icon-button                                            icon-button--small                                            icon-button--bright                                        " aria-label="Label close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Label warning-->                                <div class="                                        form-section__label-item                                        label label--warning                                    ">                                    <span class="label__text">Label</span>                                    <button class="                                            label__button                                            icon-button                                            icon-button--small                                            icon-button--bright                                        " aria-label="Label close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Label success-->                                <div class="                                        form-section__label-item                                        label label--success                                    " aria-label="Label close">                                    <span class="label__text">Label</span>                                    <button class="                                            label__button                                            icon-button                                            icon-button--small                                            icon-button--bright                                        ">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Label error-->                                <div class="                                        form-section__label-item                                        label label--error                                    ">                                    <span class="label__text">Label</span>                                    <button class="                                            label__button                                            icon-button                                            icon-button--small                                            icon-button--bright                                        " aria-label="Label close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                            </div>                        </div>                        <!-- Buttons small -->                        <div class="form-section__elements-wrapper">                            <div class="                                    form-section__buttons                                    form-section__buttons--small                                ">                                <!-- Button small -->                                <button class="                                        form-section__button-item                                        button button--small                                    ">                                    Button                                </button>                                <!-- Button small disabled-->                                <button class="                                        form-section__button-item                                        button button--small                                    " disabled>                                    Button                                </button>                                <!-- Button small contained-->                                <button class="                                        form-section__button-item                                        button button--small button--contained                                    ">                                    Button                                </button>                                <!-- Button small contained disabled -->                                <button class="                                        form-section__button-item                                        button button--small button--contained                                    " disabled>                                    Button                                </button>                                <!-- Button small outlined -->                                <button class="                                        form-section__button-item                                        button button--small button--outlined                                    ">                                    Button                                </button>                                <!-- Button small outlined disabled -->                                <button class="                                        form-section__button-item                                        button button--small button--outlined                                    " disabled>                                    Button                                </button>                            </div>                        </div>                        <!-- Buttons -->                        <div class="form-section__elements-wrapper">                            <div class="form-section__buttons">                                <!-- Button (basic) -->                                <button class="form-section__button-item button">                                    Button                                </button>                                <!-- Button disabled (basic) -->                                <button class="form-section__button-item button" disabled>                                    Button                                </button>                                <!-- Button contained -->                                <button class="                                        form-section__button-item                                        button button--contained                                    ">                                    Button                                </button>                                <!-- Button contained disabled -->                                <button class="                                        form-section__button-item                                        button button--contained                                    " disabled>                                    Button                                </button>                                <!-- Button outlined -->                                <button class="                                        form-section__button-item                                        button button--outlined                                    ">                                    Button                                </button>                                <!-- Button outlined disabled -->                                <button class="                                        form-section__button-item                                        button button--outlined                                    " disabled>                                    Button                                </button>                            </div>                        </div>                        <!-- Buttons large -->                        <div class="form-section__elements-wrapper">                            <div class="                                    form-section__buttons                                    form-section__buttons--large                                ">                                <!-- Button large -->                                <button class="                                        form-section__button-item                                        button button--large                                    ">                                    Button                                </button>                                <!-- Button large disabled -->                                <button class="                                        form-section__button-item                                        button button--large                                    " disabled>                                    Button                                </button>                                <!-- Button large contained -->                                <button class="                                        form-section__button-item                                        button button--contained button--large                                    ">                                    Button                                </button>                                <!-- Button large contained disabled -->                                <button class="                                        form-section__button-item                                        button button--contained button--large                                    " disabled>                                    Button                                </button>                                <!-- Button large outlined -->                                <button class="                                        form-section__button-item                                        button button--outlined button--large                                    ">                                    Button                                </button>                                <!-- Button large outlined disabled -->                                <button class="                                        form-section__button-item                                        button button--outlined button--large                                    " disabled>                                    Button                                </button>                            </div>                        </div>                        <!-- Alerts (basic - accent)-->                        <div class="form-section__elements-wrapper">                            <div class="form-section__alerts">                                <!-- Alert bright -->                                <div class="                                        form-section__alert-item                                        alert alert--bright                                    ">                                    <span class="alert__text">A bright alert flash for dark                                        backgrounds, which never lose the                                        contrast.</span>                                    <button class="                                            alert__button                                            icon-button icon-button--accent                                        " aria-label="Alert close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Alert dark -->                                <div class="                                        form-section__alert-item                                        alert alert--dark                                    ">                                    <span class="alert__text">A dark alert flash for bright                                        backgrounds, which never lose the                                        contrast.</span>                                    <button class="                                            alert__button                                            icon-button icon-button--bright                                        " aria-label="Alert close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Alert accent -->                                <div class="form-section__alert-item alert">                                    <span class="alert__text">A primary alert flash that looks pretty                                        nice.</span>                                    <button class="                                            alert__button                                            icon-button icon-button--bright                                        " aria-label="Alert close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Alert warning -->                                <div class="                                        form-section__alert-item                                        alert alert--warning                                    ">                                    <span class="alert__text">A warning alert flash that never                                        sucks.</span>                                    <button class="                                            alert__button                                            icon-button icon-button--bright                                        " aria-label="Alert close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Alert success -->                                <div class="                                        form-section__alert-item                                        alert alert--success                                    ">                                    <span class="alert__text">A success alert flash, which never lose                                        the contrast.</span>                                    <button class="                                            alert__button                                            icon-button icon-button--bright                                        " aria-label="Alert close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                                <!-- Alert error -->                                <div class="                                        form-section__alert-item                                        alert alert--error                                    ">                                    <span class="alert__text">An error alert flash that nobody                                        loves.</span>                                    <button class="                                            alert__button                                            icon-button icon-button--bright                                        " aria-label="Alert close">                                        <svg class="icon-button__icon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">                                            <use href="/icons/icon-sprite.svg#x-close-delete"/>                                        </svg>                                    </button>                                </div>                            </div>                        </div>                        <!-- Progresses (basic - accent) -->                        <div class="form-section__elements-wrapper">                            <div class="form-section__progresses">                                <!-- Progress accent-->                                <div class="form-section__progress-item" id="form-progress-01"></div>                                <!-- Progress warning -->                                <div class="form-section__progress-item" id="form-progress-02"></div>                                <!-- Progress success -->                                <div class="form-section__progress-item" id="form-progress-03"></div>                                <!-- Progress error -->                                <div class="form-section__progress-item" id="form-progress-04"></div>                            </div>                        </div>                        <!-- Spinners (basic - accent) -->                        <div class="form-section__elements-wrapper">                            <div class="form-section__spinners">                                <!-- Spinner accent -->                                <div class="form-section__spinner-item spinner"></div>                                <!-- Spinner warning -->                                <div class="                                        form-section__spinner-item                                        spinner spinner--warning                                    "></div>                                <!-- Spinner success -->                                <div class="                                        form-section__spinner-item                                        spinner spinner--success                                    "></div>                                <!-- Spinner error -->                                <div class="                                        form-section__spinner-item                                        spinner spinner--error                                    "></div>                            </div>                        </div>                    </div>                </section>            </div>        </main>        <a href="/" class="page-link page-link--prev" title="To index page">            <svg class="icons__item icon icon--tint">                <use href="/icons/icon-sprite.svg#chevron-left-arrow"/>            </svg>        </a>        <a href="/elements.html" class="page-link page-link--next" title="To elements page">            <svg class="icons__item icon icon--tint">                <use href="/icons/icon-sprite.svg#chevron-right-arrow"/>            </svg>        </a>    </body></html>

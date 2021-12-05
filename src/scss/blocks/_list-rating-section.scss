@@ -1,34 +1,48 @@
 .list-rating-section {
-	&__wrapper {
-		display: flex;
-		padding-top: 40px;
-	}
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 40px;
+    }
 
-	&__column {
-		margin-right: 80px;
+    &__column {
+        flex: 1 1 calc(100% / 3);
 
-		&:first-child {
-			margin-right: 120px;
-		}
+        @media screen and (max-width: $md) {
+            flex-basis: 50%;
+        }
 
-		&:last-child {
-			margin-right: 0;
-		}
-	}
+        @media screen and (max-width: $md) {
+            flex-basis: 50%;
 
-	&__item {
-		margin-bottom: 15px;
+            &:last-child {
+                margin-top: 50px;
+            }
+        }
 
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
+        @media screen and (max-width: $md) {
+            flex-basis: 100%;
+            margin-top: 50px;
 
-	&__rating-item {
-		margin-bottom: 40px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
 
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
+    &__item {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__rating-item {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }

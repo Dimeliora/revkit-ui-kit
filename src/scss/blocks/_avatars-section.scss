@@ -1,12 +1,13 @@
 .avatars-section {
     &__wrapper {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         padding-top: 40px;
     }
 
     &__item {
-        margin-right: 30px;
+        margin: 10px 30px 10px 0;
 
         &:last-child {
             margin-right: 0;

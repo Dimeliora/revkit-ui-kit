@@ -3,5 +3,17 @@
         display: grid;
         grid-template-columns: repeat(4, 240px);
         gap: 40px;
+
+        @media screen and (max-width: $xl) {
+            grid-template-columns: repeat(4, 180px);
+        }
+
+        @media screen and (max-width: $lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $md) {
+            grid-template-columns: 1fr;
+        }
     }
 }

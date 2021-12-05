@@ -3,6 +3,14 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         row-gap: 60px;
+
+        @media screen and (max-width: $xxl) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $xl) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__column {

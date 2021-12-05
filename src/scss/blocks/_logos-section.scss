@@ -1,12 +1,13 @@
 .logos-section {
     &__wrapper {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         padding-top: 40px;
     }
 
     &__item {
-        margin-right: 20px;
+        margin: 10px 20px 10px 0;
 
         &:nth-child(2) {
             margin-right: 60px;
