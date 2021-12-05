@@ -28,6 +28,11 @@
         &::before {
             width: 28px;
             height: 28px;
+
+            @media screen and (max-width: $md) {
+                width: 0;
+                height: 0;
+            }
         }
     }
 

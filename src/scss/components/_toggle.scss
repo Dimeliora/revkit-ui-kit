@@ -12,6 +12,10 @@
         &:focus-visible + .toggle__label {
             &::before {
                 outline: 2px solid var(--primary-color);
+
+                @media screen and (max-width: $md) {
+                    outline: none;
+                }
             }
         }
 

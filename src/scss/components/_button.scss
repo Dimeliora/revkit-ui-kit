@@ -14,11 +14,20 @@
 
     &:hover {
         border-color: var(--bright-color);
+
+        @media screen and (max-width: $md) {
+            border-color: var(--shade-color);
+        }
     }
 
     &:focus-visible {
         outline: 2px solid var(--accent-color);
         border-color: var(--bright-color);
+
+        @media screen and (max-width: $md) {
+            outline: none;
+            border-color: var(--shade-color);
+        }
     }
 
     &:disabled {
@@ -50,11 +59,21 @@
         &:hover {
             border-color: var(--muted-color);
             background-color: var(--muted-color);
+
+            @media screen and (max-width: $md) {
+                border-color: var(--accent-color);
+                background-color: var(--accent-color);
+            }
         }
 
         &:focus-visible {
             outline: 2px solid var(--primary-color);
             border-color: var(--accent-color);
+
+            @media screen and (max-width: $md) {
+                outline: none;
+                border-color: var(--accent-color);
+            }
         }
 
         &:disabled {
@@ -71,12 +90,22 @@
         &:hover {
             border-color: var(--accent-color);
             color: var(--accent-color);
+
+            @media screen and (max-width: $md) {
+                border-color: var(--muted-color);
+                color: var(--muted-color);
+            }
         }
 
         &:focus-visible {
             outline: none;
             border-color: var(--secondary-color);
             color: var(--secondary-color);
+
+            @media screen and (max-width: $md) {
+                border-color: var(--muted-color);
+                color: var(--muted-color);
+            }
         }
 
         &:disabled {

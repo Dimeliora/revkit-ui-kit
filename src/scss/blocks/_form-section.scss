@@ -1,95 +1,109 @@
 .form-section {
-	&__inputs {
-		display: grid;
-		grid-template-columns: repeat(3, 360px);
-		gap: 48px 80px;
-	}
+    &__inputs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        gap: 48px 80px;
 
-	&__elements-wrapper {
-		margin-top: 80px;
-	}
+        @media screen and (max-width: $sm) {
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+    }
 
-	&__stepper-item {
-		margin-right: 40px;
+    &__elements-wrapper {
+        margin-top: 80px;
+    }
 
-		&:last-child {
-			margin-right: 0;
-		}
-	}
+    &__steppers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 200px);
+        gap: 30px;
+    }
 
-	&__checkboxes {
-		display: grid;
-		grid-template-columns: repeat(3, 155px);
-		gap: 30px 50px;
-	}
+    &__checkboxes {
+        display: grid;
+        grid-template-columns: repeat(3, 155px);
+        gap: 30px 50px;
 
-	&__radios,
-	&__toggles {
-		display: grid;
-		grid-template-columns: repeat(2, 155px);
-		gap: 40px 50px;
-	}
+        @media screen and (max-width: $md) {
+            grid-template-columns: repeat(3, 100px);
+            gap: 30px;
+        }
 
-	&__sliders,
-	&__labels {
-		display: flex;
-	}
+        @media screen and (max-width: $sm) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 
-	&__slider-item {
-		width: 350px;
-		margin-right: 65px;
+    &__radios,
+    &__toggles {
+        display: grid;
+        grid-template-columns: repeat(2, 155px);
+        gap: 40px 50px;
 
-		&:last-child {
-			margin-right: 0;
-		}
-	}
+        @media screen and (max-width: $md) {
+            grid-template-columns: repeat(2, 120px);
+            gap: 30px;
+        }
+    }
 
-	&__label-item {
-		margin-right: 20px;
+    &__sliders {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 350px));
+        gap: 50px;
+    }
 
-		&:last-child {
-			margin-right: 0;
-		}
-	}
+    &__labels {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 90px);
+        gap: 20px;
+    }
 
-	&__buttons {
-		display: grid;
-		grid-template-columns: repeat(2, 140px);
-		gap: 30px 40px;
-	}
+    &__buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 140px);
+        gap: 30px 40px;
 
-	&__buttons--small {
-		grid-template-columns: repeat(2, 100px);
-	}
+        @media screen and (max-width: $md) {
+            grid-template-columns: 140px;
+        }
+    }
 
-	&__buttons--large {
-		grid-template-columns: repeat(2, 180px);
-	}
+    &__buttons--small {
+        grid-template-columns: repeat(2, 100px);
+    }
 
-	&__alert-item,
-	&__progress-item {
-		max-width: 800px;
-		margin-bottom: 30px;
+    &__buttons--large {
+        grid-template-columns: repeat(2, 180px);
 
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
+        @media screen and (max-width: $md) {
+            grid-template-columns: 180px;
+        }
+    }
 
-	&__progress-item {
-		margin-bottom: 50px;
-	}
+    &__alert-item,
+    &__progress-item {
+        max-width: 800px;
+        margin-bottom: 30px;
 
-	&__spinners {
-		display: flex;
-		align-items: center;
-	}
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 
-	&__spinner-item {
-		margin-right: 30px;
+    &__progress-item {
+        margin-bottom: 50px;
+    }
 
-		&:last-child {
-			margin-right: 0;
-		}
-	}
+    &__spinners {
+        display: flex;
+        align-items: center;
+    }
+
+    &__spinner-item {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }

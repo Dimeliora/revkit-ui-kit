@@ -27,6 +27,10 @@
 
             &::-webkit-slider-thumb {
                 box-shadow: 0 0 0 6px var(--muted-shadow-color);
+
+                @media screen and (max-width: $md) {
+                    box-shadow: none;
+                }
             }
         }
 
@@ -45,10 +49,18 @@
 
             &:hover {
                 box-shadow: 0 0 0 6px var(--muted-shadow-color);
+
+                @media screen and (max-width: $md) {
+                    box-shadow: none;
+                }
             }
 
             &:active {
                 box-shadow: 0 0 0 12px var(--muted-shadow-color);
+
+                @media screen and (max-width: $md) {
+                    box-shadow: none;
+                }
             }
         }
     }

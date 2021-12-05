@@ -43,8 +43,12 @@
         background-color: var(--bright-color);
         cursor: pointer;
 
-        &:focus-within {
+        &:focus-visible {
             outline: 2px solid var(--accent-color);
+
+            @media screen and (max-width: $md) {
+                outline: none;
+            }
         }
 
         &:active {
@@ -100,6 +104,10 @@
         &:hover {
             outline: none;
             background-color: var(--tint-color);
+
+            @media screen and (max-width: $md) {
+                background-color: transparent;
+            }
         }
 
         &--selected {
