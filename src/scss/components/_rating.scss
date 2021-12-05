@@ -1,77 +1,81 @@
 .rating {
-	&__top {
-		display: flex;
-		align-items: center;
-	}
+    &__top {
+        display: flex;
+        align-items: center;
+    }
 
-	&__stars {
-		display: flex;
-		flex-direction: row-reverse;
-		margin-right: 7px;
+    &__stars {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-right: 7px;
 
-		&:hover,
-		&:focus-within {
-			.rating__star-icon {
-				fill: #a3bad4;
-			}
-		}
-	}
+        @media screen and (min-width: $md) {
+            &:hover,
+            &:focus-within {
+                .rating__star-icon {
+                    fill: #a3bad4;
+                }
+            }
+        }
+    }
 
-	&__star-item {
-		display: inline-flex;
-		align-items: center;
-		padding: 0 2px;
-		border: none;
-		background-color: transparent;
-		cursor: pointer;
+    &__star-item {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 2px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
 
-		&:hover,
-		&:focus-visible {
-			outline: none;
-			transform: scale(1.22);
+        @media screen and (min-width: $md) {
+            &:hover,
+            &:focus-visible {
+                outline: none;
+                transform: scale(1.22);
 
-			&,
-			& ~ .rating__star-item {
-				.rating__star-icon {
-					fill: #ffbe1e;
-				}
-			}
-		}
+                &,
+                & ~ .rating__star-item {
+                    .rating__star-icon {
+                        fill: #ffbe1e;
+                    }
+                }
+            }
+        }
 
-		&--half {
-			.rating__star-icon--left {
-				fill: #ffa200;
-			}
+        &--half {
+            .rating__star-icon--left {
+                fill: #ffa200;
+            }
 
-			.rating__star-icon--right {
-				fill: #a3bad4;
-			}
-		}
+            .rating__star-icon--right {
+                fill: #a3bad4;
+            }
+        }
 
-		&--full {
-			.rating__star-icon {
-				fill: #ffa200;
-			}
-		}
-	}
+        &--full {
+            .rating__star-icon {
+                fill: #ffa200;
+            }
+        }
+    }
 
-	&__star-icon {
-		width: 10px;
-		height: 20px;
-		fill: #a3bad4;
-	}
+    &__star-icon {
+        width: 10px;
+        height: 20px;
+        fill: #a3bad4;
+    }
 
-	&__value {
-		color: var(--primary-color);
-		font-size: 1.6rem;
-		font-weight: 600;
-	}
+    &__value {
+        color: var(--primary-color);
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
 
-	&__bottom {
-		min-height: 16px;
-		margin-top: 7px;
-		color: var(--secondary-color);
-		font-size: 1.4rem;
-		line-height: 1.6rem;
-	}
+    &__bottom {
+        min-height: 16px;
+        margin-top: 7px;
+        color: var(--secondary-color);
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
 }
