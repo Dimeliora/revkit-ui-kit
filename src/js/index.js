@@ -7,6 +7,7 @@ import { moreMenuHandler } from "./moreMenu";
 import { barChart } from "./bar-chart";
 import { lineChart } from "./line-chart";
 import { doughnutChart } from "./doughnut-chart";
+import { formValidationOnSubmit } from "./form-validation";
 
 const SELECT_ITEMS = [
 	{
@@ -195,4 +196,17 @@ window.addEventListener("DOMContentLoaded", () => {
 			],
 		});
 	}
+
+	formValidationOnSubmit({
+		selector: "#form-contact",
+		onSubmit: console.log,
+	});
+	formValidationOnSubmit({
+		selector: "#form-sign-up",
+		onSubmit: console.log,
+	});
+	formValidationOnSubmit({
+		selector: "#form-reset-password",
+		onSubmit: console.log,
+	});
 });

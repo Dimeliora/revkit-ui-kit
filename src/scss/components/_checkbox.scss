@@ -1,97 +1,107 @@
 .checkbox {
-    position: relative;
-    display: flex;
-    align-items: center;
+	position: relative;
+	display: flex;
+	align-items: center;
 
-    &--partial {
-        .checkbox__label {
-            &::after {
-                top: 50%;
-                left: 8px;
-                transform: rotate(0deg);
-                width: 12px;
-                height: 2px;
-                border: none;
-                border-top: 2px solid var(--accent-color);
-            }
-        }
-    }
+	&--partial {
+		.checkbox__label {
+			&::after {
+				top: 50%;
+				left: 8px;
+				transform: rotate(0deg);
+				width: 12px;
+				height: 2px;
+				border: none;
+				border-top: 2px solid var(--accent-color);
+			}
+		}
+	}
 
-    &__input {
-        position: absolute;
-        appearance: none;
+	&--invalid {
+		.checkbox__label {
+			color: var(--error-color);
 
-        &:focus-visible + .checkbox__label {
-            &::before {
-                outline: 2px solid var(--primary-color);
+			&::before {
+				border-color: var(--error-color);
+			}
+		}
+	}
 
-                @media screen and (max-width: $md) {
-                    outline: none;
-                }
-            }
-        }
+	&__input {
+		position: absolute;
+		appearance: none;
 
-        &:checked + .checkbox__label {
-            &::before {
-                border-width: 2px;
-                border-color: var(--accent-color);
-            }
+		&:focus-visible + .checkbox__label {
+			&::before {
+				outline: 2px solid var(--primary-color);
 
-            &::after {
-                opacity: 1;
-            }
-        }
+				@media screen and (max-width: $md) {
+					outline: none;
+				}
+			}
+		}
 
-        &:disabled + .checkbox__label {
-            pointer-events: none;
+		&:checked + .checkbox__label {
+			&::before {
+				border-width: 2px;
+				border-color: var(--accent-color);
+			}
 
-            &::before {
-                background-color: transparent;
-            }
+			&::after {
+				opacity: 1;
+			}
+		}
 
-            &::after {
-                border-color: var(--shade-color);
-            }
-        }
+		&:disabled + .checkbox__label {
+			pointer-events: none;
 
-        &:disabled:checked + .checkbox__label {
-            &::before {
-                border-color: var(--shade-color);
-            }
-        }
-    }
+			&::before {
+				background-color: transparent;
+			}
 
-    &__label {
-        padding-left: 35px;
-        color: var(--secondary-color);
-        font-size: 1.6rem;
-        cursor: pointer;
+			&::after {
+				border-color: var(--shade-color);
+			}
+		}
 
-        &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            width: 28px;
-            height: 28px;
-            border: 1px solid var(--shade-color);
-            border-radius: 4px;
-            box-shadow: 0px 4px 8px var(--shadow-color);
-            background-color: var(--bright-color);
-        }
+		&:disabled:checked + .checkbox__label {
+			&::before {
+				border-color: var(--shade-color);
+			}
+		}
+	}
 
-        &::after {
-            content: "";
-            position: absolute;
-            top: 40%;
-            left: 10px;
-            opacity: 0;
-            width: 8px;
-            height: 16px;
-            border-bottom: 2px solid var(--accent-color);
-            border-right: 2px solid var(--accent-color);
-            transform: translateY(-50%) rotate(45deg);
-        }
-    }
+	&__label {
+		padding-left: 35px;
+		color: var(--secondary-color);
+		font-size: 1.6rem;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 28px;
+			height: 28px;
+			border: 1px solid var(--shade-color);
+			border-radius: 4px;
+			box-shadow: 0px 4px 8px var(--shadow-color);
+			background-color: var(--bright-color);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 40%;
+			left: 10px;
+			opacity: 0;
+			width: 8px;
+			height: 16px;
+			border-bottom: 2px solid var(--accent-color);
+			border-right: 2px solid var(--accent-color);
+			transform: translateY(-50%) rotate(45deg);
+		}
+	}
 }

@@ -66,7 +66,7 @@ $flap-padding-lr: 40px;
 	&__action {
 		@media screen and (max-width: $sm) {
 			width: 100px;
-			padding: 8px 0;
+			padding: 8px 6px;
 			font-size: 1.4rem;
 		}
 	}
