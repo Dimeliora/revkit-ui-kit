@@ -1,115 +1,115 @@
 .button {
-    width: 140px;
-    padding: 14px 0;
-    border: 1px solid var(--shade-color);
-    background-color: var(--bright-color);
-    box-shadow: 0px 4px 8px var(--shadow-color);
-    border-radius: 6px;
-    color: var(--muted-color);
-    font-size: 1.6rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: border-color 0.2s ease-in, background-color 0.2s ease-in,
-        color 0.2s ease-in;
+	width: 140px;
+	padding: 14px 6px;
+	border: 1px solid var(--shade-color);
+	background-color: var(--bright-color);
+	box-shadow: 0px 4px 8px var(--shadow-color);
+	border-radius: 6px;
+	color: var(--muted-color);
+	font-size: 1.6rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: border-color 0.2s ease-in, background-color 0.2s ease-in,
+		color 0.2s ease-in;
 
-    &:hover {
-        border-color: var(--bright-color);
+	&:hover {
+		border-color: var(--bright-color);
 
-        @media screen and (max-width: $md) {
-            border-color: var(--shade-color);
-        }
-    }
+		@media screen and (max-width: $md) {
+			border-color: var(--shade-color);
+		}
+	}
 
-    &:focus-visible {
-        outline: 2px solid var(--accent-color);
-        border-color: var(--bright-color);
+	&:focus-visible {
+		outline: 2px solid var(--accent-color);
+		border-color: var(--bright-color);
 
-        @media screen and (max-width: $md) {
-            outline: none;
-            border-color: var(--shade-color);
-        }
-    }
+		@media screen and (max-width: $md) {
+			outline: none;
+			border-color: var(--shade-color);
+		}
+	}
 
-    &:disabled {
-        pointer-events: none;
-        background-color: transparent;
-        color: var(--muted-shadow-color);
-    }
+	&:disabled {
+		pointer-events: none;
+		background-color: transparent;
+		color: var(--muted-shadow-color);
+	}
 
-    &--small {
-        width: 100px;
-        padding: 8px 0;
-        font-size: 1.4rem;
-    }
+	&--small {
+		width: 100px;
+		padding: 8px 6px;
+		font-size: 1.4rem;
+	}
 
-    &--large {
-        width: 180px;
-        padding: 18px 0;
-    }
+	&--large {
+		width: 180px;
+		padding: 18px 6px;
+	}
 
-    &--full-width {
-        width: 100%;
-    }
+	&--full-width {
+		width: 100%;
+	}
 
-    &--contained {
-        border-color: var(--accent-color);
-        background-color: var(--accent-color);
-        color: var(--tint-color);
+	&--contained {
+		border-color: var(--accent-color);
+		background-color: var(--accent-color);
+		color: var(--tint-color);
 
-        &:hover {
-            border-color: var(--muted-color);
-            background-color: var(--muted-color);
+		&:hover {
+			border-color: var(--muted-color);
+			background-color: var(--muted-color);
 
-            @media screen and (max-width: $md) {
-                border-color: var(--accent-color);
-                background-color: var(--accent-color);
-            }
-        }
+			@media screen and (max-width: $md) {
+				border-color: var(--accent-color);
+				background-color: var(--accent-color);
+			}
+		}
 
-        &:focus-visible {
-            outline: 2px solid var(--primary-color);
-            border-color: var(--accent-color);
+		&:focus-visible {
+			outline: 2px solid var(--primary-color);
+			border-color: var(--accent-color);
 
-            @media screen and (max-width: $md) {
-                outline: none;
-                border-color: var(--accent-color);
-            }
-        }
+			@media screen and (max-width: $md) {
+				outline: none;
+				border-color: var(--accent-color);
+			}
+		}
 
-        &:disabled {
-            border-color: var(--shade-color);
-            background-color: var(--shade-color);
-        }
-    }
+		&:disabled {
+			border-color: var(--shade-color);
+			background-color: var(--shade-color);
+		}
+	}
 
-    &--outlined {
-        border: 2px solid var(--muted-color);
-        background-color: transparent;
-        color: var(--muted-color);
+	&--outlined {
+		border: 2px solid var(--muted-color);
+		background-color: transparent;
+		color: var(--muted-color);
 
-        &:hover {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
+		&:hover {
+			border-color: var(--accent-color);
+			color: var(--accent-color);
 
-            @media screen and (max-width: $md) {
-                border-color: var(--muted-color);
-                color: var(--muted-color);
-            }
-        }
+			@media screen and (max-width: $md) {
+				border-color: var(--muted-color);
+				color: var(--muted-color);
+			}
+		}
 
-        &:focus-visible {
-            outline: none;
-            border-color: var(--secondary-color);
-            color: var(--secondary-color);
+		&:focus-visible {
+			outline: none;
+			border-color: var(--secondary-color);
+			color: var(--secondary-color);
 
-            @media screen and (max-width: $md) {
-                border-color: var(--muted-color);
-                color: var(--muted-color);
-            }
-        }
+			@media screen and (max-width: $md) {
+				border-color: var(--muted-color);
+				color: var(--muted-color);
+			}
+		}
 
-        &:disabled {
-            border-color: var(--shade-color);
-        }
-    }
+		&:disabled {
+			border-color: var(--shade-color);
+		}
+	}
 }

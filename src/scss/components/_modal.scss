@@ -1,52 +1,62 @@
 .modal {
-    &__overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        display: none;
-        width: 100vw;
-        height: 100vh;
-        background-color: var(--muted-shadow-color);
-    }
+	&__overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		display: none;
+		width: 100vw;
+		height: 100vh;
+		background-color: var(--muted-shadow-color);
+	}
 
-    &__content {
-        position: relative;
-        width: 480px;
-        padding: 30px 25px;
-        border-radius: 16px;
-        background-color: var(--bright-color);
-    }
+	&__content {
+		position: relative;
+		padding: 30px 25px;
+		border-radius: 16px;
+		background-color: var(--bright-color);
 
-    &__close {
-        position: absolute;
-        top: 30px;
-        right: 25px;
-    }
+		@media screen and (max-width: $sm) {
+			padding: 20px;
+		}
+	}
 
-    &__heading {
-        margin-bottom: 15px;
-    }
+	&__close {
+		position: absolute;
+		top: 30px;
+		right: 25px;
+	}
 
-    &__text {
-        margin-bottom: 35px;
-    }
+	&__heading {
+		margin-bottom: 15px;
+	}
 
-    &__actions {
-        text-align: right;
-    }
+	&__text {
+		margin-bottom: 35px;
+	}
 
-    &__action-button {
-        margin-right: 15px;
+	&__actions {
+		text-align: right;
+	}
 
-        &:last-child {
-            margin-right: 0;
-        }
-    }
+	&__action-button {
+		margin-right: 15px;
 
-    &--with-actions {
-        .modal__close {
-            display: none;
-        }
-    }
+		@media screen and (max-width: $sm) {
+			width: 100px;
+			margin-right: 8px;
+			padding: 8px 6px;
+			font-size: 1.4rem;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&--with-actions {
+		.modal__close {
+			display: none;
+		}
+	}
 }

@@ -41,7 +41,7 @@ $flap-padding-lr: 40px;
 
 		@media screen and (max-width: $sm) {
 			font-size: 1.6rem;
-			line-height: 2.4rem;
+			line-height: 2.2rem;
 		}
 	}
 
@@ -144,6 +144,11 @@ $flap-padding-lr: 40px;
 
 		.flap__heading {
 			margin-bottom: 8px;
+
+			@media screen and (max-width: $sm) {
+				font-size: 2rem;
+				line-height: 2.8rem;
+			}
 		}
 
 		.flap__text {

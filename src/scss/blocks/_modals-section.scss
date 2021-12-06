@@ -1,13 +1,11 @@
 .modals-section {
-    &__wrapper {
-        display: flex;
-    }
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 480px);
+		gap: 60px;
 
-    &__item {
-        margin-right: 60px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
+		@media screen and (max-width: $sm) {
+			grid-template-columns: 1fr;
+		}
+	}
 }
