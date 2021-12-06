@@ -3,7 +3,7 @@ import { Slider } from "./slider";
 import { Stepper } from "./stepper";
 import { Progress } from "./progress";
 import { Rating } from "./rating";
-import { calloutActionsMenuHandler } from "./callouts";
+import { moreMenuHandler } from "./moreMenu";
 import { barChart } from "./bar-chart";
 import { lineChart } from "./line-chart";
 import { doughnutChart } from "./doughnut-chart";
@@ -130,7 +130,14 @@ window.addEventListener("DOMContentLoaded", () => {
 			},
 		});
 
-	calloutActionsMenuHandler(".callout--micro");
+	moreMenuHandler({
+		selector: ".callout--micro",
+		activeClass: "callout__actions--active",
+	});
+	moreMenuHandler({
+		selector: ".card--menu",
+		activeClass: "card__actions--active",
+	});
 
 	if (window["bar-chart"]) {
 		barChart({
