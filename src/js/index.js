@@ -3,6 +3,7 @@ import { Slider } from "./slider";
 import { Stepper } from "./stepper";
 import { Progress } from "./progress";
 import { Rating } from "./rating";
+import { headerMenuHandler } from "./header-menu";
 import { moreMenuHandler } from "./moreMenu";
 import { barChart } from "./bar-chart";
 import { lineChart } from "./line-chart";
@@ -130,6 +131,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 5: 12,
             },
         });
+
+    window["page-header"] && headerMenuHandler("#page-header");
 
     moreMenuHandler({
         selector: ".callout--micro",
