@@ -10,7 +10,6 @@ export const lineChart = ({ selector, title, subtitle, labels, linesData }) => {
 	}
 
 	const canvas = root.querySelector("canvas");
-	canvas.style = "width: 560px; height: 500px";
 	const ctx = canvas.getContext("2d");
 
 	const datasets = linesData.map(({ label, data, color }) => ({
@@ -28,7 +27,8 @@ export const lineChart = ({ selector, title, subtitle, labels, linesData }) => {
 	};
 
 	const options = {
-		responsive: false,
+		responsive: true,
+		maintainAspectRatio: false,
 		plugins: {
 			legend: {
 				position: "bottom",

@@ -16,7 +16,6 @@ export const doughnutChart = ({
 	}
 
 	const canvas = root.querySelector("canvas");
-	canvas.style = "width: 560px; height: 500px";
 	const ctx = canvas.getContext("2d");
 
 	const data = {
@@ -25,8 +24,9 @@ export const doughnutChart = ({
 	};
 
 	const options = {
+		responsive: true,
+		maintainAspectRatio: false,
 		cutout: "60%",
-		responsive: false,
 		plugins: {
 			legend: {
 				position: "right",

@@ -1,12 +1,11 @@
 .charts-section {
 	&__wrapper {
 		display: grid;
-		grid-template-columns: repeat(2, 600px);
+		grid-template-columns: repeat(auto-fill, 600px);
 		gap: 60px 68px;
-	}
 
-	&__item {
-		width: 600px;
-		margin-right: 60px;
+		@media screen and (max-width: $md) {
+			grid-template-columns: 1fr;
+		}
 	}
 }

@@ -10,7 +10,6 @@ export const barChart = ({ selector, title, subtitle, labels, barsData }) => {
 	}
 
 	const canvas = root.querySelector("canvas");
-	canvas.style = "width: 560px; height: 500px";
 	const ctx = canvas.getContext("2d");
 
 	const datasets = barsData.map(({ label, data, color }) => ({
@@ -27,7 +26,8 @@ export const barChart = ({ selector, title, subtitle, labels, barsData }) => {
 	};
 
 	const options = {
-		responsive: false,
+		responsive: true,
+		maintainAspectRatio: false,
 		plugins: {
 			legend: {
 				position: "bottom",
