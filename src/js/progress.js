@@ -5,17 +5,17 @@ export class Progress {
 		error: "progress--error",
 	};
 
+	
+	#value;
+	#type;
+	#root;
+	
 	/**
 	 * @param {Object} options - Options object for progress element creation
 	 * @param {string} options.selector - CSS selector for progress element injection
 	 * @param {number} [options.value=0] - Initial progress value
 	 * @param {?('warning'|'success'|'error')=} options.type - Progress element styling variant
 	 */
-
-	#value;
-	#type;
-	#root;
-
 	constructor({ selector, value = 0, type = null }) {
 		this.#root = document.querySelector(selector);
 		if (this.#root === null) {
