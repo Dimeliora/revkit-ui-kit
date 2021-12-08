@@ -1,6 +1,6 @@
 export class Rating {
-	static getStarItemTemplate(value) {
-		return `
+    static getStarItemTemplate(value) {
+        return `
             <button
                 class="rating__star-item"
                 data-rating-value="${value}"
@@ -27,14 +27,14 @@ export class Rating {
 				</svg>
             </button>
         `;
-	}
+    }
 
-	static createHTMLTemplate() {
-		const starButtons = [...Array(5).keys()]
-			.map((item) => Rating.getStarItemTemplate(item + 1))
-			.reverse();
+    static createHTMLTemplate() {
+        const starButtons = [...Array(5).keys()]
+            .map((item) => Rating.getStarItemTemplate(item + 1))
+            .reverse();
 
-		return `
+        return `
             <div class="rating__top">
                 <div class="rating__stars">
                     ${starButtons.join(" ")}
@@ -43,156 +43,152 @@ export class Rating {
             </div>
             <div class="rating__bottom" data-rating-element="votes"></div>
         `;
-	}
+    }
 
-	static calculateOverallRating(ratings) {
-		const votesCount = Object.values(ratings).reduce(
-			(sum, value) => sum + value,
-			0
-		);
-		const allRatingsSum = Object.entries(ratings).reduce(
-			(sum, [rate, count]) => sum + rate * count,
-			0
-		);
-		const overallRating =
-			Number((allRatingsSum / votesCount).toFixed(1)) || 0;
+    static calculateOverallRating(ratings) {
+        const votesCount = Object.values(ratings).reduce(
+            (sum, value) => sum + value,
+            0
+        );
+        const allRatingsSum = Object.entries(ratings).reduce(
+            (sum, [rate, count]) => sum + rate * count,
+            0
+        );
+        const overallRating =
+            Number((allRatingsSum / votesCount).toFixed(1)) || 0;
 
-		return { votesCount, overallRating };
-	}
+        return { votesCount, overallRating };
+    }
 
-	get ratings() {
-		return this.#ratings;
-	}
+    get ratings() {
+        return this.#ratings;
+    }
 
-	get overallRating() {
-		return this.#overallRating;
-	}
+    get overallRating() {
+        return this.#overallRating;
+    }
 
-	get totalVotes() {
-		return this.#totalVotes;
-	}
+    get totalVotes() {
+        return this.#totalVotes;
+    }
 
-	#ratings = {
-		1: 0,
-		2: 0,
-		3: 0,
-		4: 0,
-		5: 0,
-	};
-	#totalVotes = 0;
-	#overallRating = 0;
-	#root;
-	#ratingButtons;
-	#ratingValue;
-	#ratingVotes;
+    #ratings = {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+    };
+    #totalVotes = 0;
+    #overallRating = 0;
+    #root;
+    #ratingButtons;
+    #ratingValue;
+    #ratingVotes;
 
-	/**
-	 * @param {Object} options - Options object for rating creation
-	 * @param {string} options.selector - CSS selector for rating element injection
-	 * @param {Object} options.initialRatings - Object with initial vote counts for every rating value
-	 */
-	constructor({ selector, initialRatings }) {
-		this.#root = document.querySelector(selector);
-		if (this.#root === null) {
-			console.error(
-				`Container element "${selector}" for rating is not available`
-			);
-			return;
-		}
+    /**
+     * @param {Object} options - Options object for rating creation
+     * @param {string} options.selector - CSS selector for rating element injection
+     * @param {Object} options.initialRatings - Object with initial vote counts for every rating value
+     */
+    constructor({ selector, initialRatings }) {
+        this.#root = document.querySelector(selector);
+        if (this.#root === null) {
+            console.error(
+                `Container element "${selector}" for rating is not available`
+            );
+            return;
+        }
 
-		this.#render();
-		this.#setup();
+        this.#render();
+        this.#setup();
 
-		if (initialRatings) {
-			this.#ratings = initialRatings;
-			this.#calculateRating();
-			this.#updateRatingView();
-		}
-	}
+        if (initialRatings) {
+            this.#ratings = initialRatings;
+            this.#calculateRating();
+            this.#updateRatingView();
+        }
+    }
 
-	#render() {
-		this.#root.classList.add("rating");
-		this.#root.innerHTML = Rating.createHTMLTemplate();
-	}
+    #render() {
+        this.#root.classList.add("rating");
+        this.#root.innerHTML = Rating.createHTMLTemplate();
+    }
 
-	#setup() {
-		this.#ratingButtons = this.#root.querySelectorAll(
-			'[data-rating-element="button-item"]'
-		);
-		this.#ratingValue = this.#root.querySelector(
-			'[data-rating-element="value"]'
-		);
-		this.#ratingVotes = this.#root.querySelector(
-			'[data-rating-element="votes"]'
-		);
+    #setup() {
+        this.#ratingButtons = this.#root.querySelectorAll(
+            '[data-rating-element="button-item"]'
+        );
+        this.#ratingValue = this.#root.querySelector(
+            '[data-rating-element="value"]'
+        );
+        this.#ratingVotes = this.#root.querySelector(
+            '[data-rating-element="votes"]'
+        );
 
-		this.#ratingButtons.forEach((button) => {
-			button.addEventListener("click", this.#ratingButtonsClickHandler);
-		});
-	}
+        this.#ratingButtons.forEach((button) => {
+            button.addEventListener("click", this.#ratingButtonsClickHandler);
+        });
+    }
 
-	#ratingButtonsClickHandler = ({ currentTarget }) => {
-		const ratingButtonValue = Number(currentTarget.dataset.ratingValue);
+    #ratingButtonsClickHandler = ({ currentTarget }) => {
+        const ratingButtonValue = Number(currentTarget.dataset.ratingValue);
 
-		this.#ratings[ratingButtonValue] += 1;
+        this.#ratings[ratingButtonValue] += 1;
 
-		this.#calculateRating();
-		this.#updateRatingView();
+        this.#calculateRating();
+        this.#updateRatingView();
 
-		currentTarget.blur();
-	};
+        currentTarget.blur();
+    };
 
-	#calculateRating() {
-		const overall = Rating.calculateOverallRating(this.#ratings);
-		this.#totalVotes = overall.votesCount;
-		this.#overallRating = overall.overallRating;
-	}
+    #calculateRating() {
+        const overall = Rating.calculateOverallRating(this.#ratings);
+        this.#totalVotes = overall.votesCount;
+        this.#overallRating = overall.overallRating;
+    }
 
-	#updateRatingView() {
-		if (this.#overallRating > 0) {
-			this.#ratingValue.textContent = this.#overallRating.toFixed(1);
-		}
+    #updateRatingView() {
+        if (this.#overallRating > 0) {
+            this.#ratingValue.textContent = this.#overallRating.toFixed(1);
+        }
 
-		if (this.#totalVotes > 0) {
-			this.#ratingVotes.textContent = `based on ${
-				this.#totalVotes
-			} ratings`;
-		}
+        if (this.#totalVotes > 0) {
+            this.#ratingVotes.textContent = `based on ${
+                this.#totalVotes
+            } ratings`;
+        }
 
-		const intRating = Math.floor(this.#overallRating);
-		const fracRating = this.#overallRating - intRating;
+        const intRating = Math.floor(this.#overallRating);
+        const fracRating = this.#overallRating - intRating;
 
-		this.#ratingButtons.forEach((button) => {
-			const ratingButtonValue = Number(button.dataset.ratingValue);
+        this.#ratingButtons.forEach((button) => {
+            const ratingButtonValue = Number(button.dataset.ratingValue);
 
-			if (ratingButtonValue <= intRating) {
-				button.classList.add("rating__star-item--full");
-			} else {
-				button.classList.remove(
-					"rating__star-item--full",
-					"rating__star-item--half"
-				);
-			}
+            if (ratingButtonValue <= intRating) {
+                button.classList.add("rating__star-item--full");
+            } else {
+                button.classList.remove(
+                    "rating__star-item--full",
+                    "rating__star-item--half"
+                );
+            }
 
-			if (fracRating && ratingButtonValue === intRating + 1) {
-				if (fracRating < 0.5) {
-					button.classList.add("rating__star-item--half");
-				} else {
-					button.classList.add("rating__star-item--full");
-				}
-			}
-		});
-	}
+            if (fracRating >= 0.5 && ratingButtonValue === intRating + 1) {
+                button.classList.add("rating__star-item--half");
+            }
+        });
+    }
 
-	destroy() {
-		this.#ratingButtons.forEach((button) => {
-			button.removeEventListener(
-				"click",
-				this.#ratingButtonsClickHandler
-			);
-		});
+    destroy() {
+        this.#ratingButtons.forEach((button) => {
+            button.removeEventListener(
+                "click",
+                this.#ratingButtonsClickHandler
+            );
+        });
 
-		this.#root.classList.remove("rating");
-		this.#root.innerHTML = "";
-	}
+        this.#root.classList.remove("rating");
+        this.#root.innerHTML = "";
+    }
 }
