@@ -70,8 +70,8 @@
 		fill: none;
 	}
 
-	&__helper-text {
-		display: none;
+	&__helper-text {	
+		visibility: hidden;	
 		margin-top: 5px;
 		font-size: 1.4rem;
 
@@ -90,7 +90,7 @@
 		}
 
 		.text-field__helper-text--success {
-			display: block;
+			visibility: visible;
 		}
 	}
 
@@ -100,7 +100,7 @@
 		}
 
 		.text-field__helper-text--error {
-			display: block;
+			visibility: visible;
 		}
 	}
 }
