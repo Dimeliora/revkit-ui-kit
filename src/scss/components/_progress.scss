@@ -1,37 +1,35 @@
 .progress {
-    --progress-fill-width: 0;
-    position: relative;
-    height: 8px;
-    border-radius: 2px;
-    background-color: var(--shade-color);
-    overflow: hidden;
+  position: relative;
+  height: 8px;
+  border-radius: 2px;
+  background-color: var(--shade-color);
+  overflow: hidden;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: var(--progress-fill-width);
-        background-color: var(--accent-color);
-        transition: width 0.7s ease-in-out;
-    }
+  &__filler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--accent-color);
+    transition: width 0.7s ease-in-out;
+  }
 
-    &--warning {
-        &::before {
-            background-color: var(--warning-color);
-        }
+  &--warning {
+    .progress__filler {
+      background-color: var(--warning-color);
     }
+  }
 
-    &--success {
-        &::before {
-            background-color: var(--success-color);
-        }
+  &--success {
+    .progress__filler {
+      background-color: var(--success-color);
     }
+  }
 
-    &--error {
-        &::before {
-            background-color: var(--error-color);
-        }
+  &--error {
+    .progress__filler {
+      background-color: var(--error-color);
     }
+  }
 }
