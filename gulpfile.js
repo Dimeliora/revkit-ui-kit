@@ -1,30 +1,30 @@
-"use strict";
+'use strict';
 
-const fs = require("fs");
-const { src, dest, parallel, series, watch } = require("gulp");
-const del = require("del");
-const gulpIf = require("gulp-if");
-const rename = require("gulp-rename");
-const htmlMin = require("gulp-htmlmin");
-const sass = require("gulp-sass")(require("sass"));
-const sourcemaps = require("gulp-sourcemaps");
-const groupMediaQueries = require("gulp-group-css-media-queries");
-const autoprefixer = require("gulp-autoprefixer");
-const csso = require("gulp-csso");
-const webpackStream = require("webpack-stream");
-const imagemin = require("gulp-imagemin");
-const newer = require("gulp-newer");
-const webp = require("gulp-webp");
-const svgSprite = require("gulp-svg-sprite");
-const realFavicon = require("gulp-real-favicon");
-const browserSync = require("browser-sync").create();
+const fs = require('fs');
+const { src, dest, parallel, series, watch } = require('gulp');
+const del = require('del');
+const gulpIf = require('gulp-if');
+const rename = require('gulp-rename');
+const htmlMin = require('gulp-htmlmin');
+const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
+const groupMediaQueries = require('gulp-group-css-media-queries');
+const autoprefixer = require('gulp-autoprefixer');
+const csso = require('gulp-csso');
+const webpackStream = require('webpack-stream');
+const imagemin = require('gulp-imagemin');
+const newer = require('gulp-newer');
+const webp = require('gulp-webp');
+const svgSprite = require('gulp-svg-sprite');
+const realFavicon = require('gulp-real-favicon');
+const browserSync = require('browser-sync').create();
 
-const SRC_PATH = "./src";
-const DEST_PATH = "./dist";
-const FAVICON_DESIGN_PATH = "./favicon-design.json";
-const FAVICON_DATA_PATH = "./favicon-data.json";
-const IS_PROD = process.env.NODE_ENV === "production";
-const WEBPACK_MODE = IS_PROD ? "production" : "development";
+const SRC_PATH = './src';
+const DEST_PATH = './dist';
+const FAVICON_DESIGN_PATH = './favicon-design.json';
+const FAVICON_DATA_PATH = './favicon-data.json';
+const IS_PROD = process.env.NODE_ENV === 'production';
+const WEBPACK_MODE = IS_PROD ? 'production' : 'development';
 
 // ======== HTML Handler ========
 const html = () =>
@@ -46,7 +46,7 @@ const scss = () =>
         .pipe(gulpIf(!IS_PROD, sourcemaps.init()))
         .pipe(
             sass({
-                outputStyle: "expanded",
+                outputStyle: 'expanded',
             })
         )
         .pipe(groupMediaQueries())
@@ -64,7 +64,7 @@ const scss = () =>
                 })
             )
         )
-        .pipe(gulpIf(!IS_PROD, sourcemaps.write(".")))
+        .pipe(gulpIf(!IS_PROD, sourcemaps.write('.')))
         .pipe(dest(DEST_PATH))
         .pipe(browserSync.stream());
 
@@ -75,14 +75,14 @@ const js = () =>
             webpackStream({
                 mode: WEBPACK_MODE,
                 output: {
-                    filename: "script.js",
+                    filename: 'script.js',
                 },
                 module: {
                     rules: [
                         {
                             test: /\.js$/,
                             exclude: /(node_modules)/,
-                            use: "babel-loader",
+                            use: 'babel-loader',
                         },
                     ],
                 },
@@ -94,7 +94,7 @@ const js = () =>
 // ======== Images Handler ========
 const images = () =>
     src(`${SRC_PATH}/images/**/*.*`)
-        .pipe(rename({ dirname: "" }))
+        .pipe(rename({ dirname: '' }))
         .pipe(newer(`${DEST_PATH}/images`))
         .pipe(
             imagemin([
@@ -108,7 +108,7 @@ const images = () =>
 // ======== WebP Converter ========
 const webpConvert = () =>
     src(`${SRC_PATH}/images/**/*.{png,jpg}`)
-        .pipe(rename({ dirname: "" }))
+        .pipe(rename({ dirname: '' }))
         .pipe(newer(`${DEST_PATH}/images`))
         .pipe(
             webp({
@@ -124,7 +124,7 @@ const svg = () =>
             svgSprite({
                 mode: {
                     symbol: {
-                        sprite: "../icon-sprite.svg",
+                        sprite: '../icon-sprite.svg',
                     },
                 },
                 shape: {
@@ -134,7 +134,7 @@ const svg = () =>
                                 plugins: [
                                     { removeViewBox: false },
                                     { cleanupIDs: false },
-                                    { removeAttrs: { attrs: "(fill|stroke)" } },
+                                    { removeAttrs: { attrs: '(fill|stroke)' } },
                                 ],
                             },
                         },
@@ -153,11 +153,11 @@ const makeFavicons = (done) =>
     realFavicon.generateFavicon(
         {
             masterPicture: `${SRC_PATH}/favicon/favicon.png`,
-            dest: `${SRC_PATH}/favicon`,
-            iconsPath: "/icons",
+            dest: `${DEST_PATH}/icons`,
+            iconsPath: '/icons',
             design: JSON.parse(fs.readFileSync(FAVICON_DESIGN_PATH)),
             settings: {
-                scalingAlgorithm: "Mitchell",
+                scalingAlgorithm: 'Mitchell',
                 errorOnImageTooSmall: false,
                 readmeFile: false,
                 htmlCodeFile: false,
@@ -170,17 +170,13 @@ const makeFavicons = (done) =>
 
 // ======== Favicons Injection Handler ========
 const injectFavicons = () =>
-    src(`${SRC_PATH}/*.html`)
+    src(`${DEST_PATH}/*.html`)
         .pipe(
             realFavicon.injectFaviconMarkups(
                 JSON.parse(fs.readFileSync(FAVICON_DATA_PATH)).favicon.html_code
             )
         )
-        .pipe(dest(SRC_PATH, { overwrite: true }));
-
-// ======== Favicons Copy Handler ========
-const copyFavicons = () =>
-    src(`${SRC_PATH}/favicon/*.*`).pipe(dest(`${DEST_PATH}/icons`));
+        .pipe(dest(DEST_PATH, { overwrite: true }));
 
 // ======== Favicons Data remove ========
 const clearFaviconData = () => del(FAVICON_DATA_PATH);
@@ -201,7 +197,7 @@ const devServer = () => {
 
 // ======== Watchers ========
 const watchers = () => {
-    watch(`${SRC_PATH}/*.html`, html).on("change", browserSync.reload);
+    watch(`${SRC_PATH}/*.html`, html).on('change', browserSync.reload);
     watch(`${SRC_PATH}/scss/**/*.scss`, scss);
     watch(`${SRC_PATH}/js/**/*.js`, js);
     watch(`${SRC_PATH}/images/**/*.*`, parallel(images, webpConvert));
@@ -211,8 +207,8 @@ const watchers = () => {
 // ======== Build Task ========
 const build = series(
     clearDist,
-    series(makeFavicons, injectFavicons, clearFaviconData),
-    parallel(html, scss, js, images, webpConvert, svg, fonts, copyFavicons)
+    parallel(html, scss, js, images, webpConvert, svg, fonts),
+    series(makeFavicons, injectFavicons, clearFaviconData)
 );
 
 // ======== Build & Serve Task ========
