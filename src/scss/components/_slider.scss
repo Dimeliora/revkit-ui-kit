@@ -22,9 +22,7 @@
             }
         }
 
-        &:focus-visible {
-            outline: none;
-
+        &:focus {
             &::-webkit-slider-thumb {
                 box-shadow: 0 0 0 6px var(--muted-shadow-color);
 

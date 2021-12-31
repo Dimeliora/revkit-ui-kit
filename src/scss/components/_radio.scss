@@ -13,7 +13,7 @@
 		position: absolute;
 		appearance: none;
 
-		&:focus-visible + .radio__label {
+		&:focus + .radio__label {
 			&::before {
 				outline: 2px solid var(--primary-color);
 

@@ -29,8 +29,7 @@
 
         @media screen and (min-width: $md) {
             &:hover,
-            &:focus-visible {
-                outline: none;
+            &:focus {
                 transform: scale(1.22);
 
                 &,

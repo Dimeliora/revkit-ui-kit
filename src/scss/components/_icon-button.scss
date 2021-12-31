@@ -9,7 +9,7 @@
     cursor: pointer;
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 50%;
         left: 50%;
@@ -22,9 +22,7 @@
     }
 
     &:hover,
-    &:focus-visible {
-        outline: none;
-
+    &:focus {
         &::before {
             width: 28px;
             height: 28px;
@@ -37,6 +35,8 @@
     }
 
     &__icon {
+        position: relative;
+        z-index: 100;
         width: 20px;
         height: 20px;
         stroke: var(--primary-color);
@@ -65,7 +65,7 @@
         }
 
         &:hover,
-        &:focus-visible {
+        &:focus {
             &::before {
                 width: 24px;
                 height: 24px;
@@ -80,7 +80,7 @@
         }
 
         &:hover,
-        &:focus-visible {
+        &:focus {
             &::before {
                 width: 32px;
                 height: 32px;

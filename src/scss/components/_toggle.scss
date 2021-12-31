@@ -9,7 +9,7 @@
         position: absolute;
         appearance: none;
 
-        &:focus-visible + .toggle__label {
+        &:focus + .toggle__label {
             &::before {
                 outline: 2px solid var(--primary-color);
 

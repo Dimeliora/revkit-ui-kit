@@ -43,7 +43,7 @@
         background-color: var(--bright-color);
         cursor: pointer;
 
-        &:focus-visible {
+        &:focus {
             outline: 2px solid var(--accent-color);
 
             @media screen and (max-width: $md) {

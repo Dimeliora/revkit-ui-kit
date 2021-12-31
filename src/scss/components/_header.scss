@@ -67,8 +67,7 @@
         text-decoration: none;
 
         &:hover,
-        &:focus-visible {
-            outline: none;
+        &:focus {
             text-decoration: underline;
         }
 

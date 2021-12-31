@@ -28,8 +28,7 @@
         }
 
         &:hover,
-        &:focus-visible {
-            outline: none;
+        &:focus {
             background-color: var(--accent-color);
             border-color: var(--accent-color);
 
