@@ -6,12 +6,12 @@
     "scripts": {
         "serve": "cross-env NODE_ENV=development gulp serve",
         "build": "cross-env NODE_ENV=development gulp build",
-        "prod": "cross-env NODE_ENV=production gulp build"
+        "prod": "cross-env NODE_ENV=production gulp prod"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "browserslist": "> 1%, not dead",
+    "browserslist": "> 5%, last 2 versions, not ie <= 11, not dead",
     "devDependencies": {
         "@babel/core": "^7.16.0",
         "@babel/preset-env": "^7.16.4",
